@@ -14,7 +14,7 @@ export async function onRequest(context) {
   }
 
   // 从 R2 读取对象
-  const object = await env.ACU_R2.get(key);
+  const object = await env["acu-web-assets"].get(key);
   if (!object) {
     return new Response('File Not Found', { status: 404 });
   }
