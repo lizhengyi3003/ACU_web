@@ -3,7 +3,7 @@ export default {
     const url = new URL(request.url);
     // 获取路径最后一段作为文件名
     const filename = url.pathname.split('/').pop();
-    const object = await env.content.get(`ACU_images/${filename}`);
+    const object = await env['acu-web-assets'].get(`ACU_images/${filename}`);
 
     function getContentType(filename) {
       if (filename.endsWith('.png')) return 'image/png';
