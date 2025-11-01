@@ -22,15 +22,21 @@
         <nav class="ACU_nav-bar">
             <a href="ACU_main.html" class="ACU_nav" id="ACU_home">首页</a>
             <a href="ACU_pages/ACU_organizational-structure.html" class="ACU_nav" id="ACU_organizational-structure">组织架构</a>
-            <a href="#" class="ACU_nav" id="ACU_club-activity">
-                社团活动
+            <div class="ACU_nav" id="ACU_club-activity">社团活动
                 <div class="ACU_club-activity-sub-nav">
-                    <div class="ACU_club-activity-sub-nav-item"><a href="ACU_pages/ACU_club-activity.html">社团活动</a></div>
-                    <div class="ACU_club-activity-sub-nav-item"><a href="#">活动</a></div>
-                    <div class="ACU_club-activity-sub-nav-item"><a href="#">项目</a></div>
+                    <div class="ACU_club-activity-sub-nav-item"><a href="ACU_pages/ACU_club-activity.html" class="change">社团活动</a></div>
+                    <div class="ACU_club-activity-sub-nav-item"><a href="#" class="change">活动</a></div>
+                    <div class="ACU_club-activity-sub-nav-item"><a href="#" class="change">项目</a></div>
+               </div>
+            </div>
+            <div class="ACU_nav" id="ACU_call-us">联系我们
+                <div class="ACU_call-us-sub-nav">
+                    <div class="ACU_call-us-sub-nav-item"><a href="#" class="change">联系我们</a></div>
+                    <div class="ACU_call-us-sub-nav-item">联系方式:</div>
+                    <div class="ACU_call-us-sub-nav-item">负责人信息：</div>
+                    <div class="ACU_call-us-sub-nav-item message-board"><a href="#messageboard" class="change">留言板</a></div>
                 </div>
-            </a>
-            <a href="#" class="ACU_nav" id="ACU_call-us">联系我们</a>
+            </div>
             <a href="#" class="ACU_nav" id="ACU_connenction">交流论坛</a>
             <a href="#" class="ACU_nav" id="ACU_honor">荣誉</a>
             <a href="ACU_pages/ACU_login.html" class="ACU_nav" id="ACU_log-in">登录</a>
@@ -40,6 +46,11 @@
             <h1 class="ACU_title"><strong>四川农业大学羽毛球协会</strong></h1>
             <hr class="ACU_cut-off"/>
         </main>
-        
+        <div id="messageboard">
+            <textarea cols="120" rows="30" placeholder="请输入你的留言叭"></textarea><br>
+            <input type="submit" value="提交留言" class="submit-button">
+            <div id="close-button"><a href="ACU_main.html" id="close-button1">关闭留言板</a></div>
+
+        </div>
     </body>
 </html>
