@@ -3,9 +3,10 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   let key = url.pathname.startsWith('/') ? url.pathname.slice(1) : url.pathname;
 
-  // 允许访问指定目录下的资源
+  // 允许访问的资源前缀
   const allowPrefixes = [
     "ACU_videos/",
+    "ACU_images/",
     "ACU_assets/ACU_fonts/",
     "ACU_assets/ACU_images/"
   ];
@@ -13,7 +14,7 @@ export async function onRequest(context) {
     return new Response('Not Found', { status: 404 });
   }
 
-  // 从 R2 读取对象
+  // 从 R2 读取对象（注意绑定名要和 wrangler.toml 一致）
   const object = await env["acu-web-assets"].get(key);
   if (!object) {
     return new Response('File Not Found', { status: 404 });
@@ -24,6 +25,7 @@ export async function onRequest(context) {
   if (key.endsWith('.mp4')) contentType = 'video/mp4';
   else if (key.endsWith('.jpg') || key.endsWith('.jpeg')) contentType = 'image/jpeg';
   else if (key.endsWith('.png')) contentType = 'image/png';
+  else if (key.endsWith('.ico')) contentType = 'image/x-icon';
   else if (key.endsWith('.ttf')) contentType = 'font/ttf';
   else if (key.endsWith('.otf')) contentType = 'font/otf';
   else if (key.endsWith('.woff')) contentType = 'font/woff';
