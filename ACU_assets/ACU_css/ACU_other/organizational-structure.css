@@ -1,0 +1,52 @@
+.node-content {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    background-color: red;
+    max-width: 250px;
+    height: 80px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+.node-content2 {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    background-color: blue;
+    max-width: 250px;
+    height: 80px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+h1 {
+    text-align: center;
+}
+h5 {
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+}
+.desc {
+    font-size: 14px;
+    color: white;
+    font-weight: lighter;
+    font-family: "MicrosoftYaHei";
+    text-align: center;
+}
+body {
+    background-image: url(https://bpic.588ku.com/back_pic/06/10/98/5361e4309e938e7.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+
+
