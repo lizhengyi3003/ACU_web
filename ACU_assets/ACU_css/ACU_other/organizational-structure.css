@@ -3,13 +3,14 @@
     font-weight: bold;
     color:white;
     text-align: center;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     max-width: 250px;
     height: 80px;
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 50px;
+    border-radius: 15px;
 }
 .node-content2 {
     font-size: 24px;
@@ -23,6 +24,7 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 50px;
+    border-radius: 15px;
 }
 h1 {
     text-align: center;

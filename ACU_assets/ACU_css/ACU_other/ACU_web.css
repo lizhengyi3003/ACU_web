@@ -28,3 +28,28 @@
     color: #1565c0;
     border-color: #1565c0;
 }
+.ACU_club-activity-sub-nav {
+            position: absolute;
+            top: 100%;
+            left: 16%;
+            width: 200px;
+            background-color: #000;
+            border: 2px solid #1565c0;
+            border-radius: 15px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+        
+        #ACU_club-activity:hover .ACU_club-activity-sub-nav {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .ACU_club-activity-sub-nav-item {
+            display: block;
+            padding: 8px 20px;
+            color: #2196f3;
+            text-decoration: none;
+        }
