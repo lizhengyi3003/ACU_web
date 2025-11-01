@@ -1,3 +1,12 @@
+if (key.endsWith('.html')) {
+  return new Response(object.body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Content-Security-Policy': "script-src 'self' https://static.cloudflareinsights.com https://acu-web.feichuan.dpdns.org 'unsafe-inline';"
+    }
+  });
+}
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
