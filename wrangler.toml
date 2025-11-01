@@ -1,4 +1,4 @@
-name = "acu-images"
+name = "acu-web"
 main = "functions/ACU_images/index.js"
 compatibility_date = "2025-11-01"
 
