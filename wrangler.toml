@@ -1,0 +1,7 @@
+name = "acu-images"
+main = "functions/ACU_images/index.js"
+compatibility_date = "2025-11-01"
+
+name = "acu-videos"
+main = "functions/ACU_videos/index.js"
+compatibility_date = "2025-11-01"
