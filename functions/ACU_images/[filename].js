@@ -3,10 +3,7 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   let key = url.pathname.startsWith('/') ? url.pathname.slice(1) : url.pathname;
 
-if (
-  !key.startsWith("ACU_images/") &&
-  !key.startsWith("ACU_assets/ACU_images/")
-) {
+  if (!key.startsWith("ACU_images/")) {
     return new Response('Not Found', { status: 404 });
   }
 
