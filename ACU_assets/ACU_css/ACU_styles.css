@@ -1,12 +1,12 @@
 @font-face {
     font-family: '悄悄喜欢你';
-    src: url('/ACU_fonts/悄悄喜欢你.ttf') format('truetype');
+    src: url('/ACU_fonts/ACU_悄悄喜欢你.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: '小可奶酪体';
-    src: url('/ACU_fonts/小可奶酪体.ttf') format('truetype');
+    src: url('/ACU_fonts/ACU_小可奶酪体.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,12 +29,12 @@ body {
 }
 .ACU_background-video video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 100%;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     pointer-events: none;
     background: #000;
 }
+
