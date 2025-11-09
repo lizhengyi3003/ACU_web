@@ -10,6 +10,7 @@
         <meta name="author" content="飞船团队">
         <meta name="copyright" content="飞船团队版权所有">
         <link rel="stylesheet" href="ACU_assets/ACU_css/ACU_styles.css">
+        <link rel="stylesheet" href="ACU_assets/ACU_css/ACU_nav.css">
         <link rel="stylesheet" href="ACU_assets/ACU_css/ACU_other/ACU_web.css">
         <script src="ACU_assets/ACU_js/ACU_tool.js"></script>
     </head>
@@ -25,14 +26,13 @@
             <div class="ACU_nav" id="ACU_club-activity">社团活动
                 <div class="ACU_club-activity-sub-nav">
                     <div class="ACU_club-activity-sub-nav-item"><a href="ACU_pages/ACU_club-activity.html" class="change">社团活动</a></div>
-                    <div class="ACU_club-activity-sub-nav-item"><a href="#" class="change">活动</a></div>
+                    <div class="ACU_club-activity-sub-nav-item"><a href="#" class="change">公告</a></div>
                     <div class="ACU_club-activity-sub-nav-item"><a href="#" class="change">项目</a></div>
                </div>
             </div>
             <div class="ACU_nav" id="ACU_call-us">联系我们
                 <div class="ACU_call-us-sub-nav">
-                    <div class="ACU_call-us-sub-nav-item"><a href="#" class="change">联系我们</a></div>
-                    <div class="ACU_call-us-sub-nav-item">联系方式:</div>
+                    <div class="ACU_call-us-sub-nav-item ACU_call-us-hidden"><a href="#callus" class="change">联系我们</a></div>
                     <div class="ACU_call-us-sub-nav-item">负责人信息：</div>
                     <div class="ACU_call-us-sub-nav-item message-board"><a href="#messageboard" class="change">留言板</a></div>
                 </div>
@@ -43,14 +43,21 @@
             <a href="ACU_pages/ACU_register.html" class="ACU_nav" id="ACU_register">注册</a>
         </nav>
         <main>
+            <hr class="ACU_cut-off"/>
             <h1 class="ACU_title"><strong>四川农业大学羽毛球协会</strong></h1>
             <hr class="ACU_cut-off"/>
         </main>
         <div id="messageboard">
             <textarea cols="120" rows="30" placeholder="请输入你的留言叭"></textarea><br>
             <input type="submit" value="提交留言" class="submit-button">
-            <div id="close-button"><a href="ACU_main.html" id="close-button1">关闭留言板</a></div>
-
+            <div id="close-button"><a href="ACU_web.html" id="close-button1">关闭留言板</a></div>
+        </div>
+        <div id="callus">
+            <div class="ACU_call-us-hidden-item">联系电话:</div>
+            <div class="ACU_call-us-hidden-item">官方邮箱:</div>
+            <div class="ACU_call-us-hidden-item">官方QQ:</div>
+            <div class="ACU_call-us-hidden-item">官方微信:</div>
+            <div id="closebutton"><a href="ACU_web.html" id="close-button2">关闭</a></div>
         </div>
     </body>
 </html>
