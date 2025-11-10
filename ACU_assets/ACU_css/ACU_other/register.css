@@ -180,7 +180,7 @@ body {
   margin: 0;
   display: block;
 }
-.slide-down {
+.ACU_ACU_slide-down {
   animation: slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
 }
 @keyframes slideDown {

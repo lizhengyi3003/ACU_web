@@ -13,7 +13,7 @@ export async function onRequest(context) {
   }
 
   let contentType = 'application/octet-stream';
-  if (key.endsWith('.mp4')) contentType = 'font/ttf';
+  if (key.endsWith('.mp4')) contentType = 'video/mp4';
 
   return new Response(object.body, {
     status: 200,

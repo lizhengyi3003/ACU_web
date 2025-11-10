@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     allStatusEls.forEach(el => {
       if (el) {
         el.style.display = 'none';
-        el.classList.remove('slide-down');
+        el.classList.remove('ACU_slide-down');
       }
     });
   }
@@ -38,19 +38,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (statusTrue2) {
           statusTrue2.style.display = 'block';
           void statusTrue2.offsetWidth;
-          statusTrue2.classList.add('slide-down');
+          statusTrue2.classList.add('ACU_slide-down');
         }
       } else {
         if (statusFalse6) {
           statusFalse6.style.display = 'block';
           void statusFalse6.offsetWidth;
-          statusFalse6.classList.add('slide-down');
+          statusFalse6.classList.add('ACU_slide-down');
         }
       }
     };
   }
 
-  const form = document.querySelector('.register-form');
+  const form = document.querySelector('.ACU_register-form');
   if (form) {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (statusFalse5) {
           statusFalse5.style.display = 'block';
           void statusFalse5.offsetWidth;
-          statusFalse5.classList.add('slide-down');
+          statusFalse5.classList.add('ACU_slide-down');
         }
         return;
       }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
           void statusFalse1.offsetWidth;
-          statusFalse1.classList.add('slide-down');
+          statusFalse1.classList.add('ACU_slide-down');
         }
         return;
       }
@@ -91,29 +91,29 @@ document.addEventListener('DOMContentLoaded', function () {
       if (text.trim() === 'TRUE' && statusTrue1) {
         statusTrue1.style.display = 'block';
         void statusTrue1.offsetWidth;
-        statusTrue1.classList.add('slide-down');
+        statusTrue1.classList.add('ACU_slide-down');
         setTimeout(() => {
           window.location.href = 'login.html';
         }, 2000);
       } else if (text.trim() === 'FALSE-2' && statusFalse2) {
         statusFalse2.style.display = 'block';
         void statusFalse2.offsetWidth;
-        statusFalse2.classList.add('slide-down');
+        statusFalse2.classList.add('ACU_slide-down');
         setTimeout(() => {
           window.location.href = 'login.html';
         }, 2000);
       } else if (text.trim() === 'FALSE-3' && statusFalse3) {
         statusFalse3.style.display = 'block';
         void statusFalse3.offsetWidth;
-        statusFalse3.classList.add('slide-down');
+        statusFalse3.classList.add('ACU_slide-down');
       } else if (text.trim() === 'FALSE-4' && statusFalse4) { 
         statusFalse4.style.display = 'block';
         void statusFalse4.offsetWidth;
-        statusFalse4.classList.add('slide-down');
+        statusFalse4.classList.add('ACU_slide-down');
       } else if (text.trim() === 'FALSE-5' && statusFalse5) {
         statusFalse5.style.display = 'block';
         void statusFalse5.offsetWidth;
-        statusFalse5.classList.add('slide-down');
+        statusFalse5.classList.add('ACU_slide-down');
       }
     });
   }
