@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   text-align: center;
   margin: auto;
-  max-width: 500px;
+  max-width: 600px;
   padding: 20px 25px 50px 25px;
   border: 2px solid #4fc3f7;
   border-radius: 25px;
@@ -40,7 +40,7 @@ body {
 }
 .ACU_log-in-form-content input[type="text"],.ACU_log-in-form-content input[type="password"] {
   flex: 1;
-  min-width: 0;
+  min-width: 300px;
   font-size: 1.2em;
   padding: 10px 15px;
   text-align: left;
