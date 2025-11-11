@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         void statusTrue.offsetWidth;
         statusTrue.classList.add('ACU_slide-down');
         setTimeout(() => {
-          window.location.href = '../tool.html';
+          window.location.href = '../ACU_web.html';
         }, 1000);
       } else if (text.trim() === 'FALSE' && statusFalse) {
         statusFalse.style.display = 'block';
@@ -36,6 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   } else {
-    console.error('未找到 .log-in-form 元素，无法绑定登录事件');
+    console.error('未找到 .ACU_log-in-form 元素，无法绑定登录事件');
   }
 });
