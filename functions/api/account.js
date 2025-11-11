@@ -4,7 +4,7 @@ export async function onRequest(context) {
   const username = formData.get('username');
   const password = formData.get('password');
 
-  const db = acu-web-sql; 
+  const db = envacu-web-sql; 
   const { results } = await db.prepare(
     `SELECT * FROM account 
      WHERE (username = ? OR phone = ? OR mail = ?)
