@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const statusTrue = document.querySelector('.log-in-status-TRUE');
-  const statusFalse = document.querySelector('.log-in-status-FALSE');
+  const statusTrue = document.querySelector('.ACU_log-in-status-TRUE');
+  const statusFalse = document.querySelector('.ACU_log-in-status-FALSE');
   if (statusTrue) statusTrue.style.display = 'none';
   if (statusFalse) statusFalse.style.display = 'none';
 
