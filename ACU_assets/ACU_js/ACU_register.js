@@ -19,16 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   clearAllStatus();
 
-  const sendCodeBtn = document.getElementById('send-code-btn');
+  const sendCodeBtn = document.getElementById('ACU_send-code-btn');
   if (sendCodeBtn) {
     sendCodeBtn.onclick = async function() {
       clearAllStatus();
-      const email = document.getElementById('username').value;
+      const email = document.getElementById('ACU_mail').value;
       if (!email) {
         alert('请输入邮箱');
         return;
       }
-    const res = await fetch('/api/sendcode', {
+    const res = await fetch('/api/sendcode', { //这里还未成功实现过
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: { 'Content-Type': 'application/json' }
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       clearAllStatus();
 
-      const email = document.getElementById('username').value;
-      const pwd = document.getElementById('password').value;
-      const pwdNext = document.getElementById('password-next').value;
+      const email = document.getElementById('ACU_mail').value;
+      const pwd = document.getElementById('ACU_password').value;
+      const pwdNext = document.getElementById('ACU_password-next').value;
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) {
         if (statusFalse5) {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       const formData = new FormData(form);
-      const verifyCodeInput = document.getElementById('verify-code');
+      const verifyCodeInput = document.getElementById('ACU_verify-code');
       if (verifyCodeInput) {
         formData.set('verifyCode', verifyCodeInput.value);
       }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         void statusTrue1.offsetWidth;
         statusTrue1.classList.add('ACU_slide-down');
         setTimeout(() => {
-          window.location.href = 'login.html';
+          window.location.href = 'ACU_login.html';
         }, 2000);
       } else if (text.trim() === 'FALSE-2' && statusFalse2) {
         statusFalse2.style.display = 'block';
