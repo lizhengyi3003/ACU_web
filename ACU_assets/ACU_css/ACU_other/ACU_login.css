@@ -16,7 +16,6 @@ body {
   border-radius: 25px;
   background: rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 4px 4px 25px rgba(33,150,243,0.10);
 }
 .ACU_log-in h1 {
@@ -70,7 +69,6 @@ body {
   border: 2px solid #4fc3f7;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(33,150,243,0.10);
   transition:
     transform 0.2s cubic-bezier(.34,1.56,.64,1),
@@ -92,17 +90,12 @@ body {
   transform: translate(-50%, 0);
   z-index: 10;
   display: none;
-}
-
-.ACU_log-in-status-TRUE,.ACU_log-in-status-FALSE {
-  position: absolute;
   min-width: 250px;
   padding: 15px 30px;
   font-size: 1.2em;
   font-weight: bold;
   border-radius: 20px;
   backdrop-filter: blur(15px) saturate(180%);
-  -webkit-backdrop-filter: blur(15px) saturate(180%);
   background: rgba(255,255,255,0.5);
   box-shadow: 4px 4px 25px 0 rgba(0,0,0,0.10);
   margin: 0;
