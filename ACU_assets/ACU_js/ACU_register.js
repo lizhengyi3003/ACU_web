@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  const statusTrue1 = document.querySelector('.register-status-TRUE-1');
-  const statusFalse1 = document.querySelector('.register-status-FALSE-1');
-  const statusFalse2 = document.querySelector('.register-status-FALSE-2');
-  const statusFalse3 = document.querySelector('.register-status-FALSE-3');
-  const statusFalse4 = document.querySelector('.register-status-FALSE-4');
-  const statusFalse5 = document.querySelector('.register-status-FALSE-5');
-  const statusTrue2 = document.querySelector('.register-status-TRUE-2');
-  const statusFalse6 = document.querySelector('.register-status-FALSE-6');
+  const statusTrue1 = document.querySelector('.ACU_register-status-TRUE-1');
+  const statusTrue2 = document.querySelector('.ACU_register-status-TRUE-2');
+  const statusFalse1 = document.querySelector('.ACU_register-status-FALSE-1');
+  const statusFalse2 = document.querySelector('.ACU_register-status-FALSE-2');
+  const statusFalse3 = document.querySelector('.ACU_register-status-FALSE-3');
+  const statusFalse4 = document.querySelector('.ACU_register-status-FALSE-4');
+  const statusFalse5 = document.querySelector('.ACU_register-status-FALSE-5');
+  const statusFalse6 = document.querySelector('.ACU_register-status-FALSE-6');
   const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6];
   function clearAllStatus() {
     allStatusEls.forEach(el => {

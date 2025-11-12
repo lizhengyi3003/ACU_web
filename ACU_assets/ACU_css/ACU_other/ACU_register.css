@@ -1,12 +1,11 @@
 body {
-  overflow: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-user-select: auto;
-  user-select: auto;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.register {
+.ACU_register {
   text-align: center;
   margin: 5vh auto auto auto;
   max-width: 500px;
@@ -20,10 +19,10 @@ body {
   box-shadow: 4px 4px 25px rgba(33,150,243,0.10);
   max-height: 85vh;
 }
-.register h1 {
+.ACU_register h1 {
   margin-bottom: 25px;
 }
-.register-form-content {
+.ACU_register-form-content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +30,7 @@ body {
   width: 100%;
   justify-content: flex-start;
 }
-.register-form-content label {
+.ACU_register-form-content label {
   font-size: 1.2em;
   color: #1565c0;
   margin-right: 20px;
@@ -39,7 +38,7 @@ body {
   white-space: nowrap;
   min-width: 75px;
 }
-.register-form-content input[type="text"],.register-form-content input[type="password"] {
+.ACU_register-form-content input[type="text"],.ACU_register-form-content input[type="password"] {
   flex: 1;
   min-width: 0;
   font-size: 1.2em;
@@ -180,10 +179,11 @@ body {
   margin: 0;
   display: block;
 }
-.ACU_ACU_slide-down {
-  animation: slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
+
+.ACU_slide-down {
+  animation: ACU_slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
 }
-@keyframes slideDown {
+@keyframes ACU_slideDown {
   from {
     opacity: 0;
     transform: translate(-50%, -40px) scale(0.95);

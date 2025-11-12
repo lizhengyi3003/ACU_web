@@ -3,66 +3,67 @@
   <head>
     <meta charset="UTF-8">
     <title>注册</title>
-    <link rel="icon" href="/images/feichuan.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/other/register.css">
-    <script src="../assets/js/register.js"></script>
+    <link rel="icon" href="/ACU_images/ACU_feichuan.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_styles.css">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_nav.css">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_other/ACU_register.css">
+    <script src="../ACU_assets/ACU_js/ACU_register.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body>
-    <div class="background-video">
+    <div class="ACU_background-video">
       <video autoplay loop muted>
-        <source src="/videos/shenlilinghua.mp4" type="video/mp4">
+        <source src="/ACU_videos/ACU_shenlilinghua.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="register">
+    <div class="ACU_register">
       <h1>注册</h1>
-      <form action="/api/register" method="post" class="register-form">
-        <div class="register-form-content">
+      <form action="/api/register" method="post" class="ACU_register-form">
+        <div class="ACU_register-form-content">
           <label for="username">邮箱:</label>
-          <input type="text" id="username" name="username" required placeholder="请输入邮箱">
+          <input type="text" id="ACU_username" name="username" required placeholder="请输入邮箱">
         </div>
-        <div class="register-form-content">
+        <div class="ACU_register-form-content">
           <label for="password">密码:</label>
-          <input type="password" id="password" name="password" required placeholder="请输入密码">
+          <input type="password" id="ACU_password" name="password" required placeholder="请输入密码">
         </div>
-        <div class="register-form-content">
+        <div class="ACU_register-form-content">
           <label for="password-next">密码:</label>
-          <input type="password" id="password-next" name="password_confirm" required placeholder="请再次输入密码">
+          <input type="password" id="ACU_password-next" name="password_confirm" required placeholder="请再次输入密码">
         </div>
-        <div class="register-form-content">
+        <div class="ACU_register-form-content">
           <label for="verify-code">验证码:</label>
-          <input type="text" id="verify-code" name="verify_code" required placeholder="请输入验证码">
-          <button type="button" id="send-code-btn">获取验证码</button>
+          <input type="text" id="ACU_verify-code" name="verify_code" required placeholder="请输入验证码">
+          <button type="button" id="ACU_send-code-btn">获取验证码</button>
         </div>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAABnkZJTigol9Njs-"></div>
         <button type="submit">注册</button>
-        <p>已有账号？<a href="login.html">登录</a></p>
+        <p>已有账号？<a href="ACU_login.html">登录</a></p>
       </form>
     </div>
-    <div class="register-status">
-      <div class="register-status-TRUE-1" style="display:none;">
+    <div class="ACU_register-status">
+      <div class="ACU_register-status-TRUE-1" style="display:none;">
         <p>注册成功，正在跳转到登录界面...</p>
       </div>
-      <div class="register-status-TRUE-2" style="display: none;">
+      <div class="ACU_register-status-TRUE-2" style="display: none;">
         <P>邮件验证码已发送成功，请查看...</P>
       </div>
-      <div class="register-status-FALSE-1" style="display:none;">
+      <div class="ACU_register-status-FALSE-1" style="display:none;">
         <p>注册失败，您两次输入的密码不同，请重新输入</p>
       </div>
-      <div class="register-status-FALSE-2" style="display:none;">
+      <div class="ACU_register-status-FALSE-2" style="display:none;">
         <p>注册失败，该用户已存在，正在为你跳转到登录界面...</p>
       </div>
-      <div class="register-status-FALSE-3" style="display:none;">
+      <div class="ACU_register-status-FALSE-3" style="display:none;">
         <P>注册失败，请等待人机验证成功后再点击注册</P>
       </div>
-      <div class="register-status-FALSE-4" style="display:none;">
+      <div class="ACU_register-status-FALSE-4" style="display:none;">
         <p>注册失败，你被判定为机器人，请刷新界面重新验证</p>
       </div>
-      <div class="register-status-FALSE-5" style="display:none;">
+      <div class="ACU_register-status-FALSE-5" style="display:none;">
         <p>注册失败，您的邮箱格式不正确，请重新输入</p>
       </div>
-      <div class="register-status-FALSE-6" style="display:none;">
+      <div class="ACU_register-status-FALSE-6" style="display:none;">
         <p>邮件验证码发送失败，请重试</p>
       </div>
     </div>
