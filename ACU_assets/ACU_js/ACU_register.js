@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
   const statusTrue1 = document.querySelector('.ACU_register-status-TRUE-1');
   const statusTrue2 = document.querySelector('.ACU_register-status-TRUE-2');
   const statusFalse1 = document.querySelector('.ACU_register-status-FALSE-1');
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('请输入邮箱');
         return;
       }
-    const res = await fetch('/api/sendcode', { //这里还未成功实现过
+    const res = await fetch('/api/sendcode', {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: { 'Content-Type': 'application/json' }
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         void statusFalse2.offsetWidth;
         statusFalse2.classList.add('ACU_slide-down');
         setTimeout(() => {
-          window.location.href = 'login.html';
+          window.location.href = 'ACU_login.html';
         }, 2000);
       } else if (text.trim() === 'FALSE-3' && statusFalse3) {
         statusFalse3.style.display = 'block';
