@@ -23,13 +23,28 @@ document.addEventListener('DOMContentLoaded', function () {
     sendCodeBtn.onclick = async function() {
       clearAllStatus();
       const email = document.getElementById('ACU_mail').value;
-      if (!email) {
-        alert('请输入邮箱');
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailReg.test(email)) {
+        if (statusFalse5) {
+          statusFalse5.style.display = 'block';
+          void statusFalse5.offsetWidth;
+          statusFalse5.classList.add('ACU_slide-down');
+        }
         return;
       }
-    const res = await fetch('/api/sendcode', {
+      // 获取人机验证token
+      const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
+      if (!turnstileToken) {
+        if (statusFalse3) {
+          statusFalse3.style.display = 'block';
+          void statusFalse3.offsetWidth;
+          statusFalse3.classList.add('ACU_slide-down');
+        }
+        return;
+      }
+      const res = await fetch('/api/sendcode', {
         method: 'POST',
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
         headers: { 'Content-Type': 'application/json' }
       });
       const text = await res.text();
@@ -47,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     };
+
   }
 
   const form = document.querySelector('.ACU_register-form');

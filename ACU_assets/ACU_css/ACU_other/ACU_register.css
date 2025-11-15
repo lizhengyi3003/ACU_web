@@ -129,7 +129,7 @@ body {
   transform: scale(1.05, 0.95);
 }
 
-.ACU_cf-turnstile {
+.cf-turnstile {
   margin: 10px 0;
   display: flex;
   justify-content: center;

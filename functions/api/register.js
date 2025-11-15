@@ -25,8 +25,31 @@ export async function onRequest(context) {
     const password = formData.get ? formData.get('password') : formData.get('password');
     const password_confirm = formData.get ? formData.get('password_confirm') : formData.get('password_confirm');
     const verify_code = formData.get ? formData.get('verify_code') : formData.get('verify_code');
-    // 可选：人机验证
-    // const turnstile_token = formData.get('cf-turnstile-response');
+
+    // Turnstile 校验
+    const turnstileToken = formData.get
+      ? formData.get('cf-turnstile-response')
+      : formData.get('cf-turnstile-response');
+    if (!turnstileToken) {
+      return new Response('FALSE-3'); // 没有人机验证token
+    }
+
+    // 校验 Turnstile token
+    const secretKey = env['cf-turnstile']; // 你的secret
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret: secretKey,
+        response: turnstileToken,
+        // remoteip: context.request.headers.get('CF-Connecting-IP') || '' // 可选
+      })
+    });
+    const verifyJson = await verifyRes.json();
+    if (!verifyJson.success) {
+      // 机器人或验证失败
+      return new Response('FALSE-4');
+    }
 
     // 邮箱格式校验
     const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
