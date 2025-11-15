@@ -54,7 +54,7 @@ body {
     box-shadow 0.2s,
     border-color 0.2s;
 }
-.ACU_register-form-content input[type="text"]#verify-code {
+.ACU_register-form-content input[type="text"]#ACU_verify-code {
   min-width: 0;
   font-size: 1.2em;
   padding: 10px 15px;
@@ -70,12 +70,12 @@ body {
     box-shadow 0.2s,
     border-color 0.2s;
 }
-.ACU_register-form-content input[type="text"]#verify-code:focus {
+.ACU_register-form-content input[type="text"]#ACU_verify-code:focus {
   border-color: #1565c0;
   box-shadow: 4px 4px 15px rgba(33,150,243,0.2);
   transform: scale(1.1, 0.9);
 }
-.ACU_register-form-content #send-code-btn {
+.ACU_register-form-content #ACU_send-code-btn {
   padding: 10px 16px;
   font-size: 1em;
   font-weight: bold;
@@ -91,7 +91,7 @@ body {
     border-color 0.2s,
     background 0.2s;
 }
-.ACU_register-form-content #send-code-btn:hover, .ACU_register-form-content #send-code-btn:focus {
+.ACU_register-form-content #ACU_send-code-btn:hover, .ACU_register-form-content #ACU_send-code-btn:focus {
   background: rgba(255,255,255,0.75);
   border-color: #1565c0;
   box-shadow: 2px 2px 12px rgba(33,150,243,0.15);
