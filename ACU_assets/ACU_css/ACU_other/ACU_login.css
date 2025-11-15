@@ -1,27 +1,27 @@
 body {
-  overflow: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-user-select: auto;
-  user-select: auto;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.log-in {
+.ACU_log-in {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin: 15vh auto 0 auto;
-  max-width: 500px;
+  margin: auto;
+  max-width: 600px;
   padding: 20px 25px 50px 25px;
   border: 2px solid #4fc3f7;
   border-radius: 25px;
   background: rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 4px 4px 25px rgba(33,150,243,0.10);
 }
-.log-in h1 {
+.ACU_log-in h1 {
   margin-bottom: 50px;
 }
-.log-in-form-content {
+.ACU_log-in-form-content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,7 +29,7 @@ body {
   width: 100%;
   justify-content: flex-start;
 }
-.log-in-form-content label {
+.ACU_log-in-form-content label {
   font-size: 1.2em;
   color: #1565c0;
   margin-right: 20px;
@@ -37,9 +37,9 @@ body {
   white-space: nowrap;
   min-width: 75px;
 }
-.log-in-form-content input[type="text"],.log-in-form-content input[type="password"] {
+.ACU_log-in-form-content input[type="text"],.ACU_log-in-form-content input[type="password"] {
   flex: 1;
-  min-width: 0;
+  min-width: 300px;
   font-size: 1.2em;
   padding: 10px 15px;
   text-align: left;
@@ -53,12 +53,12 @@ body {
     box-shadow 0.2s,
     border-color 0.2s;
 }
-.log-in-form-content input[type="text"]:focus,.log-in-form-content input[type="password"]:focus {
+.ACU_log-in-form-content input[type="text"]:focus,.ACU_log-in-form-content input[type="password"]:focus {
   border-color: #1565c0;
   box-shadow: 4px 4px 15px rgba(33,150,243,0.2);
   transform: scale(1.1, 0.9);
 }
-.log-in-form button[type="submit"] {
+.ACU_log-in-form button[type="submit"] {
   width: 50%;
   padding: 10px 0;
   margin-top: 15px;
@@ -69,7 +69,6 @@ body {
   border: 2px solid #4fc3f7;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(33,150,243,0.10);
   transition:
     transform 0.2s cubic-bezier(.34,1.56,.64,1),
@@ -77,30 +76,26 @@ body {
     border-color 0.2s,
     background 0.2s;
 }
-.log-in-form button[type="submit"]:hover,.log-in-form button[type="submit"]:focus {
+.ACU_log-in-form button[type="submit"]:hover,.ACU_log-in-form button[type="submit"]:focus {
   background: rgba(255,255,255,0.75);
   border-color: #1565c0;
   box-shadow: 5px 5px 25px rgba(33,150,243,0.2);
   transform: scale(1.05, 0.95);
 }
 
-.log-in-status-TRUE,.log-in-status-FALSE {
+.ACU_log-in-status-TRUE,.ACU_log-in-status-FALSE {
   position: absolute;
   top: 1vh;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
   display: none;
-}
-
-.log-in-status-TRUE,.log-in-status-FALSE {
   min-width: 250px;
   padding: 15px 30px;
   font-size: 1.2em;
   font-weight: bold;
   border-radius: 20px;
   backdrop-filter: blur(15px) saturate(180%);
-  -webkit-backdrop-filter: blur(15px) saturate(180%);
   background: rgba(255,255,255,0.5);
   box-shadow: 4px 4px 25px 0 rgba(0,0,0,0.10);
   margin: 0;
@@ -114,28 +109,28 @@ body {
     background 0.25s;
 }
 
-.log-in-status-TRUE {
+.ACU_log-in-status-TRUE {
   border-color: #43a047;
   box-shadow: 4px 4px 25px 0 rgba(67,160,71,0.2);
   background: rgba(67,160,71,0.10);
   color: #2e7d32;
 }
-.log-in-status-FALSE {
+.ACU_log-in-status-FALSE {
   border-color: #e53935;
   box-shadow: 4px 4px 25px 0 rgba(229,57,53,0.2);
   background: rgba(229,57,53,0.10);
   color: #b71c1c;
 }
 
-.log-in-status p {
+.ACU_log-in-status p {
   margin: 0;
   display: block;
 }
 
-.slide-down {
-  animation: slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
+.ACU_slide-down {
+  animation: ACU_slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
 }
-@keyframes slideDown {
+@keyframes ACU_slideDown {
   from {
     opacity: 0;
     transform: translate(-50%, -40px) scale(0.95);

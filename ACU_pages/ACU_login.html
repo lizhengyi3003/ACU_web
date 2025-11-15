@@ -3,40 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="icon" href="/images/feichuan.ico" type="image/x-icon">
-    <link rel="icon" href="/images/feichuan.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/other/login.css">
-    <script src="../assets/js/login.js"></script>
+    <link rel="icon" href="/ACU_images/ACU_feichuan.ico" type="image/x-icon">
+    <link rel="icon" href="/ACU_images/ACU_feichuan.png" type="image/png">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_styles.css">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_nav.css">
+    <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_other/ACU_login.css">
+    <script src="../ACU_assets/ACU_js/ACU_login.js"></script>
   </head>
   <body>
-    <div class="background-video">
+    <div class="ACU_background-video">
       <video autoplay loop muted>
-        <source src="/videos/shenlilinghua.mp4" type="video/mp4">
+        <source src="/ACU_videos/ACU_shenlilinghua.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="log-in">
+    <div class="ACU_log-in">
       <h1>登录</h1>
-      <form action="/api/login" method="post" class="log-in-form">
-        <div class="log-in-form-content">
-          <label for="username">用户名:</label>
-          <input type="text" id="username" name="username" required placeholder="请输入手机号或邮箱">
+      <form action="/api/login" method="post" class="ACU_log-in-form">
+        <div class="ACU_log-in-form-content">
+          <label for="username">账号:</label>
+          <input type="text" id="ACU_username" name="username" required placeholder="请输入手机号、邮箱或用户名">
         </div>
         <br/>
-        <div class="log-in-form-content">
+        <div class="ACU_log-in-form-content">
           <label for="password">密码:</label>
           <input type="password" id="password" name="password" required placeholder="请输入密码">
         </div>
         <br/>
         <button type="submit">登录</button>
       </form>
-      <p>还没有账号？<a href="register.html">注册</a></p>
+      <p>还没有账号？<a href="ACU_register.html">注册</a></p>
     </div>
-    <div class="log-in-status">
-      <div class="log-in-status-TRUE">
+    <div class="ACU_log-in-status">
+      <div class="ACU_log-in-status-TRUE">
         <p>登陆成功，正在跳转...</p>
       </div>
-      <div class="log-in-status-FALSE">
+      <div class="ACU_log-in-status-FALSE">
         <p>登录失败，请检查用户名或密码是否正确</p>
       </div>
     </div>

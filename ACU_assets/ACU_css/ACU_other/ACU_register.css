@@ -1,12 +1,11 @@
 body {
-  overflow: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-user-select: auto;
-  user-select: auto;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.register {
+.ACU_register {
   text-align: center;
   margin: 5vh auto auto auto;
   max-width: 500px;
@@ -20,10 +19,10 @@ body {
   box-shadow: 4px 4px 25px rgba(33,150,243,0.10);
   max-height: 85vh;
 }
-.register h1 {
+.ACU_register h1 {
   margin-bottom: 25px;
 }
-.register-form-content {
+.ACU_register-form-content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +30,7 @@ body {
   width: 100%;
   justify-content: flex-start;
 }
-.register-form-content label {
+.ACU_register-form-content label {
   font-size: 1.2em;
   color: #1565c0;
   margin-right: 20px;
@@ -39,7 +38,7 @@ body {
   white-space: nowrap;
   min-width: 75px;
 }
-.register-form-content input[type="text"],.register-form-content input[type="password"] {
+.ACU_register-form-content input[type="text"],.ACU_register-form-content input[type="password"] {
   flex: 1;
   min-width: 0;
   font-size: 1.2em;
@@ -55,7 +54,7 @@ body {
     box-shadow 0.2s,
     border-color 0.2s;
 }
-.register-form-content input[type="text"]#verify-code {
+.ACU_register-form-content input[type="text"]#ACU_verify-code {
   min-width: 0;
   font-size: 1.2em;
   padding: 10px 15px;
@@ -71,12 +70,12 @@ body {
     box-shadow 0.2s,
     border-color 0.2s;
 }
-.register-form-content input[type="text"]#verify-code:focus {
+.ACU_register-form-content input[type="text"]#ACU_verify-code:focus {
   border-color: #1565c0;
   box-shadow: 4px 4px 15px rgba(33,150,243,0.2);
   transform: scale(1.1, 0.9);
 }
-.register-form-content #send-code-btn {
+.ACU_register-form-content #ACU_send-code-btn {
   padding: 10px 16px;
   font-size: 1em;
   font-weight: bold;
@@ -92,18 +91,18 @@ body {
     border-color 0.2s,
     background 0.2s;
 }
-.register-form-content #send-code-btn:hover, .register-form-content #send-code-btn:focus {
+.ACU_register-form-content #ACU_send-code-btn:hover, .ACU_register-form-content #ACU_send-code-btn:focus {
   background: rgba(255,255,255,0.75);
   border-color: #1565c0;
   box-shadow: 2px 2px 12px rgba(33,150,243,0.15);
   transform: scale(1.05, 0.95);
 }
-.register-form-content input[type="text"]:focus,.register-form-content input[type="password"]:focus {
+.ACU_register-form-content input[type="text"]:focus,.ACU_register-form-content input[type="password"]:focus {
   border-color: #1565c0;
   box-shadow: 4px 4px 15px rgba(33,150,243,0.2);
   transform: scale(1.1, 0.9);
 }
-.register-form button[type="submit"] {
+.ACU_register-form button[type="submit"] {
   width: 50%;
   padding: 10px 0;
   margin-top: 15px;
@@ -123,20 +122,20 @@ body {
     border-color 0.2s,
     background 0.2s;
 }
-.register-form button[type="submit"]:hover,.log-in-form button[type="submit"]:focus {
+.ACU_register-form button[type="submit"]:hover,.ACU_log-in-form button[type="submit"]:focus {
   background: rgba(255,255,255,0.75);
   border-color: #1565c0;
   box-shadow: 5px 5px 25px rgba(33,150,243,0.2);
   transform: scale(1.05, 0.95);
 }
 
-.cf-turnstile {
+.ACU_cf-turnstile {
   margin: 10px 0;
   display: flex;
   justify-content: center;
 }
 
-.register-status-TRUE-1,.register-status-TRUE-2,.register-status-FALSE-1,.register-status-FALSE-2,.register-status-FALSE-3,.register-status-FALSE-4,.register-status-FALSE-5,.register-status-FALSE-6 {
+.ACU_register-status-TRUE-1,.ACU_register-status-TRUE-2,.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6 {
   position: absolute;
   top: 1vh;
   left: 50%;
@@ -163,27 +162,28 @@ body {
     background 0.25s;
 }
 
-.register-status-TRUE-1,.register-status-TRUE-2 {
+.ACU_register-status-TRUE-1,.ACU_register-status-TRUE-2 {
   border-color: #43a047;
   box-shadow: 4px 4px 25px 0 rgba(67,160,71,0.2);
   background: rgba(67,160,71,0.10);
   color: #2e7d32;
 }
-.register-status-FALSE-1,.register-status-FALSE-2,.register-status-FALSE-3,.register-status-FALSE-4,.register-status-FALSE-5,.register-status-FALSE-6 {
+.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6 {
   border-color: #e53935;
   box-shadow: 4px 4px 25px 0 rgba(229,57,53,0.2);
   background: rgba(229,57,53,0.10);
   color: #b71c1c;
 }
 
-.register-status p {
+.ACU_register-status p {
   margin: 0;
   display: block;
 }
-.slide-down {
-  animation: slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
+
+.ACU_slide-down {
+  animation: ACU_slideDown 0.5s cubic-bezier(.34,1.56,.64,1);
 }
-@keyframes slideDown {
+@keyframes ACU_slideDown {
   from {
     opacity: 0;
     transform: translate(-50%, -40px) scale(0.95);
