@@ -117,9 +117,10 @@ h1 {
 #ACU_activity {
     width: 100%;
     margin:145px 10px 10px 0px;
-    height: 500px;
+    height: 400px;
     border: 1px solid #f5f7fa;
     background-color: white;
+    border-radius: 10px;
 }
 #ACU_activity-head1 {
     float: left;
@@ -135,5 +136,240 @@ h1 {
     line-height: 50px;
     margin:30px 25px 10px 10px;
     width: 80px;
+    border-radius: 8px;
+}
+#ACU_activity-body1 {
+    width: 95%;
+    height: 60px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 95px 0 0 25px;
+}
+#ACU_activity-body {
+    width: 95%;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0 0 25px;
+}
+#ACU_activity-body:hover {
+    background-color: #f5f7fa;
+}
+.ACU_activity-body1-item1 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item2 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item3 {
+    float: left;
+    margin: 0 75px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item4 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item5 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item6 {
+    float: left;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body-item1 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item2 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item3 {
+    float: left;
+    margin: 0 84px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item4 {
+    float: left;
+    margin: 0 58px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item5 {
+    float: left;
+    margin: 0 46px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item6 {
+    float: left;
+    text-align: center;
+    width: 54px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+    background-color: #2c7be5;
+    color: white;
+    border-radius: 8px;
+}
+#ACU_reservation {
+    width: 78%;
+    margin:20px 60px 10px 5px;
+    height: 400px;
+    border: 1px solid #f5f7fa;
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+}
+#ACU_reservation-head1 {
+    float: left;
+    margin:30px 10px 10px 25px;
+    font-size: 24px;
+}
+#ACU_reservation-head2 {
+    float: right;
+    background-color: #2c7be5;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin:30px 25px 10px 10px;
+    width: 80px;
+    border-radius: 8px;
+}
+#ACU_reservation-body1 {
+    width: 95%;
+    height: 60px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 95px 0 0 25px;
+}
+#ACU_reservation-body {
+    width: 95%;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0 0 25px;
+}
+#ACU_reservation-body:hover {
+    background-color: #f5f7fa;
+}
+.ACU_reservation-body1-item1 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item2 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item3 {
+    float: left;
+    margin: 0 75px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item4 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item5 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item6 {
+    float: left;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body-item1 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item2 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item3 {
+    float: left;
+    margin: 0 84px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item4 {
+    float: left;
+    margin: 0 58px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item5 {
+    float: left;
+    margin: 0 46px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item6 {
+    float: left;
+    text-align: center;
+    width: 54px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+    background-color: #2c7be5;
+    color: white;
     border-radius: 8px;
 }
