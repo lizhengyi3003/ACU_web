@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f5f7fa;
+}
+#ACU_head {
+    height: 67px;
+    background-color:#0b1727;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#ACU_title {
+    color:white;
+    margin: 10px 0px 10px 15px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 900;
+}
+#ACU_logo {
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    background-color: white;
+    float: left;
+    color: red;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px 0 5px 30px;
+}
+#ACU_user-profile {
+    float: right;
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    margin: 10px 15px 0 0;
+    background-color: white;
+    text-align: center;
+}
+#ACU_body-left {
+    float: left;
+    width: 250px;
+    height: 80%;
+    margin: 67px 10px 0px 0px;
+}
+.ACU_body-left-item {
+    width:70% ;
+    height:80px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    line-height: 80px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+.ACU_body-left-item:hover {
+    background-color: #f5f7fa;
+    color: #2c7be5;
+}
+.ACU_body-left-item:active {
+    background-color: rgba(44, 123, 229, 0.1);
+    border-left: 3px solid #2c7be5;
+    width: 69%;
+}
+#ACU_body-right {
+    float: left;
+    width: 78%;
+    height: 80%;
+    margin: 67px 10px 0px -45px;
+}
+.ACU_body-right1 {
+    width: 30%;
+    height: 100px;
+    float: left;
+    margin: 10px 20px 10px 0;
+    border:1px solid #f0f0f0;
+    border-radius: 8px;
+    background-color: white;
+}
+.ACU_body-right0 {
+    width: 100%;
+    margin:10px 10px 10px 10px;
+    height: 100px;
+}
+h1 {
+    margin:10px 0 20px 0;
+    float: left;
+}
+#ACU_refresh {
+    float: right;
+    border: 1px solid #2c7be5;
+    color: #2c7be5;
+    text-align: center;
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    margin: 17px 20px 20px 20px;
+}
+.ACU_num {
+    margin: 10px 10px 10px 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0b1727;
+}
+.ACU_item {
+    margin: 10px 10px 10px 10px;
+    color: #6e84a3;
+    font-size: 14px;
+}
+#ACU_activity {
+    width: 100%;
+    margin:145px 10px 10px 0px;
+    height: 500px;
+    border: 1px solid #f5f7fa;
+    background-color: white;
+}
+#ACU_activity-head1 {
+    float: left;
+    margin:30px 10px 10px 25px;
+    font-size: 24px;
+}
+#ACU_activity-head2 {
+    float: right;
+    background-color: #2c7be5;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin:30px 25px 10px 10px;
+    width: 80px;
+    border-radius: 8px;
+}
