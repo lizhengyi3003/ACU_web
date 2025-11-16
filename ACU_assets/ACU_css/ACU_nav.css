@@ -1,9 +1,13 @@
+/*导航栏的整体样式*/
 .ACU_nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
     position: relative;
     top: 15px;
-    display: flex;
-    gap: 20px;
     z-index: 10;
+    background: transparent;
 }
 .ACU_nav {
     padding: 10px 25px;
@@ -17,18 +21,7 @@
     transition: transform 0.2s cubic-bezier(.25,1.5,.75,1.25), box-shadow 0.2s;
     outline: none;
     text-decoration: none;
-
-
-
-
-
-
-
     position: relative;
-
-
-
-
 }
 .ACU_nav:active {
     transform: scale(0.90, 1.1);
@@ -39,103 +32,103 @@
     color: #1565c0;
     border-color: #1565c0;
 }
-
-.left-bar{
-  position: absolute;
-  left: 20px;
+/*左导航栏样式*/
+.ACU_left-bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
-
-.right-bar{
-  position: absolute;
-  right: 20px;
-
-
-
-
-
-
-
-
-
-
+/*右导航栏样式*/
+.ACU_right-bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
-
-}
-
-
-.ACU_club-activity-sub-nav {
+/*社团活动导航的下拉菜单*/
+.ACU_club-activity-box {
     position: absolute;
     top: 100%;
-    left: 0%;
-    width: 200px;
-    background-color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    background: rgba(33, 150, 243, 0.25);
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 25px rgba(33,150,243,0.1);
     border: 2px solid #1565c0;
     border-radius: 15px;
     padding: 10px 0;
+    margin-top: 20px;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
     z-index: 100;
 } 
-#ACU_club-activity:hover .ACU_club-activity-sub-nav {
+#ACU_club-activity:hover .ACU_club-activity-box,.ACU_club-activity-box:hover {
     opacity: 1;
     visibility: visible;
 }
-.ACU_club-activity-sub-nav-item {
+/*社团活动导航的下拉菜单的下拉菜单里的每一项*/
+.ACU_club-activity-box-cont {
     display: block;
-    padding: 8px 20px;
-    color: #2196f3;
+    padding: 10px 20px;
+    color: #1565c0;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+.ACU_club-activity-box-cont a {
+    color: #ffffff;
     text-decoration: none;
 }
-.ACU_call-us-sub-nav {
+/*联系我们的下拉菜单*/
+.ACU_call-nav {
     position: absolute;
     top: 100%;
-    left: 0%;
-    width: 200px;
-    background-color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    background: rgba(33, 150, 243, 0.25);
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 25px rgba(33,150,243,0.1);
     border: 2px solid #1565c0;
     border-radius: 15px;
     padding: 10px 0;
+    margin-top: 20px;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
     z-index: 100;
 }
-#ACU_call-us:hover .ACU_call-us-sub-nav {
+#ACU_call:hover .ACU_call-nav,.ACU_call-nav:hover {
     opacity: 1;
     visibility: visible;
 }
-.ACU_call-us-sub-nav-item {
+/*联系我们的下拉菜单的下拉菜单里的每一项*/
+.ACU_call-nav-cont{
+    color: #f17f7f;
+}
+.ACU_call-nav-cont-box-cont {
     display: block;
-    padding: 8px 20px;
-    color: #2196f3;
+    padding: 10px 20px;
+    color: #ffffff;
     text-decoration: none;
-}
-
-
-#ACU_club-notice-nav {
-    background-color: yellow;
-    height: 60px;
-}
-.ACU_club-notice-nav-item {
-    width: 150px;
-    height: 60px;
-    float: left;
     text-align: center;
-    line-height: 60px;
+    font-weight: bold;
 }
-.ACU_club-notice-nav-item a {
-    color: black;
+.ACU_call-nav-item-messageboard{
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;    
 }
-.ACU_club-notice-nav-item a {
+.ACU_call-nav-item-messageboard a {
+    color: #ffffff;
     text-decoration: none;
 }
-.ACU_club-notice-nav-item:hover {
-    background-color: red;
+/*下划线样式*/
+.ACU_club-activity-box-cont-cut-off,.ACU_call-nav-cut-off{
+  border-top: 2px solid aliceblue;
+  width: 90%;
 }
-.ACU_club-notice-nav-item:hover a {
-    color: rgb(255, 255, 255);
-}
-.ACU_club-notice-nav-item:first-child {
-    margin:0 0 0 50px ;
-}
-
-

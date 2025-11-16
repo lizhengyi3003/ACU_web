@@ -1,92 +1,32 @@
+/*下划线样式*/
 .ACU_cut-off{
   margin: 60px 0 0 0;
   border-top: 2px solid aliceblue;
   width: 100%;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-.change {
+}
+/*标题样式*/
+.ACU_title{
+    width: fit-content;
+    margin: 25px auto;
+    padding: 20px 50px;
+    border: 2px solid #4fc3f7;
+    border-radius: 25px;
+    background: #fff;
     color: #2196f3;
-}
-.message-board {
-    text-decoration: underline;
-}
-#messageboard {
-    opacity:0;
-    visibility: hidden;
-    max-width: 800px;
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-#messageboard:target {
-    opacity: 1;
-    visibility: visible;
-
-}
-#close-button {
-    display: inline-block;
-    border: 0px;
-    border-radius: 10px;
-    border-color: #1565c0;
-    border-style: solid;
-    background-color: white;
-    width: 95px;
-    text-align: center
-    
-}
-.submit-button {
-    color: #2196f3;
-    border-radius: 10px;
-    height: 25px;
-}
-#close-button1 {
-    color: #2196f3;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(33,150,243,0.1);
+    transition: transform 0.2s cubic-bezier(.25,1.5,.75,1.25), box-shadow 0.2s;
+    outline: none;
     text-decoration: none;
-    font-size: 16px;
+    position: relative;
+    text-align: center;
 }
-.ACU_cut-off {
-  margin: 60px 0 0 0;
-  border-top: 2px solid aliceblue;
-  width: 100%;
+.ACU_title:active {
+    transform: scale(0.90, 1.1);
+    box-shadow: 5px 5px 20px rgba(33,150,243,0.2);
 }
-#callus {
-    opacity: 0;
-    visibility: hidden;
-    margin: 40px auto;
-    color:#2196f3;
-    background-color: black;
-    height: 120px;
-    width: 200px;
-    border-style: solid;
-    border: -1px;
-    border-radius: 10px;
+.ACU_title:hover {
+    background: #e3f2fd;
+    color: #1565c0;
     border-color: #1565c0;
-}
-#callus:target {
-    opacity: 1;
-    visibility: visible;
-}
-#close-button2 {
-    color: #2196f3;
-    font-size: 16px;
 }
