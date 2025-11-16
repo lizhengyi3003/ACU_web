@@ -1,7 +1,24 @@
 export async function onRequest(context) {
   const { request, env } = context;
   try {
-    if (request.method !== 'POST') {
+
+
+
+
+
+
+
+
+
+    // 只接受 POST 请求
+    
+
+
+
+
+
+
+if (request.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 });
     }
 
@@ -24,6 +41,16 @@ export async function onRequest(context) {
     const password = formData.get ? formData.get('password') : formData.get('password');
     const password_confirm = formData.get ? formData.get('password_confirm') : formData.get('password_confirm');
     const verify_code = formData.get ? formData.get('verify_code') : formData.get('verify_code');
+
+
+
+
+
+
+
+
+
+
 
     // Turnstile 校验
     const turnstileToken = formData.get
@@ -50,7 +77,35 @@ export async function onRequest(context) {
       return new Response('FALSE-4');
     }
 
-    // 邮箱格式校验
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+// 可选：人机验证
+    // const turnstile_token = formData.get('cf-turnstile-response');
+
+    
+
+
+
+
+
+
+
+
+// 邮箱格式校验
     const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailReg.test(mail)) {
       return new Response('FALSE-5'); // 邮箱格式错误

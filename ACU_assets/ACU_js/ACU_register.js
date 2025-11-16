@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const statusTrue1 = document.querySelector('.ACU_register-status-TRUE-1');
+
+ 
+
+
+
+
+
+
+
+
+
+
+const statusTrue1 = document.querySelector('.ACU_register-status-TRUE-1');
   const statusTrue2 = document.querySelector('.ACU_register-status-TRUE-2');
   const statusFalse1 = document.querySelector('.ACU_register-status-FALSE-1');
   const statusFalse2 = document.querySelector('.ACU_register-status-FALSE-2');
@@ -7,12 +19,49 @@ document.addEventListener('DOMContentLoaded', function () {
   const statusFalse4 = document.querySelector('.ACU_register-status-FALSE-4');
   const statusFalse5 = document.querySelector('.ACU_register-status-FALSE-5');
   const statusFalse6 = document.querySelector('.ACU_register-status-FALSE-6');
-  const statusFalse7 = document.querySelector('.ACU_register-status-FALSE-7');
+  
+
+
+
+
+
+
+
+
+
+
+const statusFalse7 = document.querySelector('.ACU_register-status-FALSE-7');
   const statusFalse8 = document.querySelector('.ACU_register-status-FALSE-8');
   const statusFalse9 = document.querySelector('.ACU_register-status-FALSE-9');
   const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6, statusFalse7, statusFalse8, statusFalse9];
   //隐藏所有状态类元素
-  function clearAllStatus() {
+  
+
+
+
+
+
+
+
+
+
+
+
+
+const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6];
+  
+
+
+
+
+
+
+
+
+
+
+
+function clearAllStatus() {
     allStatusEls.forEach(el => {
       if (el) {
         el.style.display = 'none';
@@ -26,7 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sendCodeBtn) {
     sendCodeBtn.onclick = async function() {
       clearAllStatus();
-      //验证邮箱表达是否正确
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//验证邮箱表达是否正确
       const email = document.getElementById('ACU_mail').value;
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) {
@@ -50,7 +116,50 @@ document.addEventListener('DOMContentLoaded', function () {
       const res = await fetch('/api/sendcode', {
         method: 'POST',
         body: JSON.stringify({ email, turnstileToken }),
-        headers: { 'Content-Type': 'application/json' }
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const email = document.getElementById('ACU_mail').value;
+      if (!email) {
+        alert('请输入邮箱');
+        return;
+      }
+    const res = await fetch('/api/sendcode', { //这里还未成功实现过
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+headers: { 'Content-Type': 'application/json' }
       });
       const text = await res.text();
       if (text.includes('验证码已发送')) {
@@ -68,7 +177,36 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-  }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
   const form = document.querySelector('.ACU_register-form');
   if (form) {
@@ -120,8 +258,61 @@ document.addEventListener('DOMContentLoaded', function () {
         void statusFalse2.offsetWidth;
         statusFalse2.classList.add('ACU_slide-down');
         setTimeout(() => {
-          window.location.href = 'ACU_login.html';
-        }, 2000);
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+window.location.href = 'ACU_login.html';
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.location.href = 'login.html';
+        
+
+
+
+
+
+
+
+
+
+
+}, 2000);
       } else if (text.trim() === 'FALSE-3' && statusFalse3) {
         statusFalse3.style.display = 'block';
         void statusFalse3.offsetWidth;

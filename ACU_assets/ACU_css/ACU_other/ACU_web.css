@@ -2,4 +2,91 @@
   margin: 60px 0 0 0;
   border-top: 2px solid aliceblue;
   width: 100%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+.change {
+    color: #2196f3;
+}
+.message-board {
+    text-decoration: underline;
+}
+#messageboard {
+    opacity:0;
+    visibility: hidden;
+    max-width: 800px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#messageboard:target {
+    opacity: 1;
+    visibility: visible;
+
+}
+#close-button {
+    display: inline-block;
+    border: 0px;
+    border-radius: 10px;
+    border-color: #1565c0;
+    border-style: solid;
+    background-color: white;
+    width: 95px;
+    text-align: center
+    
+}
+.submit-button {
+    color: #2196f3;
+    border-radius: 10px;
+    height: 25px;
+}
+#close-button1 {
+    color: #2196f3;
+    text-decoration: none;
+    font-size: 16px;
+}
+.ACU_cut-off {
+  margin: 60px 0 0 0;
+  border-top: 2px solid aliceblue;
+  width: 100%;
+}
+#callus {
+    opacity: 0;
+    visibility: hidden;
+    margin: 40px auto;
+    color:#2196f3;
+    background-color: black;
+    height: 120px;
+    width: 200px;
+    border-style: solid;
+    border: -1px;
+    border-radius: 10px;
+    border-color: #1565c0;
+}
+#callus:target {
+    opacity: 1;
+    visibility: visible;
+}
+#close-button2 {
+    color: #2196f3;
+    font-size: 16px;
 }

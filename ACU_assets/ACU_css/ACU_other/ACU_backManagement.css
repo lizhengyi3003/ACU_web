@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f5f7fa;
+}
+#ACU_head {
+    height: 10%;
+    background-color:#0b1727;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#ACU_title {
+    color:white;
+    margin: 10px 0px 10px 15px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 900;
+}
+#ACU_logo {
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    background-color: white;
+    float: left;
+    color: red;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px 0 5px 30px;
+}
+#ACU_user-profile {
+    float: right;
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    margin: 10px 15px 0 0;
+    background-color: white;
+    text-align: center;
+}
+#ACU_body-left {
+    float: left;
+    width: 250px;
+    height: 80%;
+    margin: 67px 10px 0px 0px;
+}
+.ACU_body-left-item {
+    width:70% ;
+    height:80px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    line-height: 80px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+.ACU_body-left-item1 {
+    width:70% ;
+    height:80px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    line-height: 80px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2c7be5;
+}
+.ACU_body-left-item:hover {
+    background-color: #f5f7fa;
+    color: #2c7be5;
+}
+.ACU_body-left-item:active {
+    background-color: rgba(44, 123, 229, 0.1);
+    border-left: 3px solid #2c7be5;
+    width: 69%;
+}
+.ACU_body-left-item1:active {
+    background-color: rgba(44, 123, 229, 0.1);
+    border-left: 3px solid #2c7be5;
+    width: 69%;
+}
+#ACU_body-right {
+    float: left;
+    width: 78%;
+    height: 80%;
+    margin: 67px 10px 0px -45px;
+}
+.ACU_body-right1 {
+    width: 30%;
+    height: 100px;
+    float: left;
+    margin: 10px 20px 10px 0;
+    border:1px solid #f0f0f0;
+    border-radius: 8px;
+    background-color: white;
+}
+.ACU_body-right0 {
+    width: 100%;
+    margin:10px 10px 10px 10px;
+    height: 100px;
+}
+h1 {
+    margin:10px 0 20px 0;
+    float: left;
+}
+#ACU_refresh {
+    float: right;
+    border: 1px solid #2c7be5;
+    color: #2c7be5;
+    text-align: center;
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    margin: 17px 20px 20px 20px;
+}
+.ACU_num {
+    margin: 10px 10px 10px 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0b1727;
+}
+.ACU_item {
+    margin: 10px 10px 10px 10px;
+    color: #6e84a3;
+    font-size: 14px;
+}
+#ACU_activity {
+    width: 100%;
+    margin:145px 10px 10px 0px;
+    height: 400px;
+    border: 1px solid #f5f7fa;
+    background-color: white;
+    border-radius: 10px;
+}
+#ACU_activity-head1 {
+    float: left;
+    margin:30px 10px 10px 25px;
+    font-size: 24px;
+}
+#ACU_activity-head2 {
+    float: right;
+    background-color: #2c7be5;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin:30px 25px 10px 10px;
+    width: 80px;
+    border-radius: 8px;
+}
+#ACU_activity-body1 {
+    width: 95%;
+    height: 60px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 95px 0 0 25px;
+}
+#ACU_activity-body {
+    width: 95%;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0 0 25px;
+}
+#ACU_activity-body:hover {
+    background-color: #f5f7fa;
+}
+.ACU_activity-body1-item1 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item2 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item3 {
+    float: left;
+    margin: 0 75px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item4 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item5 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body1-item6 {
+    float: left;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_activity-body-item1 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item2 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item3 {
+    float: left;
+    margin: 0 84px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item4 {
+    float: left;
+    margin: 0 58px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item5 {
+    float: left;
+    margin: 0 46px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_activity-body-item6 {
+    float: left;
+    text-align: center;
+    width: 54px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+    background-color: #2c7be5;
+    color: white;
+    border-radius: 8px;
+}
+#ACU_reservation {
+    width: 78%;
+    margin:20px 60px 10px 5px;
+    height: 400px;
+    border: 1px solid #f5f7fa;
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+}
+#ACU_reservation-head1 {
+    float: left;
+    margin:30px 10px 10px 25px;
+    font-size: 24px;
+}
+#ACU_reservation-head2 {
+    float: right;
+    background-color: #2c7be5;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin:30px 25px 10px 10px;
+    width: 80px;
+    border-radius: 8px;
+}
+#ACU_reservation-body1 {
+    width: 95%;
+    height: 60px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 95px 0 0 25px;
+}
+#ACU_reservation-body {
+    width: 95%;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0 0 25px;
+}
+#ACU_reservation-body:hover {
+    background-color: #f5f7fa;
+}
+.ACU_reservation-body1-item1 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item2 {
+    float: left;
+    margin: 0 130px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item3 {
+    float: left;
+    margin: 0 75px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item4 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item5 {
+    float: left;
+    margin: 0 50px 0 20px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body1-item6 {
+    float: left;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ACU_reservation-body-item1 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item2 {
+    float: left;
+    margin: 0 138px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item3 {
+    float: left;
+    margin: 0 84px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item4 {
+    float: left;
+    margin: 0 58px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item5 {
+    float: left;
+    margin: 0 46px 0 20px;
+    text-align: left;
+    line-height: 60px;
+}
+.ACU_reservation-body-item6 {
+    float: left;
+    text-align: center;
+    width: 54px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+    background-color: #2c7be5;
+    color: white;
+    border-radius: 8px;
+}
+span {
+    font-size: 20px;
+    margin: 10px 6px 10px 0px;
+}
+#image0 {
+    display: block;
+    margin: 0px 10px -10px 10px;
+    font-size: 35px;
+}

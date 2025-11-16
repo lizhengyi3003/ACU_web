@@ -17,6 +17,18 @@
     transition: transform 0.2s cubic-bezier(.25,1.5,.75,1.25), box-shadow 0.2s;
     outline: none;
     text-decoration: none;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
 }
 .ACU_nav:active {
     transform: scale(0.90, 1.1);
@@ -36,4 +48,94 @@
 .right-bar{
   position: absolute;
   right: 20px;
+
+
+
+
+
+
+
+
+
+
 }
+
+}
+
+
+.ACU_club-activity-sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 200px;
+    background-color: #000;
+    border: 2px solid #1565c0;
+    border-radius: 15px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+} 
+#ACU_club-activity:hover .ACU_club-activity-sub-nav {
+    opacity: 1;
+    visibility: visible;
+}
+.ACU_club-activity-sub-nav-item {
+    display: block;
+    padding: 8px 20px;
+    color: #2196f3;
+    text-decoration: none;
+}
+.ACU_call-us-sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 200px;
+    background-color: #000;
+    border: 2px solid #1565c0;
+    border-radius: 15px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+}
+#ACU_call-us:hover .ACU_call-us-sub-nav {
+    opacity: 1;
+    visibility: visible;
+}
+.ACU_call-us-sub-nav-item {
+    display: block;
+    padding: 8px 20px;
+    color: #2196f3;
+    text-decoration: none;
+}
+
+
+#ACU_club-notice-nav {
+    background-color: yellow;
+    height: 60px;
+}
+.ACU_club-notice-nav-item {
+    width: 150px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 60px;
+}
+.ACU_club-notice-nav-item a {
+    color: black;
+}
+.ACU_club-notice-nav-item a {
+    text-decoration: none;
+}
+.ACU_club-notice-nav-item:hover {
+    background-color: red;
+}
+.ACU_club-notice-nav-item:hover a {
+    color: rgb(255, 255, 255);
+}
+.ACU_club-notice-nav-item:first-child {
+    margin:0 0 0 50px ;
+}
+
+

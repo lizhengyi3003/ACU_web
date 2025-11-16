@@ -1,0 +1,108 @@
+body {
+    background-image: url(https://bpic.588ku.com/back_list_pic/21/05/26/99535d05e8191ce1c4511a081f9b9e28.jpg!/fw/640/quality/90/unsharp/true/compress/true);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#ACU_body0 {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+}
+#ACU_head {
+    margin:0 auto;
+    background-color: orange;
+    text-align: center;
+    width:800px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 30px 30px 0 0;
+}
+#ACU_head div {
+    color:#2196f3;
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 0px 3px 3px rgba(255,255,255,1.0)
+}
+#ACU_body1 {
+    width: 800px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    margin:0 auto;
+}
+#ACU_body2 {
+    width: 800px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    margin:0 auto;
+}
+#ACU_time-position {
+    float: left;
+    background-color: #2196f3;
+    margin-left: 100px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    margin-top: 30px;
+    width: 270px;
+    border-radius: 25px;
+}
+#ACU_time-position div {
+    margin-top: 20px;
+}
+#ACU_people {
+    float: right;
+    background-color: #2196f3;
+    margin-right: 100px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    margin-top: 30px;
+    width: 270px;
+    border-radius: 25px;
+}
+#ACU_people div {
+    margin: 35px auto;
+}
+#ACU_activity {
+    width: 270px;
+    text-align: center;
+    float: left;
+    background-color: #2196f3;
+    margin-left: 100px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 25px;
+    height: 200px;
+    margin-top: 50px;
+}
+#ACU_end {
+    width: 270px;
+    text-align: center;
+    float: right;
+    background-color: #2196f3;
+    margin-right: 100px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 25px;
+    height: 200px;
+    margin-top: 50px;
+}
+#ACU_activity div {
+    margin: 57px auto;
+}
+#ACU_end div {
+    margin: 71px auto;
+}
+#ACU_footer {
+    width: 800px;
+    height: 100px;
+    color:rgb(255, 255, 255);
+    background-color: #2196f3;
+    margin:0 auto;
+    line-height: 20px;
+    border-radius: 0 0 30px 30px;
+}
