@@ -7,7 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const statusFalse4 = document.querySelector('.ACU_register-status-FALSE-4');
   const statusFalse5 = document.querySelector('.ACU_register-status-FALSE-5');
   const statusFalse6 = document.querySelector('.ACU_register-status-FALSE-6');
-  const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6];
+  const statusFalse7 = document.querySelector('.ACU_register-status-FALSE-7');
+  const statusFalse8 = document.querySelector('.ACU_register-status-FALSE-8');
+  const statusFalse9 = document.querySelector('.ACU_register-status-FALSE-9');
+  const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6, statusFalse7, statusFalse8, statusFalse9];
+  //隐藏所有状态类元素
   function clearAllStatus() {
     allStatusEls.forEach(el => {
       if (el) {
@@ -22,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sendCodeBtn) {
     sendCodeBtn.onclick = async function() {
       clearAllStatus();
+      //验证邮箱表达是否正确
       const email = document.getElementById('ACU_mail').value;
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) {

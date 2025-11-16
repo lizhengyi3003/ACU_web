@@ -1,7 +1,6 @@
 export async function onRequest(context) {
   const { request, env } = context;
   try {
-    // 只接受 POST 请求
     if (request.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 });
     }
