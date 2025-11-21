@@ -46,13 +46,13 @@ export async function onRequest(context) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         grant_type: 'client_credentials',
-        client_id: env.SENDPULSE_CLIENT_ID,      // 需在环境变量中配置
-        client_secret: env.SENDPULSE_CLIENT_SECRET // 需在环境变量中配置
+        client_id: env.SENDPULSE_CLIENT_ID,
+        client_secret: env.SENDPULSE_CLIENT_SECRET
       })
     });
     const tokenData = await tokenRes.json();
     if (!tokenData.access_token) {
-      return new Response('SendPulse授权失败', { status: 500 });
+      return new Response('SendPulse授权失败，tokenData: ' + JSON.stringify(tokenData), { status: 500 });
     }
     const accessToken = tokenData.access_token;
 
@@ -69,22 +69,24 @@ export async function onRequest(context) {
       },
       body: JSON.stringify({
         email: {
-          from: { email: 'noreply@yourdomain.com', name: 'ACU平台' }, // 建议用你认证过的发件人邮箱
-          to: [{ email }],               // 收件人邮箱
-          subject,                       // 邮件主题
-          text                           // 邮件正文
+          from: { email, name: email },
+          to: [{ email }],
+          subject,
+          text
         }
       })
     });
     const mailData = await mailRes.json();
-    // SendPulse返回结构严格判断 result 字段
     if (!mailData.result) {
-      const errorMsg = mailData.error_code ? `邮件发送失败，错误码：${mailData.error_code}` : '邮件发送失败';
-      return new Response(errorMsg, { status: 500 });
+      return new Response('邮件发送失败，mailData: ' + JSON.stringify(mailData), { status: 500 });
     }
 
     // 存储验证码到 KV，5分钟有效
-    await env['acu-web-kv'].put(email, code, { expirationTtl: 300 });
+    try {
+      await env['acu-web-kv'].put(email, code, { expirationTtl: 300 });
+    } catch (kvErr) {
+      return new Response('验证码存储失败，错误信息: ' + kvErr.message, { status: 500 });
+    }
 
     return new Response('验证码已发送');
   } catch (err) {
