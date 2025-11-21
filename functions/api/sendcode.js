@@ -46,8 +46,8 @@ export async function onRequest(context) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         grant_type: 'client_credentials',
-        client_id: env.SENDPULSE_CLIENT_ID,
-        client_secret: env.SENDPULSE_CLIENT_SECRET
+        client_id: env.SENDPULSECLIENTID,
+        client_secret: env.SENDPULSECLIENTSECRET
       })
     });
     const tokenData = await tokenRes.json();
@@ -69,7 +69,7 @@ export async function onRequest(context) {
       },
       body: JSON.stringify({
         email: {
-          from: { email, name: email },
+          from: { email: 'feichuan613@gmail.com', name: '飞船ACU' },
           to: [{ email }],
           subject,
           text
