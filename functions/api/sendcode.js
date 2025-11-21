@@ -69,18 +69,18 @@ export async function onRequest(context) {
       },
       body: JSON.stringify({
         email: {
-          from: { email: '', name: '' }, // 发件人邮箱和姓名（需补充）
+          from: { email: 'noreply@yourdomain.com', name: 'ACU平台' }, // 建议用你认证过的发件人邮箱
           to: [{ email }],               // 收件人邮箱
           subject,                       // 邮件主题
           text                           // 邮件正文
-          // 其它参数可参考SendPulse文档
         }
       })
     });
     const mailData = await mailRes.json();
-    // SendPulse返回结构请根据实际API文档调整
-    if (!mailData.result) { // result字段仅为示例，请根据实际API返回判断
-      return new Response('邮件发送失败', { status: 500 });
+    // SendPulse返回结构严格判断 result 字段
+    if (!mailData.result) {
+      const errorMsg = mailData.error_code ? `邮件发送失败，错误码：${mailData.error_code}` : '邮件发送失败';
+      return new Response(errorMsg, { status: 500 });
     }
 
     // 存储验证码到 KV，5分钟有效
