@@ -36,6 +36,7 @@ if (request.method !== 'POST') {
       return new Response('Unsupported Content-Type', { status: 400 });
     }
 
+    
     // 获取字段
     const email = formData.get ? formData.get('email') : formData.get('email');
     const password = formData.get ? formData.get('password') : formData.get('password');

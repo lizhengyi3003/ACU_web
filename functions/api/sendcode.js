@@ -69,7 +69,7 @@ export async function onRequest(context) {
       },
       body: JSON.stringify({
         email: {
-          from: { email: 'feichuan613@gmail.com', name: '飞船ACU' },
+          from: { email: 'acu@feichuan.ltd', name: '飞船ACU' },
           to: [{ email }],
           subject,
           text
