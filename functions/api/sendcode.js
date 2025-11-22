@@ -56,7 +56,7 @@ export async function onRequest(context) {
     }
     const accessToken = tokenData.access_token;
     // 使用模板生成邮件内容
-    const { subject, text } = buildVerifyMail(code, email);
+    const { subject, text, html } = buildVerifyMail(code, email);
     // 发送邮件
     const mailRes = await fetch('https://api.sendpulse.com/smtp/emails', {
       method: 'POST',

@@ -74,6 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sendCodeBtn) {
     sendCodeBtn.onclick = async function() {
       clearAllStatus();
+      // 每次点击前强制刷新 Turnstile token
+      if (window.turnstile && turnstileWidgetId !== null) {
+        window.turnstile.reset(turnstileWidgetId);
+        disableSendCodeBtn(); 
+      }
+      // 等待新 token 生成
+      await new Promise(resolve => setTimeout(resolve, 500));
       // 验证邮箱是否输入
       const email = document.getElementById('ACU_mail').value;
       if (!email) {
@@ -122,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     };
+
   }
   // 提交表单
   const form = document.querySelector('.ACU_register-form');
