@@ -127,17 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     async function sendVerifyCode() {
       clearAllStatus();
-      
-      
-      
-      
-      
-      
       const email = document.getElementById('ACU_mail').value;
-
-
-
-
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
         if (statusFalse3) {
@@ -147,27 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      
-      
-      
-      
-      
       if (!email) {
         alert('请输入邮箱');
         return;
       }
-
-
-
-
-
-
       const emailReg = /^[^\s@]+@[^"]+\.[^\s@]+$/;
-      
-      
-      
-      
-      
       if (!emailReg.test(email)) {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
@@ -176,29 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-
-
-
-
-
-      
-      
-      
-      
       const res = await fetch('/api/sendcode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, turnstileToken })
       });
-
-
-
-
-      
-      
-      
-      
-      
       const text = await res.text();
       if (text.trim() === 'TRUE-1') {
         if (statusTrue1) {
@@ -206,10 +162,6 @@ document.addEventListener('DOMContentLoaded', function () {
           void statusTrue1.offsetWidth;
           statusTrue1.classList.add('ACU_slide-down');
         }
-
-
-
-
       } else if (text.trim() === 'FALSE-4') {
         if (statusFalse4) {
           statusFalse4.style.display = 'block';
@@ -226,10 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
           void statusFalse3.offsetWidth;
           statusFalse3.classList.add('ACU_slide-down');
         }
-      
-      
-      
-      
       } else {
         if (statusFalse6) {
           statusFalse6.style.display = 'block';
@@ -237,14 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
           statusFalse6.classList.add('ACU_slide-down');
         }
       }
-
-
-
     }
-  
-  
-  
-  
   }
   // 提交表单
   const form = document.querySelector('.ACU_register-form');
@@ -256,9 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = document.getElementById('ACU_mail').value;
       const pwd = document.getElementById('ACU_password').value;
       const pwdNext = document.getElementById('ACU_password-next').value;
-
-
-
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       // 新增：注册时token为空弹窗
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
@@ -270,10 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      
-      
-      
-      
       if (!emailReg.test(email)) {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
