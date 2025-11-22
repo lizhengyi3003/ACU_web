@@ -1,5 +1,99 @@
-        <div id="messageboard">
-            <textarea cols="120" rows="30" placeholder="请输入你的留言叭"></textarea><br>
-            <input type="submit" value="提交留言" class="submit-button">
-            <div id="close-button"><a href="ACU_web.html" id="close-button1">关闭留言板</a></div>
-        </div>
+       <!DOCTYPE html>
+       <html lang="en">
+       <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_nav.css">
+        <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_styles.css">
+        <link rel="stylesheet" href="../ACU_assets/ACU_css/ACU_other/ACU_messageboard.css">
+        <link rel="stylesheet" href="../ACU_assets/ACU_css/iconfont.css">
+        <title>留言板</title>
+       </head>
+       <body>
+        <nav class="ACU_nav-bar">
+            <div class="ACU_left-bar">
+                <a href="../ACU_web.html" class="ACU_nav" id="ACU_home">首页</a>
+                <a href="../ACU_pages/ACU_organizational-structure.html" class="ACU_nav" id="ACU_organizational">组织架构</a>
+                <div class="ACU_nav" id="ACU_club-activity">社团活动
+                    <div class="ACU_club-activity-box">
+                        <div class="ACU_club-activity-box-cont"><a href="../ACU_pages/ACU_club-notice.html">活动</a></div>
+                        <hr class="ACU_club-activity-box-cont-cut-off"/>
+                        <div class="ACU_club-activity-box-cont"><a href="#">项目</a></div>
+                    </div>
+                </div>
+                <a href="#" class="ACU_nav" id="ACU_honor">荣誉展示</a>
+                <a href="../ACU_pages/ACU_communication-forum.html" class="ACU_nav" id="ACU_communication">交流论坛</a>
+                <div class="ACU_nav" id="ACU_call">联系我们
+                    <div class="ACU_call-nav">
+                        <div class="ACU_call-nav-cont">负责人信息
+                            <div id="ACU_call-nav-cont-box">
+                                <div class="ACU_call-nav-cont-box-cont">联系电话:18482159136</div>
+                                <div class="ACU_call-nav-cont-box-cont">官方邮箱:connect.acu@feichuan.ltd</div>
+                                <div class="ACU_call-nav-cont-box-cont">官方QQ:2730879271</div>
+                                <div class="ACU_call-nav-cont-box-cont">官方微信:lizhengyi3003</div>
+                            </div>
+                        </div>
+                        <hr class="ACU_call-nav-cut-off"/>
+                        <div class="ACU_call-nav-item-messageboard"><a href="../ACU_pages/ACU_messageboard.html" class="ACU_call-nav-item-messageboard-box">留言板</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ACU_right-bar">
+                <a href="../ACU_pages/ACU_login.html" class="ACU_nav" id="ACU_log-in">登录</a>
+                <a href="../ACU_pages/ACU_register.html" class="ACU_nav" id="ACU_register">注册</a>
+            </div>
+        </nav>
+            <div id="ACU_xuzhi">
+                <div id="ACU_xuzhi-head">
+                <div>访客留言</div>
+                </div>
+                <div class="ACU_xuzhi-body">
+                    <div class="ACU_xuzhi-body-title">公众留言须知</div>
+                        一、本栏目仅用于协会和公众之间的交流 ，不用于公众互相之间的交流，公众可就协会职能范围内的相关工作进行咨询、提出意见和建议。<br>
+                        二、留言人需遵守国家相关法律法规，并承担一切因留言行为而直接或间接引 起的法律责任。<br>
+　　                        含有下列内容的留言不予发布和答复：<br>
+　　                        1、违反中华人民共和国法律、法规及违反改革开放和四项基本原 则的；<br>
+　　                        2、含有造谣、诽谤、攻击他 人内容的；<br>
+　　                        3、根据未经证实的消息提出相关问题的；<br>
+　　                        4、含有商业广告内容的；<br>
+                        三、公众提交的留言须经协会相关部门审核，只有符合本须知规定的留言才准予发布，不符合留言规定的 将予以删除。<br>
+                        四、对我们认为需要答复的留言，本栏目将视留言的具体内容，原则上在15个工作日内，采取不同的方式进行答复，因此请留言者务必留下真实的联系方式。<br>
+                        五、对我们认为不需答复的留言，将转交有关部门作为工作参考，以进一步改进工作。<br>
+                        六、凡在本栏目留言， 即表明已阅读并接受了上述各项条款。
+                </div>
+                <div class="ACU_xuzhi-body">
+                    <div class="ACU_xuzhi-body-title">公众留言</div>
+                    <form>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-renwu-ren"></span>
+                            <input type="text" placeholder="您的姓名" class="ACU_input">
+                        </div>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-youxiang"></span>
+                            <input type="text" placeholder="电子邮件" class="ACU_input">
+                        </div>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-dianhua"></span>
+                            <input type="text" placeholder="联系电话" class="ACU_input">
+                        </div>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-duihua"></span>
+                            <input type="text" placeholder="留言主题" class="ACU_input">
+                        </div>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-liaotian"></span>
+                            <textarea placeholder="内容(限1000字)" class="ACU_input-textarea"></textarea>
+                        </div>
+                        <div class="ACU_inputdiv">
+                            <span id="ACU_image" class="iconfont icon-suoding"></span>
+                            <input type="text" placeholder="验证码" class="ACU_input" id="ACU_yzm">
+                        </div>
+                        <div id="ACU_anniu">
+                            <input type="submit" value="确定" id="ACU_anniu1">
+                            <input type="submit" value="取消" id="ACU_anniu2">
+                        </div>
+                    </form>
+                </div>
+            </div>
+       </body>
+       </html>
+       
