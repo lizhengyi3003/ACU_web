@@ -40,16 +40,16 @@ export async function onRequest(context) {
     }
     // 检查邮箱是否已注册
     const db = env['acu-web-sql'];
-    const checkSql = 'SELECT COUNT(*) as count FROM users WHERE mail = ?';
-    const checkRes = await db.prepare(checkSql).bind(mail).first();
+    const checkSql = 'SELECT COUNT(*) as count FROM users WHERE email = ?';
+    const checkRes = await db.prepare(checkSql).bind(email).first();
     if (checkRes && checkRes.count > 0) {
       return new Response('FALSE-8'); 
     }
     // 注册用户
     const maxIdRes = await db.prepare('SELECT MAX(id) as maxId FROM users').first();
     const id = (maxIdRes && maxIdRes.maxId ? maxIdRes.maxId : 0) + 1;
-    const insertSql = 'INSERT INTO users (id, mail, password) VALUES (?, ?, ?)';
-    await db.prepare(insertSql).bind(id, mail, password).run();
+    const insertSql = 'INSERT INTO users (id, email, password) VALUES (?, ?, ?)';
+    await db.prepare(insertSql).bind(id, email, password).run();
     // 注册成功，删除验证码
     await env['acu-web-kv'].delete(email);
     return new Response('TRUE-2');
