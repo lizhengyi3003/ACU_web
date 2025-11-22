@@ -72,16 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
   clearAllStatus();
   // 发送验证码按钮点击
   if (sendCodeBtn) {
-
-
-
-
-
-
-
-
-
-
     // 标记是否等待token回调后自动发验证码
     let waitForTokenToSendCode = false;
     sendCodeBtn.onclick = function() {
