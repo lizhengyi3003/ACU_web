@@ -17,7 +17,7 @@
 #ACU_head2 {
     margin: 0 0 0 135px;
 }
-#logo {
+#ACU_logo {
     float: left;
     background-color: rgb(255,255,255);
     color: red;
@@ -40,36 +40,36 @@ hr {
     border: 1px solid orange;
     margin: 10px 30px 20px 30px;
 }
-#main {
+#ACU_main {
     background-color: rgb(255,255,255);
     border: 1px solid;
     border-color: rgb(255,255,255);
     margin-left: 30px;
     width: 70%;
 }
-#main h3 {
+#ACU_main h3 {
     font-size: 18px;
     color: red;
     margin-left: 20px;
 }
-#main span {
+#ACU_main span {
     font-size: 14px;
     color: gray;
     margin-left: 20px;
 }
-#main p {
+#ACU_main p {
     margin-left: 20px;
 }
-#main div {
+#ACU_main div {
     background-color: lightgray;
     margin:20px 30px;
     border-left: 3px solid red;
 }
-#main div:hover {
+#ACU_main div:hover {
     box-shadow: 0px 3px 3px rgba(205, 205, 205,0.6) ;
     transition: all 0.3s ease;
 }
-#main div div {
+#ACU_main div div {
     background-color: red;
     width: 80px;
     height: 40px;
@@ -81,10 +81,10 @@ hr {
     line-height: 40px;
     border-left:0 none;
 }
-#main div div:hover {
+#ACU_main div div:hover {
     background-color: lightblue;
 }
-#main div div a {
+#ACU_main div div a {
     text-decoration: none;
     color: black;
 }

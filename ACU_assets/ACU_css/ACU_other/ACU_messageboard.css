@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    color: #333;
+}
+#ACU_xuzhi {
+    background-color: #F5FFF9;
+    width: 98%;
+    margin:0 auto;
+}
+#ACU_xuzhi-head {
+    height: 61px;
+    border-bottom: 1px #008B31 dashed;
+    margin: 40px 10px 10px 10px;
+}
+#ACU_xuzhi-head div {
+    background-color: #D9B565;
+    display: inline-block;
+    margin: 12px 5px 5px -10px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.ACU_xuzhi-body {
+    width: 80%;
+    margin: 60px auto -26px;
+    border: 1px #E1E5E1 solid;
+    position: relative;
+    line-height: 30px;
+    padding: 10px 10px 56px 10px;
+}
+.ACU_xuzhi-body-title {
+    font-size: 20px;
+    margin: -34px 20px 48px 30px ;
+    background-color: #F5FFF9;
+    padding: 10px 30px ;
+    width: 144px;
+    text-align: center;
+}
+.ACU_xuzhi-body:last-child {
+    border-top: 0px;
+    margin: 10px auto;
+}
+.ACU_xuzhi-body-title:last-child {
+    padding: 24px 10px 10px 10px;
+}
+.ACU_inputdiv {
+    background-color: white;
+    border: 1px #E1E5E1 solid ;
+    margin: 22px auto;
+    width: 80%;
+}
+#ACU_image {
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 0 0 14px;
+}
+.ACU_input {
+    width: 85%;
+    border: 0px;
+    font-size: 14px;
+    color: #333;
+}
+#ACU_yzm {
+    width: 80px;
+    border: 1px solid #e1e5e1;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    margin-right: 10px;
+}
+.ACU_input,.ACU_input-textarea:focus  {
+        border:none;
+        outline: none;
+}
+.ACU_input-textarea {
+    height: 120px;
+    padding-top: 10px;
+    line-height: 26px;
+    border: none;
+    width: 80%;
+}
+.icon-liaotian {
+    float: left;
+}
+#ACU_anniu1 {
+    background-color: #00873b;
+    color: #fff;
+    border: 0px;
+}
+#ACU_anniu2 {
+    background: none;
+    color: #333;
+    border: 0px;
+}
+#ACU_anniu1,#ACU_anniu2 {
+    cursor: pointer;
+    border: 1px #e1e5e1 solid;
+    margin: 0 5px;
+    padding: 6px 20px;
+    border-radius: 5px;
+}
+#ACU_anniu {
+    padding: 10px 10px 10px 40%;
+}
+
+    

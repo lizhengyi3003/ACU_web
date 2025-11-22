@@ -1,4 +1,4 @@
-.node-content {
+.ACU_node-content {
     font-size: 24px;
     font-weight: bold;
     color:white;
@@ -12,7 +12,7 @@
     margin-bottom: 50px;
     border-radius: 15px;
 }
-.node-content2 {
+.ACU_node-content2 {
     font-size: 24px;
     font-weight: bold;
     color:white;
@@ -34,7 +34,7 @@ h5 {
     color: #ccc;
     font-size: 20px;
 }
-.desc {
+.ACU_desc {
     font-size: 14px;
     color: white;
     font-weight: lighter;
