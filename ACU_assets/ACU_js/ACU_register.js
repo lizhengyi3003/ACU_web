@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function setSendCodeBtnDisabled(disabled) {
     if (sendCodeBtn) sendCodeBtn.disabled = disabled;
   }
-  setSendCodeBtnDisabled(true); // 初始禁用
+  // 初始禁用
+  setSendCodeBtnDisabled(true); 
   window.onloadTurnstile = function() {
     // 显式渲染 Turnstile 验证组件
     turnstileWidgetId = turnstile.render('#cf-turnstile-container', { 
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'FALSE-8': document.querySelector('.ACU_register-status-FALSE-8'),
     'FALSE-9': document.querySelector('.ACU_register-status-FALSE-9'),
   };
+  // 清除所有状态提示
   function clearAllStatus() {
     Object.values(statusEls).forEach(el => {
       if (el) {
@@ -66,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  // 显示状态提示
   function showStatus(key) {
     clearAllStatus();
     const el = statusEls[key];
@@ -83,43 +86,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // 检查token是否存在
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
-        // token为空，直接提示，不再reset
+        // token为空，直接提示
         showStatus('FALSE-3');
         return;
       }
       // token已存在，直接发验证码
       sendVerifyCode();
     };
-    // turnstile token回调不再支持自动发验证码，简化逻辑
-    const oldCallback = window.onloadTurnstile;
-    window.onloadTurnstile = function() {
-      turnstileWidgetId = turnstile.render('#cf-turnstile-container', {
-        sitekey: '0x4AAAAAABnkZJTigol9Njs-',
-        theme: 'auto',
-        size: 'normal',
-        callback: function(token) {
-          turnstileToken = token;
-          setSendCodeBtnDisabled(false);
-          let input = document.querySelector('input[name="cf-turnstile-response"]');
-          if (!input) {
-            input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'cf-turnstile-response';
-            document.querySelector('.ACU_register-form').appendChild(input);
-          }
-          input.value = token;
-        },
-        'expired-callback': function() {
-          turnstileToken = '';
-          setSendCodeBtnDisabled(true);
-        },
-        'error-callback': function() {
-          turnstileToken = '';
-          setSendCodeBtnDisabled(true);
-        }
-      });
-      if (typeof oldCallback === 'function') oldCallback();
-    };
+    // 发送验证码函数
     async function sendVerifyCode() {
       clearAllStatus();
       const email = document.getElementById('ACU_mail').value;
@@ -137,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         showStatus('FALSE-1');
         return;
       }
+      // 结果处理
       const res = await fetch('/api/sendcode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -164,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       clearAllStatus();
-      // 验证表单格式（邮箱和密码）
+      // 验证表单格式
       const email = document.getElementById('ACU_mail').value;
       const pwd = document.getElementById('ACU_password').value;
       const pwdNext = document.getElementById('ACU_password-next').value;
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      // 新增：注册时token为空弹窗
+      // 注册时token为空弹窗
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
         showStatus('FALSE-9');
