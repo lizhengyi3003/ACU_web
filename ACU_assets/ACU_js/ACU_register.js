@@ -3,14 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
   let turnstileWidgetId = null;
   let turnstileToken = '';
   const sendCodeBtn = document.getElementById('ACU_send-code-btn');
-  // 初始禁用按钮，只有通过人机验证后才可用
-  if (sendCodeBtn) sendCodeBtn.disabled = true;
-  function enableSendCodeBtn() {
-    if (sendCodeBtn) sendCodeBtn.disabled = false;
+  // 按钮禁用/启用通用函数，只有通过人机验证后才可用
+  function setSendCodeBtnDisabled(disabled) {
+    if (sendCodeBtn) sendCodeBtn.disabled = disabled;
   }
-  function disableSendCodeBtn() {
-    if (sendCodeBtn) sendCodeBtn.disabled = true;
-  }
+  setSendCodeBtnDisabled(true); // 初始禁用
   window.onloadTurnstile = function() {
     // 显式渲染 Turnstile 验证组件
     turnstileWidgetId = turnstile.render('#cf-turnstile-container', { 
@@ -19,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       size: 'normal',
       callback: function(token) {
         turnstileToken = token;
-        enableSendCodeBtn();
+        setSendCodeBtnDisabled(false);
         // 同步 token 到隐藏 input，便于表单提交
         let input = document.querySelector('input[name="cf-turnstile-response"]');
         if (!input) {
@@ -35,62 +32,65 @@ document.addEventListener('DOMContentLoaded', function () {
       // token 过期时回调
       'expired-callback': function() {
         turnstileToken = '';
-        disableSendCodeBtn();
+        setSendCodeBtnDisabled(true);
       },
       // 验证出错时回调
       'error-callback': function() {
         turnstileToken = '';
-        disableSendCodeBtn();
+        setSendCodeBtnDisabled(true);
       }
     });
   };
   // Turnstile 脚本加载后立即渲染，否则等 window load 事件再渲染，确保 Turnstile 组件在页面加载后能被正确渲染
   if (window.turnstile) window.onloadTurnstile();
   else window.addEventListener('load', window.onloadTurnstile);
-  // 绑定所有状态
-  const statusTrue1 = document.querySelector('.ACU_register-status-TRUE-1');
-  const statusTrue2 = document.querySelector('.ACU_register-status-TRUE-2');
-  const statusFalse1 = document.querySelector('.ACU_register-status-FALSE-1');
-  const statusFalse2 = document.querySelector('.ACU_register-status-FALSE-2');
-  const statusFalse3 = document.querySelector('.ACU_register-status-FALSE-3');
-  const statusFalse4 = document.querySelector('.ACU_register-status-FALSE-4');
-  const statusFalse5 = document.querySelector('.ACU_register-status-FALSE-5');
-  const statusFalse6 = document.querySelector('.ACU_register-status-FALSE-6');
-  const statusFalse7 = document.querySelector('.ACU_register-status-FALSE-7');
-  const statusFalse8 = document.querySelector('.ACU_register-status-FALSE-8');
-  const statusFalse9 = document.querySelector('.ACU_register-status-FALSE-9');
-  const allStatusEls = [statusTrue1, statusTrue2, statusFalse1, statusFalse2, statusFalse3, statusFalse4, statusFalse5, statusFalse6, statusFalse7, statusFalse8, statusFalse9];
-  // 隐藏所有状态类元
+  // 状态提示元素映射，便于统一管理
+  const statusEls = {
+    'TRUE-1': document.querySelector('.ACU_register-status-TRUE-1'),
+    'TRUE-2': document.querySelector('.ACU_register-status-TRUE-2'),
+    'FALSE-1': document.querySelector('.ACU_register-status-FALSE-1'),
+    'FALSE-2': document.querySelector('.ACU_register-status-FALSE-2'),
+    'FALSE-3': document.querySelector('.ACU_register-status-FALSE-3'),
+    'FALSE-4': document.querySelector('.ACU_register-status-FALSE-4'),
+    'FALSE-5': document.querySelector('.ACU_register-status-FALSE-5'),
+    'FALSE-6': document.querySelector('.ACU_register-status-FALSE-6'),
+    'FALSE-7': document.querySelector('.ACU_register-status-FALSE-7'),
+    'FALSE-8': document.querySelector('.ACU_register-status-FALSE-8'),
+    'FALSE-9': document.querySelector('.ACU_register-status-FALSE-9'),
+  };
   function clearAllStatus() {
-    allStatusEls.forEach(el => {
+    Object.values(statusEls).forEach(el => {
       if (el) {
         el.style.display = 'none';
         el.classList.remove('ACU_slide-down');
       }
     });
   }
+  function showStatus(key) {
+    clearAllStatus();
+    const el = statusEls[key];
+    if (el) {
+      el.style.display = 'block';
+      void el.offsetWidth;
+      el.classList.add('ACU_slide-down');
+    }
+  }
   clearAllStatus();
   // 发送验证码按钮点击
   if (sendCodeBtn) {
-    // 标记是否等待token回调后自动发验证码
-    let waitForTokenToSendCode = false;
     sendCodeBtn.onclick = function() {
       clearAllStatus();
       // 检查token是否存在
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
         // token为空，直接提示，不再reset
-        if (statusFalse3) {
-          statusFalse3.style.display = 'block';
-          void statusFalse3.offsetWidth;
-          statusFalse3.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-3');
         return;
       }
       // token已存在，直接发验证码
       sendVerifyCode();
     };
-    // turnstile token回调
+    // turnstile token回调不再支持自动发验证码，简化逻辑
     const oldCallback = window.onloadTurnstile;
     window.onloadTurnstile = function() {
       turnstileWidgetId = turnstile.render('#cf-turnstile-container', {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         size: 'normal',
         callback: function(token) {
           turnstileToken = token;
-          enableSendCodeBtn();
+          setSendCodeBtnDisabled(false);
           let input = document.querySelector('input[name="cf-turnstile-response"]');
           if (!input) {
             input = document.createElement('input');
@@ -108,19 +108,14 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.ACU_register-form').appendChild(input);
           }
           input.value = token;
-          // 如果等待token回调后自动发验证码
-          if (waitForTokenToSendCode) {
-            waitForTokenToSendCode = false;
-            sendVerifyCode();
-          }
         },
         'expired-callback': function() {
           turnstileToken = '';
-          disableSendCodeBtn();
+          setSendCodeBtnDisabled(true);
         },
         'error-callback': function() {
           turnstileToken = '';
-          disableSendCodeBtn();
+          setSendCodeBtnDisabled(true);
         }
       });
       if (typeof oldCallback === 'function') oldCallback();
@@ -130,24 +125,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = document.getElementById('ACU_mail').value;
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
-        if (statusFalse3) {
-          statusFalse3.style.display = 'block';
-          void statusFalse3.offsetWidth;
-          statusFalse3.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-3');
         return;
       }
       if (!email) {
         alert('请输入邮箱');
         return;
       }
-      const emailReg = /^[^\s@]+@[^"]+\.[^\s@]+$/;
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) {
-        if (statusFalse1) {
-          statusFalse1.style.display = 'block';
-          void statusFalse1.offsetWidth;
-          statusFalse1.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-1');
         return;
       }
       const res = await fetch('/api/sendcode', {
@@ -157,33 +144,17 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       const text = await res.text();
       if (text.trim() === 'TRUE-1') {
-        if (statusTrue1) {
-          statusTrue1.style.display = 'block';
-          void statusTrue1.offsetWidth;
-          statusTrue1.classList.add('ACU_slide-down');
-        }
+        showStatus('TRUE-1');
       } else if (text.trim() === 'FALSE-4') {
-        if (statusFalse4) {
-          statusFalse4.style.display = 'block';
-          void statusFalse4.offsetWidth;
-          statusFalse4.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-4');
         if (window.turnstile && turnstileWidgetId !== null) {
           window.turnstile.reset(turnstileWidgetId);
-          disableSendCodeBtn();
+          setSendCodeBtnDisabled(true);
         }
       } else if (text.trim() === 'FALSE-3') {
-        if (statusFalse3) {
-          statusFalse3.style.display = 'block';
-          void statusFalse3.offsetWidth;
-          statusFalse3.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-3');
       } else {
-        if (statusFalse6) {
-          statusFalse6.style.display = 'block';
-          void statusFalse6.offsetWidth;
-          statusFalse6.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-6');
       }
     }
   }
@@ -201,34 +172,22 @@ document.addEventListener('DOMContentLoaded', function () {
       // 新增：注册时token为空弹窗
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
-        if (statusFalse9) {
-          statusFalse9.style.display = 'block';
-          void statusFalse9.offsetWidth;
-          statusFalse9.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-9');
         return;
       }
       if (!emailReg.test(email)) {
-        if (statusFalse1) {
-          statusFalse1.style.display = 'block';
-          void statusFalse1.offsetWidth;
-          statusFalse1.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-1');
         return;
       }
       if (pwd !== pwdNext) {
-        if (statusFalse2) {
-          statusFalse2.style.display = 'block';
-          void statusFalse2.offsetWidth;
-          statusFalse2.classList.add('ACU_slide-down');
-        }
+        showStatus('FALSE-2');
         return;
       }
       // 提交表单
       const formData = new FormData(form);
       const verifyCodeInput = document.getElementById('ACU_verify-code');
       if (verifyCodeInput) {
-        formData.set('verifyCode', verifyCodeInput.value);
+        formData.set('verify_code', verifyCodeInput.value);
       }
       const res = await fetch(form.action, {
         method: 'POST',
@@ -236,61 +195,40 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       const text = await res.text();
       // 判断注册状态
-      if (text.trim() === 'TRUE-2' && statusTrue2) {
-        statusTrue2.style.display = 'block';
-        void statusTrue2.offsetWidth;
-        statusTrue2.classList.add('ACU_slide-down');
+      if (text.trim() === 'TRUE-2') {
+        showStatus('TRUE-2');
         setTimeout(() => {
           window.location.href = 'ACU_login.html';
         }, 2000);
-      } else if (text.trim() === 'FALSE-8' && statusFalse8) {
-        statusFalse8.style.display = 'block';
-        void statusFalse8.offsetWidth;
-        statusFalse8.classList.add('ACU_slide-down');
-        setTimeout(() => {
-        }, 2000);
-      } else if (text.trim() === 'FALSE-3' && statusFalse3) {
-        statusFalse3.style.display = 'block';
-        void statusFalse3.offsetWidth;
-        statusFalse3.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-8') {
+        showStatus('FALSE-8');
+        setTimeout(() => {}, 2000);
+      } else if (text.trim() === 'FALSE-3') {
+        showStatus('FALSE-3');
         return;
-      } else if (text.trim() === 'FALSE-4' && statusFalse4) { 
-        statusFalse4.style.display = 'block';
-        void statusFalse4.offsetWidth;
-        statusFalse4.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-4') {
+        showStatus('FALSE-4');
         return;
-      } else if (text.trim() === 'FALSE-6' && statusFalse6) { 
-        statusFalse6.style.display = 'block';
-        void statusFalse6.offsetWidth;
-        statusFalse6.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-6') {
+        showStatus('FALSE-6');
         return;
-      } else if (text.trim() === 'FALSE-1' && statusFalse1) { 
-        statusFalse1.style.display = 'block';
-        void statusFalse1.offsetWidth;
-        statusFalse1.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-1') {
+        showStatus('FALSE-1');
         return;
-      } else if (text.trim() === 'FALSE-2' && statusFalse2) { 
-        statusFalse2.style.display = 'block';
-        void statusFalse2.offsetWidth;
-        statusFalse2.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-2') {
+        showStatus('FALSE-2');
         return;
-      } else if (text.trim() === 'FALSE-9' && statusFalse9) { 
-        statusFalse9.style.display = 'block';
-        void statusFalse9.offsetWidth;
-        statusFalse9.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-9') {
+        showStatus('FALSE-9');
         return;
       } else if (text.trim() === 'no-verify-code') {
         alert('请输入验证码');
         return;
-      } else if (text.trim() === 'FALSE-5' && statusFalse5) {
-        statusFalse5.style.display = 'block';
-        void statusFalse5.offsetWidth;
-        statusFalse5.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-5') {
+        showStatus('FALSE-5');
         return;
-      } else if (text.trim() === 'FALSE-7' && statusFalse7) { 
-        statusFalse7.style.display = 'block';
-        void statusFalse7.offsetWidth;
-        statusFalse7.classList.add('ACU_slide-down');
+      } else if (text.trim() === 'FALSE-7') {
+        showStatus('FALSE-7');
         return;
       }
     });
