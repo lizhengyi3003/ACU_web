@@ -20,6 +20,7 @@ export async function onRequest(context) {
     const verify_code = formData.get ? formData.get('verify_code') : formData.get('verify_code');
     // 校验 Turnstile token
     const secretKey = env['cf-turnstile'];
+    const turnstileToken = formData.get('cf-turnstile-response');
     const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
