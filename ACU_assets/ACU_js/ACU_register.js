@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Turnstile 显式渲染与回调
   let turnstileWidgetId = null;
-  let turnstileToken = '';
   const sendCodeBtn = document.getElementById('ACU_send-code-btn');
   // 初始禁用按钮，只有通过人机验证后才可用
   if (sendCodeBtn) sendCodeBtn.disabled = true;
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
       theme: 'auto',
       size: 'normal',
       callback: function(token) {
-        turnstileToken = token;
         enableSendCodeBtn();
         // 同步 token 到隐藏 input，便于表单提交
         let input = document.querySelector('input[name="cf-turnstile-response"]');
@@ -32,16 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // 设置 token 值，把人机验证通过后获得的 token 赋值给隐藏的 input 表单项
         input.value = token;
       },
-      // token 过期时回调
-      'expired-callback': function() {
-        turnstileToken = '';
-        disableSendCodeBtn();
-      },
-      // 验证出错时回调
-      'error-callback': function() {
-        turnstileToken = '';
-        disableSendCodeBtn();
-      }
     });
   };
   // Turnstile 脚本加载后立即渲染，否则等 window load 事件再渲染，确保 Turnstile 组件在页面加载后能被正确渲染
@@ -72,8 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
   clearAllStatus();
   // 发送验证码按钮点击
   if (sendCodeBtn) {
-    // 标记是否等待token回调后自动发验证码
-    let waitForTokenToSendCode = false;
     sendCodeBtn.onclick = function() {
       clearAllStatus();
       // 检查token是否存在
@@ -87,8 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      // token已存在，直接发验证码
-      sendVerifyCode();
     };
     // turnstile token回调
     const oldCallback = window.onloadTurnstile;
@@ -98,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
         theme: 'auto',
         size: 'normal',
         callback: function(token) {
-          turnstileToken = token;
           enableSendCodeBtn();
           let input = document.querySelector('input[name="cf-turnstile-response"]');
           if (!input) {
@@ -108,18 +91,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.ACU_register-form').appendChild(input);
           }
           input.value = token;
-          // 如果等待token回调后自动发验证码
-          if (waitForTokenToSendCode) {
-            waitForTokenToSendCode = false;
-            sendVerifyCode();
-          }
         },
         'expired-callback': function() {
-          turnstileToken = '';
           disableSendCodeBtn();
         },
         'error-callback': function() {
-          turnstileToken = '';
           disableSendCodeBtn();
         }
       });
@@ -127,17 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     async function sendVerifyCode() {
       clearAllStatus();
-      
-      
-      
-      
-      
-      
       const email = document.getElementById('ACU_mail').value;
-
-
-
-
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
         if (statusFalse3) {
@@ -147,27 +113,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      
-      
-      
-      
-      
       if (!email) {
         alert('请输入邮箱');
         return;
       }
-
-
-
-
-
-
-      const emailReg = /^[^\s@]+@[^"]+\.[^\s@]+$/;
-      
-      
-      
-      
-      
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
@@ -176,29 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-
-
-
-
-
-      
-      
-      
-      
       const res = await fetch('/api/sendcode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, turnstileToken })
       });
-
-
-
-
-      
-      
-      
-      
-      
       const text = await res.text();
       if (text.trim() === 'TRUE-1') {
         if (statusTrue1) {
@@ -206,10 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
           void statusTrue1.offsetWidth;
           statusTrue1.classList.add('ACU_slide-down');
         }
-
-
-
-
       } else if (text.trim() === 'FALSE-4') {
         if (statusFalse4) {
           statusFalse4.style.display = 'block';
@@ -226,10 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
           void statusFalse3.offsetWidth;
           statusFalse3.classList.add('ACU_slide-down');
         }
-      
-      
-      
-      
       } else {
         if (statusFalse6) {
           statusFalse6.style.display = 'block';
@@ -237,14 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
           statusFalse6.classList.add('ACU_slide-down');
         }
       }
-
-
-
     }
-  
-  
-  
-  
   }
   // 提交表单
   const form = document.querySelector('.ACU_register-form');
@@ -256,9 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = document.getElementById('ACU_mail').value;
       const pwd = document.getElementById('ACU_password').value;
       const pwdNext = document.getElementById('ACU_password-next').value;
-
-
-
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       // 新增：注册时token为空弹窗
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
@@ -270,10 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      
-      
-      
-      
       if (!emailReg.test(email)) {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
