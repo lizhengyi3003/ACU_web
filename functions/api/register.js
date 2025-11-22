@@ -18,24 +18,6 @@ export async function onRequest(context) {
     const password = formData.get ? formData.get('password') : formData.get('password');
     const password_confirm = formData.get ? formData.get('password_confirm') : formData.get('password_confirm');
     const verify_code = formData.get ? formData.get('verify_code') : formData.get('verify_code');
-    // 校验 Turnstile token
-    const secretKey = env['cf-turnstile'];
-    const turnstileToken = formData.get('cf-turnstile-response');
-    console.log('后端收到的turnstileToken:', turnstileToken);
-    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        secret: secretKey,
-        response: turnstileToken,
-      })
-    });
-    const verifyJson = await verifyRes.json();
-    console.log('Turnstile 校验返回:', verifyJson);
-    if (!verifyJson.success) {
-      // 机器人或验证失败
-      return new Response('FALSE-4');
-    }
     // 邮箱格式校验
     const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailReg.test(email)) {
