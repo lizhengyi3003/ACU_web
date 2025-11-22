@@ -72,32 +72,106 @@ document.addEventListener('DOMContentLoaded', function () {
   clearAllStatus();
   // 发送验证码按钮点击
   if (sendCodeBtn) {
-    sendCodeBtn.onclick = async function() {
+
+
+
+
+
+
+
+
+
+
+    // 标记是否等待token回调后自动发验证码
+    let waitForTokenToSendCode = false;
+    sendCodeBtn.onclick = function() {
+      
+      
+      
+      
+      
+      
+      
       clearAllStatus();
-      // 每次点击前强制刷新 Turnstile token
-      if (window.turnstile && turnstileWidgetId !== null) {
-        window.turnstile.reset(turnstileWidgetId);
-        disableSendCodeBtn(); 
-      }
-      // 等待新 token 生成
-      await new Promise(resolve => setTimeout(resolve, 500));
-      // 验证邮箱是否输入
-      const email = document.getElementById('ACU_mail').value;
-      if (!email) {
-        alert('请输入邮箱');
-        return;
-      }
-      // 验证邮箱表达是否正确
-      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailReg.test(email)) {
-        if (statusFalse1) {
-          statusFalse1.style.display = 'block';
-          void statusFalse1.offsetWidth;
-          statusFalse1.classList.add('ACU_slide-down');
+
+
+
+
+
+
+
+
+
+
+
+      // 检查token是否存在
+      const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
+      if (!turnstileToken) {
+        // 没有token，刷新token并提示
+        if (window.turnstile && turnstileWidgetId !== null) {
+          window.turnstile.reset(turnstileWidgetId);
+          disableSendCodeBtn();
         }
+        if (statusFalse3) {
+          statusFalse3.style.display = 'block';
+          void statusFalse3.offsetWidth;
+          statusFalse3.classList.add('ACU_slide-down');
+        }
+        // 标记等待token回调后自动发验证码
+        waitForTokenToSendCode = true;
         return;
       }
-      // 获取人机验证token
+      // token已存在，直接发验证码
+      sendVerifyCode();
+    };
+    // turnstile token回调
+    const oldCallback = window.onloadTurnstile;
+    window.onloadTurnstile = function() {
+      turnstileWidgetId = turnstile.render('#cf-turnstile-container', {
+        sitekey: '0x4AAAAAABnkZJTigol9Njs-',
+        theme: 'auto',
+        size: 'normal',
+        callback: function(token) {
+          turnstileToken = token;
+          enableSendCodeBtn();
+          let input = document.querySelector('input[name="cf-turnstile-response"]');
+          if (!input) {
+            input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'cf-turnstile-response';
+            document.querySelector('.ACU_register-form').appendChild(input);
+          }
+          input.value = token;
+          // 如果等待token回调后自动发验证码
+          if (waitForTokenToSendCode) {
+            waitForTokenToSendCode = false;
+            sendVerifyCode();
+          }
+        },
+        'expired-callback': function() {
+          turnstileToken = '';
+          disableSendCodeBtn();
+        },
+        'error-callback': function() {
+          turnstileToken = '';
+          disableSendCodeBtn();
+        }
+      });
+      if (typeof oldCallback === 'function') oldCallback();
+    };
+    async function sendVerifyCode() {
+      clearAllStatus();
+      
+      
+      
+      
+      
+      
+      const email = document.getElementById('ACU_mail').value;
+
+
+
+
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
         if (statusFalse3) {
@@ -107,13 +181,58 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return;
       }
-      // 数据发送后端
+      
+      
+      
+      
+      
+      if (!email) {
+        alert('请输入邮箱');
+        return;
+      }
+
+
+
+
+
+
+      const emailReg = /^[^\s@]+@[^"]+\.[^\s@]+$/;
+      
+      
+      
+      
+      
+      if (!emailReg.test(email)) {
+        if (statusFalse1) {
+          statusFalse1.style.display = 'block';
+          void statusFalse1.offsetWidth;
+          statusFalse1.classList.add('ACU_slide-down');
+        }
+        return;
+      }
+
+
+
+
+
+      
+      
+      
+      
       const res = await fetch('/api/sendcode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, turnstileToken })
       });
-      // 校验验证码状态
+
+
+
+
+      
+      
+      
+      
+      
       const text = await res.text();
       if (text.trim() === 'TRUE-1') {
         if (statusTrue1) {
@@ -121,6 +240,30 @@ document.addEventListener('DOMContentLoaded', function () {
           void statusTrue1.offsetWidth;
           statusTrue1.classList.add('ACU_slide-down');
         }
+
+
+
+
+      } else if (text.trim() === 'FALSE-4') {
+        if (statusFalse4) {
+          statusFalse4.style.display = 'block';
+          void statusFalse4.offsetWidth;
+          statusFalse4.classList.add('ACU_slide-down');
+        }
+        if (window.turnstile && turnstileWidgetId !== null) {
+          window.turnstile.reset(turnstileWidgetId);
+          disableSendCodeBtn();
+        }
+      } else if (text.trim() === 'FALSE-3') {
+        if (statusFalse3) {
+          statusFalse3.style.display = 'block';
+          void statusFalse3.offsetWidth;
+          statusFalse3.classList.add('ACU_slide-down');
+        }
+      
+      
+      
+      
       } else {
         if (statusFalse6) {
           statusFalse6.style.display = 'block';
@@ -128,8 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
           statusFalse6.classList.add('ACU_slide-down');
         }
       }
-    };
 
+
+
+    }
+  
+  
+  
+  
   }
   // 提交表单
   const form = document.querySelector('.ACU_register-form');
@@ -141,7 +290,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = document.getElementById('ACU_mail').value;
       const pwd = document.getElementById('ACU_password').value;
       const pwdNext = document.getElementById('ACU_password-next').value;
+
+
+
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      // 新增：注册时token为空弹窗
+      const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
+      if (!turnstileToken) {
+        if (statusFalse9) {
+          statusFalse9.style.display = 'block';
+          void statusFalse9.offsetWidth;
+          statusFalse9.classList.add('ACU_slide-down');
+        }
+        return;
+      }
+      
+      
+      
+      
       if (!emailReg.test(email)) {
         if (statusFalse1) {
           statusFalse1.style.display = 'block';
