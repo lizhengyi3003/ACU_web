@@ -135,7 +135,7 @@ body {
   justify-content: center;
 }
 
-.ACU_register-status-TRUE-1,.ACU_register-status-TRUE-2,.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6.ACU_register-status-FALSE-7，.ACU_register-status-FALSE-8 {
+.ACU_register-status-TRUE-1,.ACU_register-status-TRUE-2,.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6,.ACU_register-status-FALSE-7,.ACU_register-status-FALSE-8 {
   position: absolute;
   top: 1vh;
   left: 50%;
@@ -168,7 +168,7 @@ body {
   background: rgba(67,160,71,0.10);
   color: #2e7d32;
 }
-.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6，.ACU_register-status-FALSE-7，.ACU_register-status-FALSE-8 {
+.ACU_register-status-FALSE-1,.ACU_register-status-FALSE-2,.ACU_register-status-FALSE-3,.ACU_register-status-FALSE-4,.ACU_register-status-FALSE-5,.ACU_register-status-FALSE-6,.ACU_register-status-FALSE-7,.ACU_register-status-FALSE-8 {
   border-color: #e53935;
   box-shadow: 4px 4px 25px 0 rgba(229,57,53,0.2);
   background: rgba(229,57,53,0.10);
