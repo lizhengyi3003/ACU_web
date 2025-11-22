@@ -20,7 +20,6 @@ body {
 
 .ACU_background-video {
     position: fixed;
-
     top: 0;
     left: 0;
     width: 100vw;
@@ -36,6 +35,6 @@ body {
     height: 100vh;
     object-fit: cover;
     pointer-events: none;
-    background: #000;
+    background: #fff;
 }
 
