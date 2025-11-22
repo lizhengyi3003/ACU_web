@@ -31,6 +31,7 @@ export async function onRequest(context) {
       })
     });
     const verifyJson = await verifyRes.json();
+    console.log('Turnstile 校验返回:', verifyJson);
     if (!verifyJson.success) {
       // 机器人或验证失败
       return new Response('FALSE-4');
