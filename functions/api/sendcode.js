@@ -4,11 +4,13 @@ import { buildVerifyMail } from './mailTemplate.js';
 export async function onRequest(context) {
   const { request, env } = context;
   try {
+    console.log('收到请求');
     if (request.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 });
     }
     // 校验邮箱是否存在
     const { email, turnstileToken } = await request.json();
+    console.log('参数解析', { email, turnstileToken });
     if (!email) {
       return new Response('邮箱不能为空', { status: 400 });
     }
@@ -31,6 +33,7 @@ export async function onRequest(context) {
       })
     });
     const verifyData = await verifyRes.json();
+    console.log('Turnstile 校验结果', verifyData);
     if (!verifyData.success) {
       return new Response('FALSE-4', { status: 400 });
     }
@@ -47,6 +50,7 @@ export async function onRequest(context) {
       })
     });
     const tokenData = await tokenRes.json();
+    console.log('SendPulse tokenData', tokenData);
     if (!tokenData.access_token) {
       return new Response('SendPulse授权失败, tokenData: ' + JSON.stringify(tokenData), { status: 500 });
     }
@@ -70,12 +74,15 @@ export async function onRequest(context) {
       })
     });
     const mailData = await mailRes.json();
+    console.log('SendPulse mailData', mailData);
     if (!mailData.result) {
       return new Response('FALSE-6, mailData: ' + JSON.stringify(mailData), { status: 500 });
     }
     // 存储验证码到 KV，5分钟有效
     try {
+      console.log('准备存储到KV', { email, code });
       await env['acu-web-kv'].put(email, code, { expirationTtl: 300 });
+      console.log('验证码已存储到KV');
       // 存储成功
       return new Response('验证码储存到KV成功');
     } catch (kvErr) {
