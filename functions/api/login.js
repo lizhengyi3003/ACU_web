@@ -8,7 +8,7 @@ export async function onRequest(context) {
     const db = env['acu-web-sql'];
     const { results } = await db.prepare(
       `SELECT * FROM account 
-       WHERE (username = ? OR phone = ? OR mail = ?)
+       WHERE (username = ? OR phone = ? OR email = ?)
        AND password = ?`
     ).bind(username, username, username, password).all();
 
