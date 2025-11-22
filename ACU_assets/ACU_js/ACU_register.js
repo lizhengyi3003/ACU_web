@@ -85,40 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // 标记是否等待token回调后自动发验证码
     let waitForTokenToSendCode = false;
     sendCodeBtn.onclick = function() {
-      
-      
-      
-      
-      
-      
-      
       clearAllStatus();
-
-
-
-
-
-
-
-
-
-
-
       // 检查token是否存在
       const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
       if (!turnstileToken) {
-        // 没有token，刷新token并提示
-        if (window.turnstile && turnstileWidgetId !== null) {
-          window.turnstile.reset(turnstileWidgetId);
-          disableSendCodeBtn();
-        }
+        // token为空，直接提示，不再reset
         if (statusFalse3) {
           statusFalse3.style.display = 'block';
           void statusFalse3.offsetWidth;
           statusFalse3.classList.add('ACU_slide-down');
         }
-        // 标记等待token回调后自动发验证码
-        waitForTokenToSendCode = true;
         return;
       }
       // token已存在，直接发验证码
