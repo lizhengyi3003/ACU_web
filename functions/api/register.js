@@ -18,11 +18,6 @@ export async function onRequest(context) {
     const password = formData.get ? formData.get('password') : formData.get('password');
     const password_confirm = formData.get ? formData.get('password_confirm') : formData.get('password_confirm');
     const verify_code = formData.get ? formData.get('verify_code') : formData.get('verify_code');
-    // Turnstile 校验
-    const turnstileToken = formData.get('cf-turnstile-response');
-    if (!turnstileToken) {
-      return new Response('FALSE-9'); 
-    }
     // 校验 Turnstile token
     const secretKey = env['cf-turnstile'];
     const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {

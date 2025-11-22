@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'FALSE-6': document.querySelector('.ACU_register-status-FALSE-6'),
     'FALSE-7': document.querySelector('.ACU_register-status-FALSE-7'),
     'FALSE-8': document.querySelector('.ACU_register-status-FALSE-8'),
-    'FALSE-9': document.querySelector('.ACU_register-status-FALSE-9'),
   };
   // 清除所有状态提示
   function clearAllStatus() {
@@ -144,12 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const pwd = document.getElementById('ACU_password').value;
       const pwdNext = document.getElementById('ACU_password-next').value;
       const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      // 注册时token为空弹窗
-      const turnstileToken = document.querySelector('input[name="cf-turnstile-response"]')?.value;
-      if (!turnstileToken) {
-        showStatus('FALSE-9');
-        return;
-      }
       if (!emailReg.test(email)) {
         showStatus('FALSE-1');
         return;
@@ -192,9 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       } else if (text.trim() === 'FALSE-2') {
         showStatus('FALSE-2');
-        return;
-      } else if (text.trim() === 'FALSE-9') {
-        showStatus('FALSE-9');
         return;
       } else if (text.trim() === 'no-verify-code') {
         alert('请输入验证码');
