@@ -69,7 +69,8 @@ export async function onRequest(context) {
           from: { email: 'acu@feichuan.ltd', name: '飞船ACU' },
           to: [{ email }],
           subject,
-          text
+          text,
+          html
         }
       })
     });
@@ -84,10 +85,10 @@ export async function onRequest(context) {
       await env['acu-web-kv'].put(email, code, { expirationTtl: 300 });
       console.log('验证码已存储到KV');
       // 存储成功
-      return new Response('验证码储存到KV成功');
+      return new Response('TRUE-1');
     } catch (kvErr) {
       // 存储失败
-      return new Response('验证码储存到KV失败, kvErr: ' + kvErr.message, { status: 500 });
+      return new Response('FALSE-6, 验证码储存到KV失败, kvErr: ' + kvErr.message, { status: 500 });
     }
   } catch (err) {
     // 其它未知错误

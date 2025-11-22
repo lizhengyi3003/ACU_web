@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       // 校验验证码状态
       const text = await res.text();
-      if (text.includes('验证码已发送')) {
+      if (text.trim() === 'TRUE-1') {
         if (statusTrue1) {
           statusTrue1.style.display = 'block';
           void statusTrue1.offsetWidth;
