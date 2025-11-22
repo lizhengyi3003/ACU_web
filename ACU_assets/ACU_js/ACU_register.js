@@ -175,23 +175,49 @@ document.addEventListener('DOMContentLoaded', function () {
         statusFalse8.classList.add('ACU_slide-down');
         setTimeout(() => {
         }, 2000);
-
-
-
-
-
       } else if (text.trim() === 'FALSE-3' && statusFalse3) {
         statusFalse3.style.display = 'block';
         void statusFalse3.offsetWidth;
         statusFalse3.classList.add('ACU_slide-down');
+        return;
       } else if (text.trim() === 'FALSE-4' && statusFalse4) { 
         statusFalse4.style.display = 'block';
         void statusFalse4.offsetWidth;
         statusFalse4.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'FALSE-6' && statusFalse6) { 
+        statusFalse6.style.display = 'block';
+        void statusFalse6.offsetWidth;
+        statusFalse6.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'FALSE-1' && statusFalse1) { 
+        statusFalse1.style.display = 'block';
+        void statusFalse1.offsetWidth;
+        statusFalse1.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'FALSE-2' && statusFalse2) { 
+        statusFalse2.style.display = 'block';
+        void statusFalse2.offsetWidth;
+        statusFalse2.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'FALSE-9' && statusFalse9) { 
+        statusFalse9.style.display = 'block';
+        void statusFalse9.offsetWidth;
+        statusFalse9.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'no-verify-code') {
+        alert('请输入验证码');
+        return;
       } else if (text.trim() === 'FALSE-5' && statusFalse5) {
         statusFalse5.style.display = 'block';
         void statusFalse5.offsetWidth;
         statusFalse5.classList.add('ACU_slide-down');
+        return;
+      } else if (text.trim() === 'FALSE-7' && statusFalse7) { 
+        statusFalse7.style.display = 'block';
+        void statusFalse7.offsetWidth;
+        statusFalse7.classList.add('ACU_slide-down');
+        return;
       }
     });
   }
