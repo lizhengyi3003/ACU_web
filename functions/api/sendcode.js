@@ -69,8 +69,8 @@ export async function onRequest(context) {
           from: { email: 'acu@feichuan.ltd', name: '飞船ACU' },
           to: [{ email }],
           subject,
-          text,
-          html
+          html, 
+          text  
         }
       })
     });

@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (verifyCodeInput) {
         formData.set('verify_code', verifyCodeInput.value);
       }
+      console.log('提交时的turnstileToken:', document.querySelector('input[name="cf-turnstile-response"]')?.value);
       const res = await fetch(form.action, {
         method: 'POST',
         body: formData

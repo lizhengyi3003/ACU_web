@@ -21,6 +21,7 @@ export async function onRequest(context) {
     // 校验 Turnstile token
     const secretKey = env['cf-turnstile'];
     const turnstileToken = formData.get('cf-turnstile-response');
+    console.log('后端收到的turnstileToken:', turnstileToken);
     const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
