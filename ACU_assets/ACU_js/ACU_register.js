@@ -171,7 +171,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
       } else if (text.trim() === 'FALSE-8') {
         showStatus('FALSE-8');
-        setTimeout(() => {}, 2000);
+        setTimeout(() => {
+          window.location.href = 'ACU_login.html';
+        }, 2000);
       } else if (text.trim() === 'FALSE-3') {
         showStatus('FALSE-3');
         return;
