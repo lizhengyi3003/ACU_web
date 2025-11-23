@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         void statusTrue.offsetWidth;
         statusTrue.classList.add('ACU_slide-down');
         setTimeout(() => {
-          window.location.href = '../ACU_pages/ACU_backManagement.html';
+          window.location.href = '../ACU_pages/ACU_backManagement/ACU_backManagement.html';
         }, 1000);
       } else if (data.success && statusFalse) {
         statusTrue.style.display = 'block'
