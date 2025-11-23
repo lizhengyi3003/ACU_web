@@ -14,7 +14,7 @@ export function router() {
       }
     });
   } else {
-    // 未匹配到路由时可选的兜底处理
+    // 未匹配到路由时
     const container = document.getElementById('main-content');
     if (container) container.innerHTML = '<div style="padding:2em;color:#888;">页面不存在</div>';
   }

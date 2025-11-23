@@ -1,5 +1,5 @@
 export function render(container) {
-  // 加载CSS（只加载一次）
+  // 加载CSS
   if (!document.getElementById('ACU_overview_css')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
