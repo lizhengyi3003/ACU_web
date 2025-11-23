@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f5f7fa;
+}
+#ACU_body {
+    border: 1.5px #4fc3f7 solid;
+    width: 95%;
+    margin: 3% auto;
+    border-radius: 10px;
+}
+.ACU_box {
+    width: 95%;
+    margin: 3% auto;
+}
+h3 {
+    font-size: 26px;
+    color: #2196f3;
+    margin: 1% 1% 1% 0%;
+}
+hr {
+    border: 0.5px #2196f3 solid;
+}
+img {
+    max-width: 100%;
+    margin: 50px 0 0 0;
+}
+pre {
+    color:#2196f3;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 30px;
+}
+.ACU_box .ACU_box-cont1 {
+    float: left;
+    max-width: 55%;
+}
+.ACU_box .ACU_box-cont2 {
+    float: right;
+    width: 40%;
+}
+.ACU_box div {
+    width: 100%;
+    height: 600px;
+}
+
+
+
+
