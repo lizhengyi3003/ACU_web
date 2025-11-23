@@ -2,25 +2,29 @@
     margin: 0;
     padding: 0;
 }
+body,#ACU_head {
+    background-color: #f5f7fa;
+}
 #ACU_head {
-    background-color: red;
-    color: rgb(255, 255, 255);
-    border-radius: 0px;
     height: 100px;
     padding-top: 10px;
+    border-bottom: 2.5px #4fc3f7 solid;
+    margin: 20px 0 0 0;
 }
-#ACU_head1 {
+#ACU_title1 {
     font-size: 35px;
     font-weight: 700;
     margin: 0 0 0 135px;
+    color: #2196f3;
 }
-#ACU_head2 {
+#ACU_title2 {
     margin: 0 0 0 135px;
+    color: #2196f3;
 }
 #ACU_logo {
     float: left;
-    background-color: rgb(255,255,255);
-    color: red;
+    background-color: #f5f7fa;
+    color: #2196f3;
     height: 64px;
     width: 64px;
     margin: 10px 0 0 50px;
@@ -28,49 +32,52 @@
     text-align: center;
     line-height: 64px;
     font-size: 20px;
-}
-body {
-    background-color: lightgray;
+    border: 1px #2196f3 solid;
 }
 h1 {
-    color: red;
+    color: #2196f3;
     margin-left:30px;
 }
 hr {
-    border: 1px solid orange;
+    border: 1px solid #2196f3;
     margin: 10px 30px 20px 30px;
 }
 #ACU_main {
-    background-color: rgb(255,255,255);
-    border: 1px solid;
-    border-color: rgb(255,255,255);
+    background-color: #f5f7fa;
+    border: 2.5px #4fc3f7 solid;
     margin-left: 30px;
     width: 70%;
+    margin: 40px auto;
+    border-radius: 8px;
 }
 #ACU_main h3 {
     font-size: 18px;
-    color: red;
+    color: #2196f3;
     margin-left: 20px;
 }
 #ACU_main span {
     font-size: 14px;
-    color: gray;
+    color: #2196f3;
     margin-left: 20px;
 }
 #ACU_main p {
     margin-left: 20px;
+    color: #2196f3;
 }
 #ACU_main div {
-    background-color: lightgray;
+    background-color: #f5f7fa;
     margin:20px 30px;
-    border-left: 3px solid red;
+    border-right: 2.5px solid #4fc3f7;
+    border-bottom: 2.5px solid #4fc3f7;
+    border-radius: 8px;
 }
 #ACU_main div:hover {
     box-shadow: 0px 3px 3px rgba(205, 205, 205,0.6) ;
     transition: all 0.3s ease;
+    border: 2.5px solid #2c7be5;
 }
 #ACU_main div div {
-    background-color: red;
+    background-color: #f5f7fa;
     width: 80px;
     height: 40px;
     border-radius: 5px;
@@ -82,11 +89,11 @@ hr {
     border-left:0 none;
 }
 #ACU_main div div:hover {
-    background-color: lightblue;
+    border: 2px solid #2c7be5;
 }
 #ACU_main div div a {
     text-decoration: none;
-    color: black;
+    color: #2196f3;
 }
 
 

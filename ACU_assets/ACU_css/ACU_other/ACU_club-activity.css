@@ -1,108 +1,71 @@
-body {
-    background-image: url(https://bpic.588ku.com/back_list_pic/21/05/26/99535d05e8191ce1c4511a081f9b9e28.jpg!/fw/640/quality/90/unsharp/true/compress/true);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+* {
+    margin: 0;
+    padding: 0;
 }
-#ACU_body0 {
-    width: 800px;
-    height: 450px;
-    margin: 0 auto;
+body,#ACU_head {
+    background-color: #f5f7fa;
 }
 #ACU_head {
-    margin:0 auto;
-    background-color: orange;
-    text-align: center;
-    width:800px;
     height: 100px;
-    line-height: 100px;
-    border-radius: 30px 30px 0 0;
+    padding-top: 10px;
+    border-bottom: 2.5px #4fc3f7 solid;
+    margin: 20px 0 0 0;
 }
-#ACU_head div {
-    color:#2196f3;
-    font-size: 42px;
-    font-weight: bold;
-    text-shadow: 0px 3px 3px rgba(255,255,255,1.0)
+#ACU_title1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 0 135px;
+    color: #2196f3;
 }
-#ACU_body1 {
-    width: 800px;
-    height: 150px;
-    background-color: rgb(255, 255, 255);
-    margin:0 auto;
+#ACU_title2 {
+    margin: 0 0 0 135px;
+    color: #2196f3;
 }
-#ACU_body2 {
-    width: 800px;
-    height: 300px;
-    background-color: rgb(255, 255, 255);
-    margin:0 auto;
-}
-#ACU_time-position {
+#ACU_logo {
     float: left;
-    background-color: #2196f3;
-    margin-left: 100px;
-    color: rgb(255, 255, 255);
+    background-color: #f5f7fa;
+    color: #2196f3;
+    height: 64px;
+    width: 64px;
+    margin: 10px 0 0 50px;
+    border-radius: 32px;
+    text-align: center;
+    line-height: 64px;
     font-size: 20px;
-    text-align: center;
-    height: 100px;
-    margin-top: 30px;
-    width: 270px;
-    border-radius: 25px;
+    border: 1px #2196f3 solid;
 }
-#ACU_time-position div {
-    margin-top: 20px;
+#ACU_body {
+    width: 95%;
+    margin: 4% auto;
+    border: 2.5px solid #4fc3f7;
+    height: 1100px;
+    border-radius: 10px;
 }
-#ACU_people {
-    float: right;
-    background-color: #2196f3;
-    margin-right: 100px;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    text-align: center;
-    height: 100px;
-    margin-top: 30px;
-    width: 270px;
-    border-radius: 25px;
+h3 {
+    font-size: 26px;
+    color: #2196f3;
+    margin: 1% 1% 1% -2%;
 }
-#ACU_people div {
-    margin: 35px auto;
+hr {
+    border: 0.5px #2196f3 solid;
+    margin: 0 0 0 -2%;
 }
-#ACU_activity {
-    width: 270px;
-    text-align: center;
+#ACU_body .ACU_level {
+    width: 100%;
+}
+#ACU_body .ACU_level div {
+    width: 66%;
+    line-height: 40px;
+    margin: 1% 1% 3% 3%;
     float: left;
-    background-color: #2196f3;
-    margin-left: 100px;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    border-radius: 25px;
-    height: 200px;
-    margin-top: 50px;
 }
-#ACU_end {
-    width: 270px;
-    text-align: center;
+#ACU_body .ACU_level .ACU_videoPic {
     float: right;
-    background-color: #2196f3;
-    margin-right: 100px;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    border-radius: 25px;
-    height: 200px;
-    margin-top: 50px;
+    width: 25%;
+    margin: 2% 1% 1% 1%;
+    height: 210px;
+    text-align: center;
 }
-#ACU_activity div {
-    margin: 57px auto;
-}
-#ACU_end div {
-    margin: 71px auto;
-}
-#ACU_footer {
-    width: 800px;
-    height: 100px;
-    color:rgb(255, 255, 255);
-    background-color: #2196f3;
-    margin:0 auto;
-    line-height: 20px;
-    border-radius: 0 0 30px 30px;
+.ACU_level span {
+    float: right;
 }
