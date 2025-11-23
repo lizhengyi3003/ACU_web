@@ -46,14 +46,17 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 .ACU_body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 70px;
   min-height: calc(100vh - 70px);
   margin-left: 240px;
+  gap: 30px;
   transition: margin-left 0.3s;
+  flex: 1;
 }
 /* 左侧导航栏固定 */
 .ACU_nav {
@@ -175,14 +178,7 @@ body {
   background: #bbdefb;
   color: #1565c0;
 }
-/* 右区域 */
-.ACU_body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin: 30px 30px 30px 0;
-}
+
 
 /* 滚动条美化 */
 .ACU_nav::-webkit-scrollbar, .ACU_body-activities::-webkit-scrollbar, .ACU_body-locations::-webkit-scrollbar {
