@@ -54,6 +54,7 @@ export async function onRequest(context) {
     await env['acu-web-kv'].delete(email);
     return new Response('TRUE-2');
   } catch (err) {
-    return new Response('ERROR: ' + err.message, { status: 500 });
+  console.error('注册接口异常', err);
+  return new Response('ERROR: ' + err.stack, { status: 500 });
   }
 }
