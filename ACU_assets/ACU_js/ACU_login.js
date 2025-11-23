@@ -17,21 +17,25 @@ document.addEventListener('DOMContentLoaded', function () {
         method: 'POST',
         body: formData
       });
-      const text = await res.text();
+      const data = await res.json();
 
-      if (statusTrue) statusTrue.classList.remove('ACU_slide-down');
-      if (statusFalse) statusFalse.classList.remove('ACU_slide-down');
-
-      if (text.trim() === 'TRUE' && statusTrue) {
+      if (data.success && data.admin && statusTrue) {
         statusTrue.style.display = 'block';
+        void statusTrue.offsetWidth;
+        statusTrue.classList.add('ACU_slide-down');
+        setTimeout(() => {
+          window.location.href = '../ACU_pages/ACU_backManagement.html';
+        }, 1000);
+      } else if (data.success && statusFalse) {
+        statusTrue.style.display = 'block'
         void statusTrue.offsetWidth;
         statusTrue.classList.add('ACU_slide-down');
         setTimeout(() => {
           window.location.href = '../ACU_web.html';
         }, 1000);
-      } else if (text.trim() === 'FALSE' && statusFalse) {
-        statusFalse.style.display = 'block';
-        void statusFalse.offsetWidth;
+      } else if (!data.success && statusFalse) {
+        statusFalse.style.display = 'block'
+        void statusTrue.offsetWidth;
         statusFalse.classList.add('ACU_slide-down');
       }
     });

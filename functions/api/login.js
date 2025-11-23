@@ -13,9 +13,15 @@ export async function onRequest(context) {
     ).bind(username, username, username, password).all();
 
     if (results && results.length > 0) {
-      return new Response('TRUE');
+      return new Response(JSON.stringify({
+        success: true,
+        admin: results[0].limitation === 'admin',
+      }), { headers: { 'Content-Type': 'application/json'} });
     } else {
-      return new Response('FALSE');
+      return new Response(JSON.stringify({
+        success: false,
+        admin: false
+      }), { headers: { 'Content-Type': 'application/json'} });
     }
   } catch (err) {
     return new Response('ERROR: ' + err.message, { status: 500 });
