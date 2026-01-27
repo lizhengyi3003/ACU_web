@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    min-height: 100vh;
+    background-color: #050505;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#login,#register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width:70vmin;
+    border: 1px solid #39FF14;
+    min-height: 52vmin;
+    border-radius: 2vmin;
+    box-shadow: 
+    0 0 5px #0f0,
+    0 0 10px #0f0,
+    0 0 15px #0f0,
+    0 0 20px #0ff0,
+    0 0 35px rgba(0, 255, 0, 0.7),
+    0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 50px rgba(0, 255, 0, 0.3),
+    inset 0 0 15px rgba(0, 255, 0, 1.2); 
+}
+#login h1 {
+    padding-top: 3vmin;
+    color: #39FF14;
+}
+#collector {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 6vmin;
+}
+label {
+    display: block;
+    font-size: 16px;
+    color: rgb(156 163 175);
+    padding-bottom: 10px;
+}
+.userinformation input {
+    width: 50vmin;
+    height: 6vmin;
+    padding: 1vmin;
+    border: 1px solid rgba(156 163 175);
+    background-color: #050505;
+    outline: none;
+}
+.userinformation input:focus {
+    border-color: #39FF14;
+    outline: none;
+}
+button {
+    display: block;
+    width: 50vmin;
+    height: 6vmin;
+    color: #050505;
+    background-color: #39FF14;
+    margin-bottom: 2vmin;
+    outline: none;
+    letter-spacing: 1vmin;
+}
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+}
