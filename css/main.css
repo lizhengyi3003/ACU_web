@@ -29,12 +29,17 @@ br.gap-small {
 #device-introduction {
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 38px;
     padding: 20px;
+    width: 100%;
+}
+#device-introduction h1 {
+    flex: 1;
     width: 100%;
 }
 #device-introduction div {
@@ -48,12 +53,10 @@ br.gap-small {
 #device-introduction #version {
     font-size: 16px;
     color: #39FF14;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     word-spacing: 0.2em;
     letter-spacing: 0.3em;
 }
 #device-introduction button {
-    flex: 0 1 auto;
     min-width: 150px;
     padding: 15px 30px;
     margin: 15px;
@@ -94,7 +97,7 @@ br.gap-small {
     width: 100%;
     padding: 40px 20px;
 }
-#container {
+#features-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -109,7 +112,7 @@ br.gap-small {
     width: 60px;
     margin: 20px auto 30px;
 }
-#container span {
+#features-container span {
     color: #39FF14;
 }
 #cards-container {

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/login-register.css">
     <script src="./js/main.js"></script>
     <title>SWINGCORE 挥迹 | 智能运动传感器</title>
 </head>
@@ -32,16 +33,15 @@
             <p id="version">SYSTEM READY // V3.1.0</p>
             <span>YOUR AI </span>
             <br>COACH
-            <br>IS
-            <br><span>INVISIBLE.</span>
+            <br><span>IS INVISIBLE</span>
         </h1>
         <p>毫秒级动作捕捉。军工级姿态分析。重新定义你的每一次挥拍。</p>
-        <button>探 索 设 备</button>
-        <button>查 看 演 示</button>
+        <button class="main-button">探 索 设 备</button>
+        <button class="main-button">查 看 演 示</button>
     </section>
     <div id="gap-small"></div>
     <section id="features">
-        <div id="container">
+        <div id="features-container">
             <div id="text-center">
                 核 心 功 能 <br>
                 CORE <span>FEATURES</span>
@@ -72,6 +72,24 @@
             </div>
         </div>
     </section>
+    <div id="login-container">
+        <div id="login">
+            <canvas id="particle-canvas"></canvas>
+            <h1>登录</h1><br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="******">
+                </div><br>
+                <button type="submit" class="login-button">登录</button>
+                <button class="login-button">还未注册账号?点我前往注册</button>
+            </form>
+        </div>
+    </div>
     <div id="footer">
         <div class="footer-columns">
             <div>
