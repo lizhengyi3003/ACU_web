@@ -8,6 +8,7 @@ nav {
     box-sizing: border-box;
     flex-wrap: wrap;
     gap: 10px;
+    z-index: 0;
 }
 
 .nav__element {
@@ -64,6 +65,7 @@ nav button {
     padding: 10px 20px;
     height: 44px;
     min-width: 120px;
+    margin-top: 10px ;
     text-align: center;
     cursor: pointer;
     font-size: 14px;

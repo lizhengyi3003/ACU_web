@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="挥迹项目组">
+    <meta name="copyright" content="挥迹项目组版权所有">
+    <meta name="keywords" content="拍核 (SwingCore), 智能运动传感器, 多模态数据融合算法, 颠覆性性价比,硬件+SaaS+平台, 大众市场,智慧体育">
+    <meta name="decorations" content="旨在用极低价格的专业级运动数据分析硬件，引爆大众智慧体育市场的创业项目">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/login-register.css">
+    <link rel="stylesheet" href="./css/aiContainer.css">
     <script src="./js/main.js"></script>
     <title>SWINGCORE 挥迹 | 智能运动传感器</title>
 </head>
@@ -75,7 +80,9 @@
     <div id="login-container">
         <div id="login">
             <canvas id="particle-canvas"></canvas>
-            <h1>登录</h1><br>
+            <h1>登录</h1>
+            <button type="button" id="close-login">关闭</button>
+            <br>
             <form id="collector">
                 <div class="userinformation">
                     <label>邮箱或用户名</label>
@@ -83,17 +90,64 @@
                 </div><br>
                 <div class="userinformation">
                     <label>密码</label>
-                    <input type="text" placeholder="******">
+                    <input type="text" placeholder="请输入密码">
                 </div><br>
-                <button type="submit" class="login-button">登录</button>
-                <button class="login-button">还未注册账号?点我前往注册</button>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
             </form>
+        </div>
+    </div>
+    <div id="register-container">
+        <div id="register">
+            <canvas id="particle-canvas"></canvas>
+            <h1>注册</h1><br>
+            <button type="button" id="close-register">关闭</button>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span>AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">窗口吸附</button>
+                    <button id="close-ai">关闭窗口</button>
+                </div>
+            </div>
+            <div id="ai-gap"></div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-gap"></div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send">发送</button>
+                </div>
+            </div>
         </div>
     </div>
     <div id="footer">
         <div class="footer-columns">
             <div>
-                <img src="./functions/logo.png">
+                <img src="./assets/logo.png">
             </div>
         </div>
         <div class="footer-columns">
@@ -128,6 +182,6 @@
             </div>
         </div>
     </div>
-    <script src="./functions/particle.js"></script>
+    <script src="./js/functions/particle.js"></script>
 </body>
 </html>

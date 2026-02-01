@@ -1,0 +1,125 @@
+#ai-assistant {
+    position: fixed;
+    right: 5vmin;
+    bottom: 5vmin;
+    height: 60px;
+    line-height: 28px;
+    width: 60px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #39FF14;
+    color: #050505;
+    border: 1px solid #39FF14;
+}
+#ai-assistant span {
+    color: #0f0;
+}
+#ai-container {
+    width: 60vmin;
+    height: 80vmin;
+    background: rgba(128, 128, 128, 0.3);
+    backdrop-filter: blur(20px);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    border: 5px;
+    display: none;
+    position: absolute;
+    right: 9vmin;
+    border-radius: 15px;
+    bottom: 0;
+    border: 1px solid #39FF14;
+    box-shadow: 
+    0 0 5px #0f0,
+    0 0 10px #0f0,
+    0 0 15px #0f0,
+    0 0 20px #0ff0,
+    0 0 35px rgba(0, 255, 0, 0.7),
+    0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 50px rgba(0, 255, 0, 0.3),
+    inset 0 0 15px rgba(0, 255, 0, 1.2);;
+}
+.snap {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: auto;
+}
+#ai-header {
+    display: flex;
+    width: 100%;
+    cursor: move;
+    height: 10vmin;
+}
+.ai-header-element {
+    width: 70%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+}
+.ai-header-element button {
+    margin-right: 10px;
+    background-color: #050505;
+    color: #0f0;
+    box-shadow: none;
+}
+.ai-header-element:first-child {
+    width: 30%;
+}
+#ai-gap {
+    border: 1px solid #39FF14;
+    width: 100%;
+}
+#ai-body {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+}
+#ai-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    gap: 5px;
+}
+#ai-input {
+    width: 80%;
+    height: 80%;
+    margin-top: 1.5vmin;
+    margin-bottom: 1.5vmin;
+    border: 1px solid #39FF14;
+    position: relative;
+    border-radius: 10px;
+    background-color: #050505;
+    backdrop-filter: blur(20px);
+}
+#ai-footer button {
+    width: 10%;
+    margin-bottom: 2vmin;
+    background-color: #050505;
+    border: 1px solid #39FF14;
+    color: #e0e0e0;
+    position: absolute;
+    top: 65%;
+    right: 5%;
+    border-radius: 5px;
+}
+#ai-footer textarea {
+    resize: none;
+    width: 95%;
+    height: 60%;
+    border: none;
+    color:#fff;
+    background-color: #050505;
+    backdrop-filter: blur(20px);
+}
+#ai-footer textarea:focus {
+    border: none;
+    outline: none;
+}
