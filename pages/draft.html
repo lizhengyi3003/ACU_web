@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/login-register.css">
+    <link rel="stylesheet" href="../css/aiContainer.css">
+    <link rel="stylesheet" href="../css/draft.css">
+    <link rel="stylesheet" href="../隐私政策.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/draft.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav >
+        <div class="nav__element">
+            <a href="#">
+                SWINGCORE
+            </a>
+        </div>
+        <div class="nav__element">
+            <a href="#features">核心功能</a>
+            <a href="#specs">硬件参数</a>
+            <a href="../main.html">回到首页</a>
+            <button id="loginbtn">
+                <span>登录  /  立即加入</span>
+                <div></div>
+            </button>
+        </div>
+    </nav>
+    <div id="main-content">
+        <div id="side-bar">
+            <div class="side-bar-titles">
+                <div id="s-b-t-about" class="titles">关于</div>
+                    <div class="s-b-t-a-elements items">新闻动态</div>
+                    <div class="s-b-t-a-elements items">更新日志</div>
+                    <div class="s-b-t-a-elements items">现状</div>
+                    <div class="s-b-t-a-elements items">加入我们</div>
+                    <div class="s-b-t-a-elements items">职业生涯</div>
+                    <div class="s-b-t-a-elements items">奖励计划</div>
+                </div>
+            <div class="side-bar-titles">
+                <div id="s-b-t-device" class="titles">产品</div>
+                    <div class="s-b-t-d-elements items">支持创作者</div>
+                    <div class="s-b-t-d-elements items">APP介绍</div>
+                    <div class="s-b-t-d-elements items">产品概览</div>
+                    <div class="s-b-t-d-elements items">核心功能</div>
+                    <div class="s-b-t-d-elements items">技术规格</div>
+                    <div class="s-b-t-d-elements items">销售政策</div>
+                </div>
+            <div class="side-bar-titles">
+                <div id="s-b-t-resource" class="titles">资源</div>
+                    <div class="s-b-t-r-elements items">帮助中心</div>
+                    <div class="s-b-t-r-elements items">报告问题</div>
+                    <div class="s-b-t-r-elements items">API文档</div>
+                    <div class="s-b-t-r-elements items">翻译</div>
+                </div>
+            <div class="side-bar-titles">
+                <div id="s-b-t-law" class="titles">法律</div>
+                    <div class="s-b-t-l-elements items">内容规则</div>
+                    <div class="s-b-t-l-elements items">使用条款</div>
+                    <div class="s-b-t-l-elements items">隐私政策</div>
+                    <div class="s-b-t-l-elements items">安全通知</div>
+                    <div class="s-b-t-l-elements items">版权政策</div>
+                </div>
+        </div>
+        <div id="side-bar-content">
+
+        </div>
+    </div>
+    <div id="login-container">
+        <div id="login">
+            <canvas id="particle-canvas"></canvas>
+            <h1>登录</h1>
+            <button type="button" id="close-login">关闭</button>
+            <br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="请输入密码">
+                </div><br>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-container">
+        <div id="register">
+            <h1>注册</h1><br>
+            <button type="button" id="close-register">关闭</button>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span>AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">窗口吸附</button>
+                    <button id="close-ai">关闭窗口</button>
+                </div>
+            </div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="go-nav">回到顶部</button>
+    <div id="privacy-policy">
+        <div class="privacy-hero">
+            <h1>隐私政策</h1>
+            <p>保护您的隐私是我们的重要责任</p>
+        </div>
+        <div class="privacy-section">
+            <h2>引言</h2>
+            <p>欢迎使用Swing Core智能网球训练系统（以下简称"本产品"）。龙芯智造（上海）科技有限公司（以下简称"我们"）高度重视您的隐私保护，本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的个人信息。</p>
+            <div class="highlight-box">
+                <p>
+                    <strong>重要提醒:</strong>
+                    使用本产品即表示您同意本隐私政策的全部条款。如果您不同意本政策，请立即停止使用本产品。
+                </p>
+            </div>
+        </div>
+        <div class="privacy-section">
+            <h2>我们收集的个人信息</h2>
+            <h3>1.账户信息</h3>
+            <p>当您注册账户时，我们可能收集以下信息：</p>
+            <ul>
+                <li>手机号码或邮箱地址</li>
+                <li>用户名和密码</li>
+                <li>个人基本资料(昵称、头像等)</li>
+            </ul>
+            <h3>2.运动数据</h3>
+            <p>在使用本产品过程中，我们会收集以下运动相关数据：</p>
+            <ul>
+                <li>挥拍动作数据（速度、角度、力度等）</li>
+                <li>运动轨迹和击球点信息</li>
+                <li>训练时长、频率等统计信息</li>
+                <li>运动表现评分和建议</li>
+            </ul>
+            <h3>3.设备信息</h3>
+            <p>我们可能收集您的设备相关信息：</p>
+            <ul>
+                <li>设备型号和操作系统版本</li>
+                <li>设备唯一标识符</li>
+                <li>蓝牙连接信息</li>
+                <li>APP使用日志和崩溃报告</li>
+            </ul>
+        </div>
+        <div class="privacy-section">
+            <h2>信息使用目的</h2>
+            <p>我们使用收集的信息用于以下目的：</p>
+            <ul>
+                <li>
+                    <strong>提供服务：</strong>
+                    实现智能网球训练功能，提供数据分析和技术指导
+                </li>
+                <li>
+                    <strong>个性化体验：</strong>
+                    根据您的运动数据提供个性化的训练建议
+                </li>
+                <li>
+                    <strong>产品改进：</strong>
+                    分析使用数据以改进产品功能和用户体验
+                </li>
+                <li>
+                    <strong>客户服务：</strong>
+                    处理您的咨询、投诉和售后服务请求
+                </li>
+                <li>
+                    <strong>安全保障：</strong>
+                    保护用户账户安全和防止欺诈行为
+                </li>
+            </ul>
+        </div>
+        <div class="privacy-section">
+            <h2>信息共享与披露</h2>
+            <h3>1. 共享原则</h3>
+            <p>我们承诺不会向第三方出售、出租或交易您的个人信息，除非获得您的明确授权或法律法规要求。</p>
+            <h3>2. 例外情况</h3>
+            <p>在以下情况下，我们可能会共享您的信息：</p>
+            <ul>
+                <li>
+                    <strong>服务提供商：</strong>
+                    与帮助我们提供服务的合作伙伴共享（如云服务、支付处理）
+                </li>
+                <li>
+                    <strong>法律要求：</strong>
+                    根据法律法规或政府部门要求
+                </li>
+                <li>
+                    <strong>保护权益：</strong>
+                    为保护我们或用户的合法权益
+                </li>
+                <li>
+                    <strong>企业交易：</strong>
+                    公司合并、收购等重大事项中
+                </li>
+            </ul>
+        </div>
+        <div class="privacy-section">
+            <h2>数据存储与安全</h2>
+            <h3>1. 存储地点</h3>
+            <p>您的个人信息主要存储在中国境内符合法律法规要求的服务器上。</p>
+            <h3>2. 保存期限</h3>
+            <p>我们将在提供服务所需的期限内保存您的信息，或在法律法规要求的期限内保存。</p>
+            <h3>3. 安全措施</h3>
+            <p>我们采取严格的技术和管理措施保护您的信息：</p>
+            <ul>
+                <li>数据加密传输和存储</li>
+                <li>访问权限控制和身份验证</li>
+                <li>定期安全审计和漏洞扫描</li>
+                <li>员工隐私保护培训</li>
+            </ul>
+        </div>
+        <div class="privacy-section">
+            <h2>您的权利</h2>
+            <p>根据相关法规，您享有以下权利：</p>
+            <ul>
+                <li>
+                    <strong>访问权：</strong>
+                    查看我们持有的您的个人信息
+                </li>
+                <li>
+                    <strong>更正权：</strong>
+                    要求修改不准确的个人信息
+                </li>
+                <li>
+                    <strong>删除权：</strong>
+                    要求删除您的个人信息
+                </li>
+                <li>
+                    <strong>撤回同意：</strong>
+                    撤回对个人信息处理的同意
+                </li>
+                <li>
+                    <strong>投诉权：</strong>
+                    向监管部门投诉我们的数据处理行为
+                </li>
+            </ul>
+        </div>
+        <div class="privacy-section">
+            <h2>未成年人保护</h2>
+            <p>本产品主要面向成年人使用。如您未满18周岁，请在监护人陪同下使用，并确保监护人同意本隐私政策。</p>
+        </div>
+        <div class="privacy-section">
+            <h2>政策更新</h2>
+            <p>我们可能会适时更新本隐私政策。重大变更时，我们会在APP内通知您或发布更新公告。建议您定期查看本政策。</p>
+        </div>
+    </div>
+    <div id="terms-of-use">
+        <div class="terms-hero">
+            <h1>使用条款</h1>
+            <p>请仔细阅读以下条款和条件</p>
+        </div>
+        <div class="privacy-section">
+            <h2>接受条款</h2>
+            <p>欢迎使用Swing Core智能网球训练系统（以下简称"本产品"）。通过下载、安装、使用本产品，即表示您同意接受本使用条款的全部内容。如果您不同意本条款，请立即停止使用。</p>
+            <div class="highlight-box">
+                <p>
+                    <strong>重要提醒:</strong>
+                    本条款具有法律约束力，请务必仔细阅读。未成年人使用需经监护人同意。
+                </p>
+            </div>
+        </div>
+        <div class="terms-section">
+            <h2>服务说明</h2>
+            <h3>1. 服务内容</h3>
+            <p>我们为您提供以下服务：</p>
+            <ul>
+                <li>智能网球传感器设备和配套APP</li>
+                <li>网球动作数据采集和分析</li>
+                <li>个性化训练建议和指导</li>
+                <li>运动数据统计和历史记录</li>
+                <li>在线客服和技术支持</li>
+            </ul>
+            <h3>2. 服务模式</h3>
+            <p>我们提供基础版和专业版两种服务模式，具体功能和服务范围详见产品介绍页面。</p>
+            <h3>3. 服务变更</h3>
+            <p>我们保留随时修改、中断或终止部分或全部服务的权利，恕不另行通知。</p>
+        </div>
+        <div class="terms-section">
+            <h2>用户账户</h2>
+            <h3>1. 账户注册</h3>
+            <p>使用本产品需要注册账户。您承诺提供真实、准确、完整的注册信息。</p>
+            <h3>2. 账户安全</h3>
+            <p>您有责任维护账户信息的保密性，并对账户下的所有活动负责。如发现账户异常，请立即联系我们。</p>
+            <h3>3. 账户注销</h3>
+            <p>您可以随时申请注销账户。注销后，我们将删除您的个人信息，但法律法规要求保存的除外。</p>
+        </div>
+        <div class="terms-section">
+            <h2>用户行为规范</h2>
+            <h3>1. 合法使用</h3>
+            <p>您承诺：</p>
+            <ul>
+                <li>遵守中华人民共和国相关法律法规</li>
+                <li>不利用本产品从事违法违规活动</li>
+                <li>不侵犯他人合法权益</li>
+                <li>不进行可能影响系统安全的操作</li>
+            </ul>
+            <h3>2. 禁止行为</h3>
+            <div class="prohibited-list">
+                <p>严禁以下行为：</p>
+                <ul>
+                    <li>破解、反编译、逆向工程本产品</li>
+                    <li>复制、传播、销售本产品的任何部分</li>
+                    <li>利用本产品传播病毒、恶意软件</li>
+                    <li>干扰或破坏本产品服务器或网络</li>
+                    <li>伪造数据或进行虚假训练记录</li>
+                    <li>将本产品用于商业培训以外的营利活动</li>
+                    <li>超出正常使用范围大量占用系统资源</li>
+                </ul>
+            </div>
+        </div>
+        <div class="terms-section">
+            <h2>知识产权</h2>
+            <h3>1. 我们的权利</h3>
+            <p>本产品的所有内容，包括但不限于文字、图片、音频、视频、软件、商标、专利等均受知识产权保护，归我们或相关权利人所有。</p>
+            <h3>2. 用户生成内容</h3>
+            <p>您在平台上创建的训练数据、评论等内容，授予我们全球范围内免费的、非独家的使用权。</p>
+            <h3>3. 侵权投诉</h3>
+            <p>如认为本产品侵犯了您的知识产权，请提供书面通知：service@intellicore.com</p>
+        </div>
+        <div class="terms-section">
+            <h2>免责声明</h2>
+            <div class="warning-box">
+                <p>
+                    <strong>重要警告：</strong>
+                    本产品仅为训练辅助工具，不能替代专业教练指导。请根据自身情况合理使用，注意运动安全。
+                </p>
+            </div>
+            <p>我们对以下情况不承担法律责任：</p>
+            <ul>
+                <li>
+                    因网络状况、设备故障导致的服务中断
+                </li>
+                <li>
+                    用户不当使用造成的设备损坏或人身伤害
+                </li>
+                <li>
+                    训练建议仅供参考，实际效果因人而异
+                </li>
+                <li>
+                    不可抗力因素导致的服务无法提供
+                </li>
+            </ul>
+        </div>
+        <div class="terms-section">
+            <h2>付费服务</h2>
+            <h3>1. 服务费用</h3>
+            <p>基础版和专业版的具体收费标准以购买页面显示为准。我们保留调整价格的权利。</p>
+            <h3>2. 付款方式</h3>
+            <p>支持微信支付、支付宝、银行卡等多种付款方式。</p>
+            <h3>3. 退款政策</h3>
+            <p>自购买之日起7天内可申请无理由退款。超过7天的退款申请将根据具体情况处理。</p>
+            <h3>4. 自动续费</h3>
+            <p>专业版的订阅服务可能包含自动续费，您可以在账户设置中管理订阅状态。</p>
+        </div>
+        <div class="terms-section">
+            <h2>违约责任</h2>
+            <p>如您违反本条款，我们有权：</p>
+            <ul>
+                <li>警告、限制或终止您的账户使用</li>
+                <li>拒绝提供服务</li>
+                <li>要求赔偿损失</li>
+                <li>保留追究法律责任的权利</li>
+            </ul>
+        </div>
+        <div class="terms-section">
+            <h2>条款修改</h2>
+            <p>我们保留随时修改本条款的权利。重大变更时将提前通知您，继续使用视为接受修改后的条款。</p>
+        </div>
+        <div class="terms-section">
+            <h2>管辖法律</h2>
+            <p>本条款适用中华人民共和国法律。因本条款产生的争议，提交上海市人民法院诉讼解决。</p>
+        </div>
+    </div>
+    <div id="sales-policy">
+        <div class="sales-hero">
+            <h1>销售政策</h1>
+            <p>透明公正的销售和售后保障</p>
+        </div>
+        <div class="sales-section">
+            <h2>产品版本与价格</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>版本</th>
+                        <th>价格</th>
+                        <th>包含内容</th>
+                        <th>适用对象</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <strong>基础版</strong>
+                        </th>
+                        <th class="price-highlight">
+                            ¥399
+                        </th>
+                        <th>
+                            <ul>
+                                <li>Swing Core传感器模块 × 1</li>
+                                <li>APP基础功能</li>
+                                <li>1年云存储服务</li>
+                                <li>在线客服支持</li>
+                            </ul>
+                        </th>
+                        <th>
+                            个人网球爱好者
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <strong>专业版</strong>
+                        </th>
+                        <th class="price-highlight">
+                            ¥599
+                        </th>
+                        <th>
+                            <ul>
+                                <li>Swing Core传感器模块 × 1</li>
+                                <li>APP全部功能</li>
+                                <li>永久云存储服务</li>
+                                <li>1对1技术指导</li>
+                                <li>专属客服支持</li>
+                            </ul>
+                        </th>
+                        <th>
+                            进阶球员、教练
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <strong>俱乐部团购版</strong>
+                        </th>
+                        <th class="price-highlight">
+                            ¥299/套
+                        </th>
+                        <th>
+                            <ul>
+                                <li>Swing Core传感器模块 × 10套起</li>
+                                <li>教练端管理后台</li>
+                                <li>批量部署支持</li>
+                                <li>专属技术支持</li>
+                                <li>定制化培训方案</li>
+                            </ul>
+                        </th>
+                        <th>
+                            网球培训机构、俱乐部
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sales-section">
+            <h2>购买流程</h2>
+            <h3>1. 选择版本</h3>
+            <p>根据您的需求选择合适的版本，个人用户推荐基础版或专业版，机构用户推荐团购版。</p>
+            <h3>2. 下单支付</h3>
+            <p>支持多种支付方式：</p>
+            <ul>
+                <li>微信支付</li>
+                <li>支付宝</li>
+                <li>银行卡在线支付</li>
+                <li>对公转账（团购订单）</li>
+            </ul>
+            <h3>3. 订单确认</h3>
+            <p>支付成功后，您将收到订单确认邮件和短信。我们会在24小时内处理您的订单。</p>
+            <h3>4. 发货配送</h3>
+            <p>现货产品48小时内发货，定制产品7-15个工作日发货。</p>
+        </div>
+        <div class="sales-section">
+            <h2>配送政策</h2>
+            <div class="shipping-info">
+                <div class="shipping-card">
+                    <h4>🚚 配送范围</h4>
+                    <p>全国包邮（港澳台地区除外）</p>
+                </div>
+                <div class="shipping-card">
+                    <h4>⏰ 配送时效</h4>
+                    <p>
+                        顺丰速运：1-3个工作日
+                        <br>
+                        普通快递：3-7个工作日
+                    </p>
+                </div>
+                <div class="shipping-card">
+                    <h4>📦 包装标准</h4>
+                    <p>
+                        防震泡沫包装
+                        <br>
+                        原厂密封盒装
+                        <br>
+                        确保运输安全
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="sales-section">
+            <h2>退换货政策</h2>
+            <div class="sales-list">
+                <h3>7天无理由退货</h3>
+                <ul>
+                    <li>自签收之日起7天内可申请无理由退货</li>
+                    <li>商品需保持原包装完好，配件齐全</li>
+                    <li>个人原因退货需承担往返运费</li>
+                    <li>质量问题退货我们承担运费</li>
+                </ul>
+            </div>
+             <div class="sales-list">
+                <h3>质量问题处理</h3>
+                <ul>
+                    <li>收到产品7天内发现质量问题，免费换新</li>
+                    <li>1年内出现非人为损坏，免费维修或更换</li>
+                    <li>超过1年的质量问题，收取成本费用维修</li>
+                    <li>恶意损坏或超过保修期，不予受理</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <p>
+                    <strong>退货流程：</strong>
+                    联系客服 → 填写退货申请 → 寄回商品 → 质检确认 → 退款处理（3-7个工作日）
+                </p>
+            </div>
+        </div>
+        <div class="sales-section">
+            <h2>售后服务</h2>
+            <h3>1. 客服支持</h3>
+            <ul>
+                <li>
+                    <strong>服务时间：</strong>
+                    工作日9:00-18:00
+                </li>
+                <li>
+                    <strong>客服电话：</strong>
+                    400-888-8888
+                </li>
+                <li>
+                    <strong>微信客服：</strong>
+                    huiji_service
+                </li>
+                <li>
+                    <strong>邮箱支持：</strong>
+                    service@intellicore.com
+                </li>
+            </ul>
+            <h3>2. 技术支持</h3>
+            <ul>
+                <li>专业版用户享受1对1技术指导</li>
+                <li>提供详细的使用教程和视频指南</li>
+                <li>在线FAQ和远程协助服务</li>
+                <li>定期产品使用技巧分享</li>
+            </ul>
+            <h3>3. 固件升级</h3>
+            <ul>
+                <li>免费提供APP和固件升级服务</li>
+                <li>新功能优先向专业版用户开放</li>
+                <li>升级过程简单，无需专业知识</li>
+            </ul>
+        </div>
+        <div class="sales-section">
+            <h2>团购政策</h2>
+            <h3>1. 起订数量</h3>
+            <p>俱乐部团购版10套起订，支持更大批量采购。</p>
+            <h3>2. 团购优惠</h3>
+            <ul>
+                <li>10-49套：299元/套</li>
+                <li>50-99套：279元/套</li>
+                <li>100套以上：259元/套</li>
+                <li>定制LOGO：另议</li>
+            </ul>
+            <h3>3. 团购服务</h3>
+            <ul>
+                <li>专属客户经理一对一服务</li>
+                <li>免费上门安装和培训（限一线城市）</li>
+                <li>教练端管理后台免费使用</li>
+                <li>定制化功能开发支持</li>
+            </ul>
+        </div>
+        <div class="sales-section">
+            <h2>发票政策</h2>
+            <h3>1. 发票类型</h3>
+            <ul>
+                <li>增值税普通发票</li>
+                <li>增值税专用发票（企业用户）</li>
+            </ul>
+            <h3>2. 开票流程</h3>
+            <ul>
+                <li>下单时可选择发票类型和抬头</li>
+                <li>电子发票：订单完成后7个工作日内发送至邮箱</li>
+                <li>纸质发票：随商品一同寄送或单独邮寄</li>
+            </ul>
+            <h3>3. 注意事项</h3>
+            <ul>
+                <li>发票一经开具，不可修改</li>
+                <li>团购订单统一开具一张发票</li>
+                <li>如需补开发票，需承担相关税费</li>
+            </ul>
+        </div>
+        <div class="sales-section">
+            <h2>特别说明</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>产品价格会根据市场情况调整，以官网实时价格为准</li>
+                    <li>促销活动期间的价格优惠不影响本政策的执行</li>
+                    <li>最终解释权归龙芯智造（上海）科技有限公司所有</li>
+                    <li>如有争议，双方应友好协商解决</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

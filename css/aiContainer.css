@@ -1,7 +1,7 @@
 #ai-assistant {
     position: fixed;
     right: 5vmin;
-    bottom: 5vmin;
+    bottom: 16vh;
     height: 60px;
     line-height: 28px;
     width: 60px;
@@ -11,6 +11,7 @@
     background-color: #39FF14;
     color: #050505;
     border: 1px solid #39FF14;
+    cursor: pointer;
 }
 #ai-assistant span {
     color: #0f0;
@@ -64,21 +65,27 @@
 }
 .ai-header-element button {
     margin-right: 10px;
-    background-color: #050505;
+    background: rgba(128, 128, 128,0);
     color: #0f0;
-    box-shadow: none;
+    border: none;
+}
+.ai-header-element button:hover {
+    background-color: #0f0;
+    color: #050505;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 .ai-header-element:first-child {
     width: 30%;
-}
-#ai-gap {
-    border: 1px solid #39FF14;
-    width: 100%;
 }
 #ai-body {
     flex: 1;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 #ai-footer {
     width: 100%;
@@ -122,4 +129,15 @@
 #ai-footer textarea:focus {
     border: none;
     outline: none;
+}
+#go-nav {
+    position: fixed;
+    right: 5vmin;
+    bottom: 5vh;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #39FF14;
+    cursor: pointer;
+    border: none;
 }

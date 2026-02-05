@@ -1,9 +1,9 @@
-window.onload=function() {
+window.addEventListener('load',function(){
     var ologinBtn=this.document.getElementById('loginbtn');
     var ogoRegister=this.document.getElementById('go-register');
     var ogoLogin=this.document.getElementById('go-login');
-    var ocloseLogin = document.getElementById('close-login');
-    var ocloseRegister = document.getElementById('close-register');
+    var ocloseLogin = this.document.getElementById('close-login');
+    var ocloseRegister = this.document.getElementById('close-register');
     var oaiAssistant=this.document.getElementById('ai-assistant');
     var oaiContainer=this.document.getElementById('ai-container');
     var ocloseAi=this.document.getElementById('close-ai');
@@ -11,44 +11,74 @@ window.onload=function() {
     ologinBtn.onclick=function() {
         document.getElementById('login-container').style.display='flex';
         document.getElementById('register-container').style.display='none';
-        document.getElementById('features').classList.add('blur');
-        document.getElementById('device-introduction').classList.add('blur');
-        document.getElementById('footer').classList.add('blur');
-        document.querySelector('nav').classList.add('blur');
+        var features=document.getElementById('features');
+        if (features) features.classList.add('blur');
+        var deviceIntro = document.getElementById('device-introduction');
+        if (deviceIntro) deviceIntro.classList.add('blur');
+        var footer = document.getElementById('footer');
+        if (footer) footer.classList.add('blur');
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.add('blur');
+        var nav = document.querySelector('nav');
+        if (nav) nav.classList.add('blur');
         document.body.style.overflow = 'hidden';
     }
     ogoRegister.onclick=function() {
         document.getElementById('login-container').style.display='none';
         document.getElementById('register-container').style.display='flex';
-        document.getElementById('features').classList.add('blur');
-        document.getElementById('device-introduction').classList.add('blur');
-        document.getElementById('footer').classList.add('blur');
-        document.querySelector('nav').classList.add('blur');
+        var features=document.getElementById('features');
+        if (features) features.classList.add('blur');
+        var deviceIntro = document.getElementById('device-introduction');
+        if (deviceIntro) deviceIntro.classList.add('blur');
+        var footer = document.getElementById('footer');
+        if (footer) footer.classList.add('blur');
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.add('blur');
+        var nav = document.querySelector('nav');
+        if (nav) nav.classList.add('blur');
         document.body.style.overflow = 'hidden';
     }
     ogoLogin.onclick=function() {
         document.getElementById('login-container').style.display='flex';
         document.getElementById('register-container').style.display='none';
-        document.getElementById('features').classList.add('blur');
-        document.getElementById('device-introduction').classList.add('blur');
-        document.getElementById('footer').classList.add('blur');
-        document.querySelector('nav').classList.add('blur');
+        var features=document.getElementById('features');
+        if (features) features.classList.add('blur');
+        var deviceIntro = document.getElementById('device-introduction');
+        if (deviceIntro) deviceIntro.classList.add('blur');
+        var footer = document.getElementById('footer');
+        if (footer) footer.classList.add('blur');
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.add('blur');
+        var nav = document.querySelector('nav');
+        if (nav) nav.classList.add('blur');
         document.body.style.overflow = 'hidden';
     }
     ocloseLogin.onclick = function() {
         document.getElementById('login-container').style.display = 'none';
-        document.getElementById('features').classList.remove('blur');
-        document.getElementById('device-introduction').classList.remove('blur');
-        document.getElementById('footer').classList.remove('blur');
-        document.querySelector('nav').classList.remove('blur');
+        var features=document.getElementById('features');
+        if (features) features.classList.remove('blur');
+        var deviceIntro = document.getElementById('device-introduction');
+        if (deviceIntro) deviceIntro.classList.remove('blur');
+        var footer = document.getElementById('footer');
+        if (footer) footer.classList.remove('blur');
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.remove('blur');
+        var nav = document.querySelector('nav');
+        if (nav) nav.classList.remove('blur');
         document.body.style.overflow = '';
     }
     ocloseRegister.onclick = function() {
         document.getElementById('register-container').style.display = 'none';
-        document.getElementById('features').classList.remove('blur');
-        document.getElementById('device-introduction').classList.remove('blur');
-        document.getElementById('footer').classList.remove('blur');
-        document.querySelector('nav').classList.remove('blur');
+        var features=document.getElementById('features');
+        if (features) features.classList.remove('blur');
+        var deviceIntro = document.getElementById('device-introduction');
+        if (deviceIntro) deviceIntro.classList.remove('blur');
+        var footer = document.getElementById('footer');
+        if (footer) footer.classList.remove('blur');
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.remove('blur');
+        var nav = document.querySelector('nav');
+        if (nav) nav.classList.remove('blur');
         document.body.style.overflow = '';
     }
     oaiAssistant.onclick=function() {
@@ -110,11 +140,18 @@ window.onload=function() {
     oaiSend.onclick=function() {
         var userMessage=oaiTextarea.value.trim();
         if(!userMessage) return;
-        oaiBody.innerHTML+= `<div style="text-align:right; color:#fff;">你:${userMessage}</div>`;
+        oaiBody.innerHTML+= `<div style="text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-end; border:1px solid #39FF14; padding:8px 16px; border-radius:16px; background: #39FF14; color: #050505;">你:${userMessage}</div>`;
         oaiTextarea.value='';
         setTimeout(function() {
-            oaiBody.innerHTML+=`<div style="text-align:left; color:#fff;">AI:这是你的问题的回复。</div>`;
+            oaiBody.innerHTML+=`<div style="text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-start; border:1px solid #39FF14; padding:8px 16px; border-radius:16px; background: rgba(26,26,26,0.7); color: #fff;">AI:这是你的问题的回复。</div>`;
             oaiBody.scrollTop=oaiBody.scrollHeight;
         },500)
    }
-}
+   var ogoNav=this.document.getElementById('go-nav');
+   ogoNav.onclick=function() {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    }
+})
