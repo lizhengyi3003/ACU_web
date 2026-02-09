@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="挥迹项目组">
-    <meta name="copyright" content="挥迹项目组版权所有">
-    <meta name="keywords" content="拍核 (SwingCore), 智能运动传感器, 多模态数据融合算法, 颠覆性性价比,硬件+SaaS+平台, 大众市场,智慧体育">
-    <meta name="decorations" content="旨在用极低价格的专业级运动数据分析硬件，引爆大众智慧体育市场的创业项目">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/login-register.css">
-    <link rel="stylesheet" href="./css/aiContainer.css">
-    <script src="./js/main.js"></script>
-    <title>SWINGCORE 挥迹 | 智能运动传感器</title>
+    <meta name="author" content="挥迹项目组">           <!--作者-->
+    <meta name="copyright" content="挥迹项目组版权所有">        <!--版权-->
+    <meta name="keywords" content="拍核 (SwingCore), 智能运动传感器, 多模态数据融合算法, 颠覆性性价比,硬件+SaaS+平台, 大众市场,智慧体育">       <!--关键字-->
+    <meta name="decorations" content="旨在用极低价格的专业级运动数据分析硬件，引爆大众智慧体育市场的创业项目">      <!--介绍-->
+    <link rel="stylesheet" href="./css/nav.css">            <!--导航栏css-->
+    <link rel="stylesheet" href="./css/footer.css">         <!--页脚css-->
+    <link rel="stylesheet" href="./css/main.css">           <!--主页面css-->
+    <link rel="stylesheet" href="./css/login-register.css">     <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="./css/aiContainer.css">        <!--AI助手浮窗css-->
+    <link rel="stylesheet" href="./assets/iconfont.css">
+    <script src="./js/main.js"></script>    
+    <title>SWINGCORE 挥迹 | 智能运动传感器</title>              <!--网页标题-->
 </head>
 <body>
-    <nav >
+    <nav >                                                      <!--导航栏-->
         <div class="nav__element">
             <a href="#">
                 SWINGCORE
             </a>
+            <a href="./main.html">首页</a>
         </div>
         <div class="nav__element">
             <a href="#features">核心功能</a>
             <a href="#specs">硬件参数</a>
-            <a href="./main.html">回到首页</a>
+            
             <button id="loginbtn">
                 <span>登录  /  立即加入</span>
                 <div></div>
             </button>
         </div>
     </nav>
-    <section id="device-introduction">
+    <section id="device-introduction">                      <!--产品主要介绍-->
         <canvas id="particle-canvas"></canvas>
         <h1>
             <div></div><br>
@@ -42,22 +44,24 @@
             <br><span>IS INVISIBLE</span>
         </h1>
         <p>毫秒级动作捕捉。军工级姿态分析。重新定义你的每一次挥拍。</p>
-        <button class="main-button">探 索 设 备</button>
-        <button class="main-button">查 看 演 示</button>
+        <div>
+            <button class="main-button">探 索 设 备</button>
+            <button class="main-button">查 看 演 示</button>
+        </div>
     </section>
-    <div id="gap-small"></div>
-    <section id="features">
-        <div id="features-container">
+    <div id="gap-small"></div>                              <!--缩小间隔-->
+    <section id="features">                                 <!--产品特点-->
+        <div id="features-container">   
             <div id="text-center">
                 核 心 功 能 <br>
                 CORE <span>FEATURES</span>
             </div>
             <div id="divider"></div>
             <div id="cards-container">
-                <div class="feature-card">
-                    <div class="feature-img"></div>
-                    <h3>1000Hz 极速捕捉</h3>
-                    <p>
+                <div class="feature-card">                  <!--特点卡片-->
+                    <div class="feature-img"></div>         <!--卡片图片-->
+                    <h3>1000Hz 极速捕捉</h3>                <!--卡片标题-->
+                    <p>                                     <!--卡片内容-->
                         搭载工业级 IMU 传感器，以每秒 1000 次的频率记录挥拍轨迹，绝不漏掉任何一个毫秒级的发力细节。
                     </p>
                 </div>
@@ -78,7 +82,7 @@
             </div>
         </div>
     </section>
-    <div id="login-container">
+    <div id="login-container">                      <!--登录浮窗-->
         <div id="login">
             <canvas id="particle-canvas"></canvas>
             <h1>登录</h1>
@@ -98,9 +102,9 @@
             </form>
         </div>
     </div>
-    <div id="register-container">
+    <div id="register-container">               <!--注册浮窗-->
         <div id="register">
-            <canvas id="particle-canvas"></canvas>
+            <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
             <h1>注册</h1><br>
             <button type="button" id="close-register">关闭</button>
             <form id="collector">
@@ -116,12 +120,17 @@
                     <label>设置密码</label>
                     <input type="text" placeholder="最小8位有效字符">
                 </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
             </form>
         </div>
     </div>
-    <div id="ai-assistant">
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        AI助手
         <div id="ai-container">
             <div id="ai-header">
                 <div class="ai-header-element">
@@ -138,13 +147,13 @@
             <div id="ai-footer">
                 <div id="ai-input">
                     <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
-                    <button id="ai-send">发送</button>
+                    <button id="ai-send"><i class="iconfont">&#xe65f;</i></button>
                 </div>
             </div>
         </div>
     </div>
-    <button id="go-nav">回到顶部</button>
-    <div id="footer">
+    <button id="go-nav"><i class="iconfont">&#xe600;</i></button>           <!--回到顶部按钮-->
+    <div id="footer">                               <!--页脚-->
         <div class="footer-columns">
             <div>
                 <img src="./assets/logo.png">
@@ -153,39 +162,40 @@
         <div class="footer-columns">
             <div class="footer-columns-items">
                 <h3>关于</h3>
-                <a href="./pages/draft.html">新闻动态</a>
-                <a href="./pages/draft.html">更新日志</a>
-                <a href="./pages/draft.html">现状</a>
-                <a href="./pages/draft.html">加入我们</a>
-                <a href="./pages/draft.html">职业生涯</a>
-                <a href="./pages/draft.html">奖励计划</a>
+                <a href="#">新闻动态</a>
+                <a href="#">更新日志</a>
+                <a href="#">现状</a>
+                <a href="#">加入我们</a>
+                <a href="#">职业生涯</a>
+                <a href="./pages/legal-and-policy.html?tab=rewards-terms">奖励计划</a>
             </div>
             <div class="footer-columns-items">
                 <h3>产品</h3>
-                <a href="./pages/draft.html">支持创作者</a>
-                <a href="./pages/draft.html">APP介绍</a>
-                <a href="./pages/draft.html">产品概览</a>
-                <a href="./pages/draft.html">核心功能</a>
-                <a href="./pages/draft.html">技术规格</a>
-                <a href="./pages/draft.html">销售政策</a>
+                <a href="./pages/device-and-feature.html#buy">支持创作者</a>
+                <a href="./pages/device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./pages/device-and-feature.html#overview">产品概览</a>
+                <a href="./pages/device-and-feature.html#features">核心功能</a>
+                <a href="./pages/device-and-feature.html#technical-specifications">技术规格</a>
+                <a href="./pages/device-and-feature.html#target-audience">适用人群</a>
             </div>
             <div class="footer-columns-items">
                 <h3>资源</h3>
-                <a href="./pages/draft.html">帮助中心</a>
-                <a href="./pages/draft.html">报告问题</a>
-                <a href="./pages/draft.html">API文档</a>
-                <a href="./pages/draft.html">翻译</a>
+                <a href="#">帮助中心</a>
+                <a href="#">报告问题</a>
+                <a href="#">API文档</a>
+                <a href="#">翻译</a>
             </div>
             <div class="footer-columns-items">
                 <h3>法律</h3>
-                <a href="./pages/draft.html">内容规则</a>
-                <a href="./pages/draft.html">使用条款</a>
-                <a href="./pages/draft.html">隐私政策</a>
-                <a href="./pages/draft.html">安全通知</a>
-                <a href="./pages/draft.html">版权政策</a>
+                <a href="./pages/legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./pages/legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./pages/legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./pages/legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./pages/legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./pages/legal-and-policy.html?tab=sales-policy">销售政策</a>
             </div>
         </div>
     </div>
-    <script src="./js/functions/particle.js"></script>
+    <script src="./js/functions/particle.js"></script>      <!--背景粒子效果js-->
 </body>
 </html>

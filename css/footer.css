@@ -1,12 +1,13 @@
-#footer {
+#footer {                   /*页脚容器*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     background: linear-gradient(270deg, #09110d 10%, #132017);
     border-top: 1px solid rgba(27, 217, 106, 0.1);
+    margin-top: 40vh;
 }
-.footer-columns {
+.footer-columns {           /*页脚元素分为列，每一列的间隔*/
     flex: 1;
     display: flex;
     max-width: 70%;
@@ -17,11 +18,11 @@
     margin-top: 3vmin;
     margin-bottom: 10vmin;
 }
-.footer-columns:first-child {
+.footer-columns:first-child {           /*页脚元素分左右，左部分*/
     max-width: 30%;
     align-items: center;
 }
-.footer-columns-items {
+.footer-columns-items {                   /*每一个页脚元素容器*/       
     flex: 1;
     margin-top: 1vmin;
     min-width: 14vw;

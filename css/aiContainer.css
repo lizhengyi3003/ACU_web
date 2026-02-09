@@ -1,22 +1,29 @@
-#ai-assistant {
+#ai-assistant {                     /*ai助手浮窗*/ 
     position: fixed;
     right: 5vmin;
     bottom: 16vh;
     height: 60px;
     line-height: 28px;
     width: 60px;
-    border-radius: 30px;
+    border-radius: 50%;
     text-align: center;
     font-size: 18px;
-    background-color: #39FF14;
+    background-color: #27292E;
     color: #050505;
-    border: 1px solid #39FF14;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #96A2B0;
+    transition: transform 0.3s ease;
+}
+#ai-assistant:hover {
+    transform: scale(1.15),translateY(-2px);
 }
 #ai-assistant span {
     color: #0f0;
 }
-#ai-container {
+#ai-container {             /*ai助手容器*/ 
     width: 60vmin;
     height: 80vmin;
     background: rgba(128, 128, 128, 0.3);
@@ -43,19 +50,19 @@
     0 0 50px rgba(0, 255, 0, 0.3),
     inset 0 0 15px rgba(0, 255, 0, 1.2);;
 }
-.snap {
+.snap {                     /*点击窗口吸附时为容器添加的snap类，使之无法被鼠标拖拽*/ 
     position: fixed;
     z-index: 100;
     right: 0;
     top: auto;
 }
-#ai-header {
+#ai-header {            /*ai助手容器头部*/ 
     display: flex;
     width: 100%;
     cursor: move;
     height: 10vmin;
 }
-.ai-header-element {
+.ai-header-element {            /*ai助手容器头部的右侧元素*/ 
     width: 70%;
     display: flex;
     gap: 10px;
@@ -63,22 +70,22 @@
     justify-content: flex-end;
     text-align: center;
 }
-.ai-header-element button {
+.ai-header-element button {         /*ai助手容器头部按钮*/ 
     margin-right: 10px;
     background: rgba(128, 128, 128,0);
     color: #0f0;
     border: none;
 }
-.ai-header-element button:hover {
+.ai-header-element button:hover {       /*ai助手让其头部动画*/ 
     background-color: #0f0;
     color: #050505;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
-.ai-header-element:first-child {
+.ai-header-element:first-child {            /*ai助手头部的左侧元素容器*/ 
     width: 30%;
 }
-#ai-body {
+#ai-body {                      /*ai助手容器的主要内容部分*/ 
     flex: 1;
     width: 100%;
     overflow-y: auto;
@@ -87,7 +94,7 @@
     flex-direction: column;
     gap: 16px;
 }
-#ai-footer {
+#ai-footer {                /*ai助手容器底部部分*/ 
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,7 +102,7 @@
     height: 20%;
     gap: 5px;
 }
-#ai-input {
+#ai-input {                 /*ai助手容器底部输入部分*/ 
     width: 80%;
     height: 80%;
     margin-top: 1.5vmin;
@@ -106,7 +113,10 @@
     background-color: #050505;
     backdrop-filter: blur(20px);
 }
-#ai-footer button {
+#ai-input #ai-send {
+    font-size: 20px;
+}
+#ai-footer button {         /*ai助手容器底部提交按钮*/ 
     width: 10%;
     margin-bottom: 2vmin;
     background-color: #050505;
@@ -117,7 +127,8 @@
     right: 5%;
     border-radius: 5px;
 }
-#ai-footer textarea {
+#ai-footer textarea {           /*ai助手底部文本框*/ 
+    margin-top: 1vh;
     resize: none;
     width: 95%;
     height: 60%;
@@ -126,18 +137,38 @@
     background-color: #050505;
     backdrop-filter: blur(20px);
 }
-#ai-footer textarea:focus {
+#ai-footer textarea:focus {         /*ai助手底部文本框聚焦时变化*/ 
     border: none;
     outline: none;
 }
-#go-nav {
+#go-nav {                       /*前往顶部按钮*/ 
+    color: #96A2B0;
     position: fixed;
     right: 5vmin;
     bottom: 5vh;
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: #39FF14;
+    background-color: #27292E;
     cursor: pointer;
     border: none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+#go-nav:hover {
+    transform: scale(1.15);
+}
+#go-nav i {
+    font-size: 36px;
+}
+@keyframes fadein {             /*前往顶部按钮动画*/ 
+    0%{opacity: 0; scale: 0;}
+    50%{ opacity: 0.5; scale:1.3;}
+    100%{ opacity: 1; scale:1}
+}
+@keyframes fadeout {
+    0%{opacity: 1;scale: 1;}
+    100%{opacity: 0;scale: 0;}
 }

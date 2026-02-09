@@ -1,29 +1,25 @@
-* {
+* {                                 /*  清除所有的外内边距并改变盒子模式为border-box */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body {
+html,body {                         /*  设置初始高度 */
     height: 100%;
+    scroll-behavior: smooth;
 }
-body {
+body {                              /*  设置整体背景，布局为flex布局 */
     min-height: 100vh;
     background-color: #050505;
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
 }
-.blur {
-    filter: blur(12px);
-    transition: filter 0.3s;
-    pointer-events: none; 
-}
 
-br.gap-small {
+br.gap-small {                      /*  缩小间隔的css */
     display: block;
     margin: 5px;
 }
-#particle-canvas {
+#particle-canvas {                  /*  背景粒子的画布css */
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +28,7 @@ br.gap-small {
     pointer-events: none;
 }
 
-#device-introduction {
+#device-introduction {              /*  产品简介css */
     flex: 1;
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +40,7 @@ br.gap-small {
     padding: 20px;
     width: 100%;
 }
-#device-introduction h1 {
+#device-introduction h1 {               /*  产品简介标题css */
     flex: 1;
     width: 100%;
 }
@@ -62,7 +58,7 @@ br.gap-small {
     word-spacing: 0.2em;
     letter-spacing: 0.3em;
 }
-#device-introduction button {
+#device-introduction button {           /*  产品简介按钮css */
     min-width: 150px;
     padding: 15px 30px;
     margin: 15px;
@@ -74,19 +70,19 @@ br.gap-small {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-#device-introduction button:hover {
+#device-introduction button:hover {         /*  产品简介按钮动画 */
     transform: scale(1.05);
 }
-#device-introduction button:last-child {
+#device-introduction button:last-child {            /*  产品简介按钮css */
     border-color: #e0e0e0;
     color: #fff;
     background-color: #050505;
 }
-#device-introduction button:last-child:hover {
+#device-introduction button:last-child:hover {          /*  产品简介按钮动画 */
     border-color: #39FF14;
     color: #39FF14;
 }
-#device-introduction span {
+#device-introduction span {                         /*  产品简介中的大字号字体的span盒子的css */
     text-align: center;
     margin: 5% 5% 5%;
 }
@@ -99,15 +95,14 @@ br.gap-small {
 #gap-small {
     margin: 50px 10px 10px 10px;
 }
-#features {
+#features {                                     
     width: 100%;
     padding: 40px 20px;
 }
-#features-container {
+#features-container {                           /*  产品特点容器css */
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 120px;
+    margin: 120px auto;
 }
 #text-center {
     font-size: 36px;
@@ -122,15 +117,18 @@ br.gap-small {
 #features-container span {
     color: #39FF14;
 }
-#cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+#cards-container {                          /*  特点卡片容器css */
+    position: relative;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.feature-img {
+#cards-container:hover .feature-card {
+    animation-play-state: paused;
+}
+.feature-img {                              /*  特点卡片图片css */
     width: 64px;
     height: 64px;
     border-radius: 10px;
@@ -138,40 +136,71 @@ br.gap-small {
     border-color: rgb(57 255 20 / 0.3);
     margin: 30px 10px 30px 30px;
 }
-.feature-card {
-    flex: 1;
+.feature-card {                             /*  特点卡片css */
+    position: absolute;
     min-width: 280px;
     max-width: 350px;
     border: 1px solid rgba(57, 255, 20, 0.1);
     border-radius: 10px;
     padding: 20px;
     background: rgba(26, 26, 26, 0.6);
-    transition: transform 0.3s ease, border-color 0.3s ease;
     opacity: 0.7;
-    transform: scale(1);
     z-index: 1;
-    animation: carousel 6s infinite;
+    transition: boder-color 0.3s ease;
+    animation: rotateCard 9s infinite;
 }
-.feature-card:hover {
-    border-color: rgb(57 255 20 / 0.5);
-    transform: translateY(-5px);
+.feature-card:hover {                   
+    border-color: #39FF14;
 }
-.feature-card:nth-child(1) {
-    animation-delay: 0s;
+.feature-card:nth-child(1) {                /* 宽屏时各个卡片动画延迟时间 */
+    animation-delay: -6s;
 }
 .feature-card:nth-child(2) {
-    margin-top: 0;
-    animation-delay: 2s;
+    animation-delay: -3s;
 }
 .feature-card:nth-child(3) {
-    animation-delay: 4s;
+    animation-delay:0s;
 }
-@keyframes carousel {
+@keyframes rotateCard {                     /*  宽屏时卡片动画 */
+    0%   { transform: translateX(0px) scale(1.15); opacity: 1; z-index: 2; }
+    33%  { transform: translateX(380px) scale(1); opacity: 0.7; z-index: 1; }
+    66%  { transform: translateX(-380px) scale(1); opacity: 0.7; z-index: 1; }
+    100% { transform: translateX(0px) scale(1.15); opacity: 1; z-index: 2; }
+}
+@keyframes carousel {                           /*  窄屏时卡片动画 */
     0%   { opacity: 0.7; transform: scale(1); z-index: 1; }
     10%  { opacity: 1;   transform: scale(1.15); z-index: 2; }
     33%  { opacity: 1;   transform: scale(1.15); z-index: 2; }
     43%  { opacity: 0.7; transform: scale(1); z-index: 1; }
     100% { opacity: 0.7; transform: scale(1); z-index: 1; }
+}
+@media(max-width: 1132px) {             /*  窄屏时改变卡片的布局效果使之能够换行适配屏幕 */
+    #cards-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        
+    }
+    .feature-card {
+        position: relative;
+        animation: carousel 6s infinite;
+    }
+    .feature-card:nth-child(1) {            /* 窄屏时各个卡片动画延迟时间 */
+            animation-delay: 0s;
+    }
+    .feature-card:nth-child(2) {
+            animation-delay: 2s;
+    }
+    .feature-card:nth-child(3) {
+        animation-delay: 4s;
+    }
+    #footer {
+        margin-top: 15vh;
+    }
 }
 .feature-card h3 {
     font-size: 24px;

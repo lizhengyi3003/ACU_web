@@ -3,73 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/login-register.css">
-    <link rel="stylesheet" href="../css/aiContainer.css">
-    <link rel="stylesheet" href="../css/draft.css">
-    <link rel="stylesheet" href="../隐私政策.css">
-    <script src="../js/main.js"></script>
-    <script src="../js/draft.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/nav.css">               <!--导航栏css-->
+    <link rel="stylesheet" href="../css/login-register.css">       <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
+    <link rel="stylesheet" href="../css/legal-and-policy.css">      <!--侧边栏主要内容css-->
+    <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
+    <link rel="stylesheet" href="../assets/iconfont.css">
+    <script src="../js/main.js"></script>                           <!--登录注册AI浮窗js-->
+    <script src="../js/legal-and-policy.js"></script>               <!--侧边栏内容显示js-->
+    <title>法律与政策</title> 
 </head>
 <body>
-    <nav >
+    <nav >                                                      <!--导航栏-->
         <div class="nav__element">
             <a href="#">
                 SWINGCORE
             </a>
+            <a href="../main.html">首页</a>
         </div>
         <div class="nav__element">
             <a href="#features">核心功能</a>
             <a href="#specs">硬件参数</a>
-            <a href="../main.html">回到首页</a>
             <button id="loginbtn">
                 <span>登录  /  立即加入</span>
                 <div></div>
             </button>
         </div>
     </nav>
-    <div id="main-content">
-        <div id="side-bar">
+    <div id="main-content">                     
+        <div id="side-bar">                                 <!--侧边栏-->
             <div class="side-bar-titles">
-                <div id="s-b-t-about" class="titles">关于</div>
-                    <div class="s-b-t-a-elements items">新闻动态</div>
-                    <div class="s-b-t-a-elements items">更新日志</div>
-                    <div class="s-b-t-a-elements items">现状</div>
-                    <div class="s-b-t-a-elements items">加入我们</div>
-                    <div class="s-b-t-a-elements items">职业生涯</div>
-                    <div class="s-b-t-a-elements items">奖励计划</div>
+                <p>奖励计划</p>
+                <div class="items">
+                    <p>奖励计划条款</p>
                 </div>
+            </div>
             <div class="side-bar-titles">
-                <div id="s-b-t-device" class="titles">产品</div>
-                    <div class="s-b-t-d-elements items">支持创作者</div>
-                    <div class="s-b-t-d-elements items">APP介绍</div>
-                    <div class="s-b-t-d-elements items">产品概览</div>
-                    <div class="s-b-t-d-elements items">核心功能</div>
-                    <div class="s-b-t-d-elements items">技术规格</div>
-                    <div class="s-b-t-d-elements items">销售政策</div>
+                <p>法律</p>
+                <div class="items">
+                    <p>内容规则</p>
                 </div>
+                <div class="items">
+                    <p>使用条款</p>
+                </div>
+                <div class="items">
+                    <p>安全通知</p>
+                </div>
+            </div>
             <div class="side-bar-titles">
-                <div id="s-b-t-resource" class="titles">资源</div>
-                    <div class="s-b-t-r-elements items">帮助中心</div>
-                    <div class="s-b-t-r-elements items">报告问题</div>
-                    <div class="s-b-t-r-elements items">API文档</div>
-                    <div class="s-b-t-r-elements items">翻译</div>
+                <p>政策</p>
+                <div class="items">
+                    <p>隐私政策</p>
                 </div>
-            <div class="side-bar-titles">
-                <div id="s-b-t-law" class="titles">法律</div>
-                    <div class="s-b-t-l-elements items">内容规则</div>
-                    <div class="s-b-t-l-elements items">使用条款</div>
-                    <div class="s-b-t-l-elements items">隐私政策</div>
-                    <div class="s-b-t-l-elements items">安全通知</div>
-                    <div class="s-b-t-l-elements items">版权政策</div>
+                <div class="items">
+                    <p>版权政策</p>
                 </div>
+                <div class="items">
+                    <p>销售政策</p>
+                </div>
+            </div>
         </div>
-        <div id="side-bar-content">
+        <div id="side-bar-content">                         <!--侧边栏内容-->
 
         </div>
     </div>
-    <div id="login-container">
+    <div id="footer">                                       <!--页脚-->
+        <div class="footer-columns">
+            <div>
+                <img src="../assets/logo.png">
+            </div>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-columns-items">
+                <h3>关于</h3>
+                <a href="#">新闻动态</a>
+                <a href="#">更新日志</a>
+                <a href="#">现状</a>
+                <a href="#">加入我们</a>
+                <a href="#">职业生涯</a>
+                <a href="./legal-and-policy.html?tab=rewards-terms">奖励计划</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>产品</h3>
+                <a href="./device-and-feature.html#buy">支持创作者</a>
+                <a href="./device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./device-and-feature.html#overview">产品概览</a>
+                <a href="./device-and-feature.html#features">核心功能</a>
+                <a href="./device-and-feature.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">使用人群</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>资源</h3>
+                <a href="#">帮助中心</a>
+                <a href="#">报告问题</a>
+                <a href="#">API文档</a>
+                <a href="#">翻译</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>法律</h3>
+                <a href="./legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./legal-and-policy.html?tab=sales-policy">销售政策</a>
+            </div>
+        </div>
+    </div>
+    <div id="login-container">                              <!--登录浮窗-->
         <div id="login">
             <canvas id="particle-canvas"></canvas>
             <h1>登录</h1>
@@ -89,7 +130,7 @@
             </form>
         </div>
     </div>
-    <div id="register-container">
+    <div id="register-container">                           <!--注册浮窗-->
         <div id="register">
             <h1>注册</h1><br>
             <button type="button" id="close-register">关闭</button>
@@ -106,12 +147,17 @@
                     <label>设置密码</label>
                     <input type="text" placeholder="最小8位有效字符">
                 </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
             </form>
         </div>
     </div>
-    <div id="ai-assistant">
+    <div id="ai-assistant">                                 <!--AI侧边浮窗-->
+        AI助手
         <div id="ai-container">
             <div id="ai-header">
                 <div class="ai-header-element">
@@ -128,13 +174,13 @@
             <div id="ai-footer">
                 <div id="ai-input">
                     <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
-                    <button id="ai-send">发送</button>
+                    <button id="ai-send"><i class="iconfont">&#xe65f;</i></button>
                 </div>
             </div>
         </div>
     </div>
-    <button id="go-nav">回到顶部</button>
-    <div id="privacy-policy">
+    <button id="go-nav"><i class="iconfont">&#xe600;</i></button>                      <!--回到顶部浮窗-->
+    <div id="privacy-policy">                                   <!--隐私政策主要内容-->
         <div class="privacy-hero">
             <h1>隐私政策</h1>
             <p>保护您的隐私是我们的重要责任</p>
@@ -148,8 +194,8 @@
                     使用本产品即表示您同意本隐私政策的全部条款。如果您不同意本政策，请立即停止使用本产品。
                 </p>
             </div>
-        </div>
-        <div class="privacy-section">
+        </div>  
+        <div class="privacy-section">                       
             <h2>我们收集的个人信息</h2>
             <h3>1.账户信息</h3>
             <p>当您注册账户时，我们可能收集以下信息：</p>
@@ -276,7 +322,7 @@
             <p>我们可能会适时更新本隐私政策。重大变更时，我们会在APP内通知您或发布更新公告。建议您定期查看本政策。</p>
         </div>
     </div>
-    <div id="terms-of-use">
+    <div id="terms-of-use">                                     <!--使用条款主要内容-->
         <div class="terms-hero">
             <h1>使用条款</h1>
             <p>请仔细阅读以下条款和条件</p>
@@ -403,7 +449,7 @@
             <p>本条款适用中华人民共和国法律。因本条款产生的争议，提交上海市人民法院诉讼解决。</p>
         </div>
     </div>
-    <div id="sales-policy">
+    <div id="sales-policy">                                     <!--销售政策主要内容-->
         <div class="sales-hero">
             <h1>销售政策</h1>
             <p>透明公正的销售和售后保障</p>

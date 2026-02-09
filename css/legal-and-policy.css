@@ -1,4 +1,82 @@
-.highlight-box {
+* {                                     /*  清除所有的外内边距并改变盒子模式为border-box */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {                             /*  设置初始高度 */
+    height: 100%;
+}
+body {                          /*  设置整体背景，布局为flex布局 */
+    min-height: 100vh;
+    background-color: #050505;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+.blur {                         /*  点击登录或注册时添加的背景模糊类 */
+    filter: blur(12px);
+    transition: filter 0.3s;
+    pointer-events: none; 
+}
+#main-content {                     /*主要内容容器*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+#side-bar {                     /*侧边栏css*/
+    min-width: 240px;
+    width: 20%;
+    display: flex;
+    background: #27292E;
+    flex-direction: column;
+    margin-top: 6vmin;
+    border-radius: 16px;
+    margin-left: 2vw;
+}
+.side-bar-titles {          /*侧边栏元素容器*/
+    flex-direction: column;
+    display: flex;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+.side-bar-titles p {                /*侧边栏元素标题*/
+    color: #96A2B0;
+    font-size: 14px;
+    margin-left: 10%;
+}
+.items:hover {                  /*侧边栏元素动画*/
+    background-color: #34363C;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+.items {                    /*侧边栏元素css*/
+    width: 80%;
+    height: 7vmin;
+    margin-left: 10%;
+    padding-left: 10%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+#side-bar-content {             /*侧边栏元素主要内容*/
+    width: 74%;
+    margin-top: 6vmin;
+    background: #27292E;
+    border-radius: 16px;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    flex: 1;
+}
+.active {                       /*侧边栏元素点击时添加的active类*/
+    background-color: #1BD96A40;
+    color: #1BD96A;
+    border-radius: 10px;
+}
+
+
+
+.highlight-box {                /*重要提醒容器css*/
     padding-left: 3vw;
     height: 11vh;
     border-radius: 8px;
@@ -6,7 +84,7 @@
     display: flex;
     align-items: center;
 }
-.prohibited-list {
+.prohibited-list {              /*禁止行为列表容器css*/
     background: #f8d7da;
     border: 1px solid #f5c6cb;
     color: #721c24;
@@ -14,7 +92,7 @@
     border-radius: 8px;
     margin-top: 16px;
 }
-.warning-box {
+.warning-box {                  /*警告容器css*/
     background: #fff3cd;
     border: 1px solid #ffeaa7;
     color: #856404;
@@ -27,12 +105,11 @@
 
 
 
-#privacy-policy {
+#privacy-policy {               /*隐私政策主要内容css*/
     width: 87%;
     display: none;
     flex: 1;
     flex-direction: column;
-    gap: 50px;
 }
 .privacy-hero {
     gap: 2px;
@@ -60,9 +137,10 @@
 .privacy-section {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     margin-left: 6vw;
     margin-top: 10vh;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 .privacy-section h2::after {
     content: "";
@@ -87,7 +165,7 @@
 
 
 
-#terms-of-use {
+#terms-of-use {             /*使用条款主要内容css*/
     width: 87%;
     display: none;
     flex: 1;
@@ -121,6 +199,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 50px;
     margin-left: 6vw;
     margin-top: 10vh;
 }
@@ -155,7 +234,7 @@
 
 
 
-#sales-policy {
+#sales-policy {             /*销售政策主要内容css*/
     width: 87%;
     display: none;
     flex: 1;
@@ -189,6 +268,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 50px;
     margin-left: 6vw;
     margin-top: 10vh;
 }

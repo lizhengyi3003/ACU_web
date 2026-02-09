@@ -1,4 +1,4 @@
-#register-container {
+#register-container {                   /* 注册容器css */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -9,8 +9,9 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    z-index: 2;
 }
-#login-container {
+#login-container {                      /* 登录容器css */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -21,8 +22,9 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    z-index: 2;
 }
-#login,#register {
+#login,#register {                  /* 登录注册容器父元素css */
     display: flex;
     position: relative;
     flex-direction: column;
@@ -31,7 +33,7 @@
     border: 1px solid #39FF14;
     min-height: 52vmin;
     border-radius: 2vmin;
-    box-shadow: 
+    box-shadow:                     /* 高亮边框*/
     0 0 5px #0f0,
     0 0 10px #0f0,
     0 0 15px #0f0,
@@ -41,38 +43,39 @@
     0 0 50px rgba(0, 255, 0, 0.3),
     inset 0 0 15px rgba(0, 255, 0, 1.2); 
 }
-#login h1 {
+#login h1 {                 /*登录标题*/
     padding-top: 3vmin;
     color: #39FF14;
 }
-#register h1 {
+#register h1 {              /* 注册标题*/
     padding-top: 3vmin;
     color: #39FF14;
 }
-#collector {
+#collector {                            /* 提交按钮*/
     margin-top: auto;
     margin-bottom: auto;
     padding-bottom: 6vmin;
 }
-label {
+label {                 /* 登录注册表单元素*/
     display: block;
     font-size: 16px;
     color: rgb(156 163 175);
     padding-bottom: 10px;
 }
-.userinformation input {
+.userinformation input {            /* 输入框css*/
     width: 50vmin;
     height: 6vmin;
     padding: 1vmin;
     border: 1px solid rgba(156 163 175);
     background-color: #050505;
     outline: none;
+    color: rgb(156 163 175);
 }
-.userinformation input:focus {
+.userinformation input:focus {              /* 输入框聚焦时css*/
     border-color: #39FF14;
     outline: none;
 }
-.login-button {
+.login-button {                     /* 登录页面提交按钮 css*/
     display: block;
     width: 50vmin;
     height: 6vmin;
@@ -82,7 +85,7 @@ label {
     outline: none;
     letter-spacing: 1vmin;
 }
-#particle-canvas {
+#particle-canvas {                  /*粒子效果画布css*/
     position: absolute;
     top: 0;
     left: 0;
@@ -90,7 +93,7 @@ label {
     height: 200%;
     pointer-events: none;
 }
-#close-login {
+#close-login {                      /* 关闭登录页面按钮css*/
     background-color:#050505;
     color: rgb(156 163 175);
     border: none;
@@ -100,7 +103,7 @@ label {
     top: 5%;
     right: 4%;
 }
-#close-register {
+#close-register {                   /* 关闭注册页面按钮css*/
     background-color:#050505;
     color: rgb(156 163 175);
     border: none;
@@ -109,4 +112,9 @@ label {
     font-size: 20px;
     top: 5%;
     right: 4%;
+}
+.blur {                             /*  点击登录或注册时添加的背景模糊类 */
+    filter: blur(12px);
+    transition: filter 0.3s;
+    pointer-events: none; 
 }

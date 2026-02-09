@@ -1,4 +1,4 @@
-nav {
+nav {                           /* 导航栏容器css  */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,18 +11,18 @@ nav {
     z-index: 0;
 }
 
-.nav__element {
+.nav__element {                 /*  导航栏内容css */
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.nav__element:first-child {
+.nav__element:first-child {             /*  导航栏左侧css */
     flex: 1;
     min-width: 150px;
 }
 
-.nav__element:first-child a {
+.nav__element:first-child a:first-child{    /* 版权css  */
     background: linear-gradient(to right, #fff, #39FF14);
     -webkit-background-clip: text;
     background-clip: text;
@@ -33,12 +33,11 @@ nav {
     white-space: nowrap;
     transition: transform 0.3s ease;
 }
-
-.nav__element:first-child a:hover {
+.nav__element:first-child a:first-child:hover {         /* 版权动画  */
     transform: scale(1.05);
 }
 
-.nav__element:last-child {
+.nav__element:last-child {                  /*  导航栏右侧css */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -46,7 +45,7 @@ nav {
     justify-content: flex-end;
 }
 
-.nav__element:last-child a {
+.nav__element a {                   /*  导航栏链接css */
     text-decoration: none;
     color: #fff;
     transition: color 0.3s ease;
@@ -54,11 +53,11 @@ nav {
     white-space: nowrap;
 }
 
-.nav__element:last-child a:hover {
+.nav__element a:hover {         /*  导航栏链接动画 */
     color: #39FF14;
 }
 
-nav button {
+nav button {                /*  导航栏链按钮css */
     border: 2px solid #39FF14;
     background-color: #050505;
     color: #39FF14;
@@ -74,7 +73,7 @@ nav button {
     white-space: nowrap;
 }
 
-nav button:hover {
+nav button:hover {              /*  导航栏按钮动画 */
     background-color: #39FF14;
     color: #050505;
     transform: translateY(-2px);
