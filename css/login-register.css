@@ -51,10 +51,10 @@
     padding-top: 3vmin;
     color: #39FF14;
 }
-#collector {                            /* 提交按钮*/
+#collector {                            /*表单收集容器*/
     margin-top: auto;
     margin-bottom: auto;
-    padding-bottom: 6vmin;
+    padding-bottom: 3vmin;
 }
 label {                 /* 登录注册表单元素*/
     display: block;
@@ -84,14 +84,8 @@ label {                 /* 登录注册表单元素*/
     margin-bottom: 2vmin;
     outline: none;
     letter-spacing: 1vmin;
-}
-#particle-canvas {                  /*粒子效果画布css*/
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    pointer-events: none;
+    border: none;
+    border-radius: 10px;
 }
 #close-login {                      /* 关闭登录页面按钮css*/
     background-color:#050505;
@@ -112,6 +106,14 @@ label {                 /* 登录注册表单元素*/
     font-size: 20px;
     top: 5%;
     right: 4%;
+}
+#login-go-back {
+    background: none;
+    color: #39FF14;
+}
+#register-go-back {
+    background: none;
+    color: #39FF14;
 }
 .blur {                             /*  点击登录或注册时添加的背景模糊类 */
     filter: blur(12px);

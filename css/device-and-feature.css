@@ -21,7 +21,7 @@ body {                              /*  设置整体背景，布局为flex布局
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 10vh auto;
+    margin: 18vh auto;
     gap: 15vh;
 }
 .container {
@@ -120,119 +120,6 @@ body {                              /*  设置整体背景，布局为flex布局
 
 
 
-#features {
-    width: 100%;
-}
-.features-tab-container {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-.features-tab {
-    width: 24vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 9vmin;
-    background-color: #27292E;
-    color: rgb(156 163 175);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
-}
-.features-tab:hover {
-    background-color: #1BD96A40;
-    transform: translateY(-10px);
-    color: #1BD96A;
-    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
-}
-.active {                       
-    color: #050505;
-    background-color: #39FF14;
-}
-.active:hover {
-    background-color: #39FF14;
-    color: #050505;
-}
-.tab-content {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tab-content-elements {
-    display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-    border-radius: 10px;
-    width: 100%;
-    background: #27292E;
-    transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
-}
-.tab-content-elements:nth-child(2) {
-    display: flex;
-}
-.tab-content-elements:hover {
-    background-color: #1BD96A40;
-    transform: translateY(-10px);
-    color: #1BD96A;
-    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
-}
-.main-content {
-    width: 50%;
-    padding-left: 4vmin;
-    margin-top: 8vmin;
-    flex: 1;
-}
-.main-content h3 {
-    padding-left: 6vmin;
-    padding-right: 6vmin;
-    font-size: 40px;
-    background: linear-gradient(to left, #fff, #39FF14);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.main-content p {
-    margin-top: 7vmin;
-    padding-left: 6vmin;
-    padding-right: 6vmin;
-    font-size: 19px;
-}
-.main-content ul {
-    font-size: 19px;
-    margin-top: 7vmin;
-    padding-left: 6vmin;
-    padding-right: 6vmin;
-    margin-bottom: 8vmin;
-}
-.main-content ul li {
-    margin-bottom: 2vmin;
-    color: rgb(156 163 175);
-}
-.main-content ul li::after {
-    content: '';
-    display: block;
-    border: 1px solid #1BD96A40;
-    width: 100%;
-    margin-top: 1vmin;
-}
-.main-content ul li strong {
-    color: #fff;
-}
-.main-img {
-    margin-top: 8vmin;
-    margin-right: 4vmin;
-    width: 40%;
-    min-width: 450px
-}
 #download {
     flex-wrap: wrap;
     margin-bottom: 10vh;
@@ -257,6 +144,9 @@ body {                              /*  设置整体背景，布局为flex布局
     align-items: center;
     transition: transform 0.3s ease;
 }
+.download-button span{
+    font-size: 40px;
+}
 .download-button:hover {
     transform:translateY(-5px) ;
 }
@@ -279,62 +169,6 @@ body {                              /*  设置整体背景，布局为flex布局
 }
 
 
-
-#spec-features {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 15vh;
-}
-.spec-features-cards {
-    background: #27292E;
-    transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
-    height: 90vh;
-    width: 26%;
-    min-width: 280px;
-    border-radius: 10px;
-}
-.spec-features-cards:hover {
-    background-color: #1BD96A40;
-    transform: translateY(-10px);
-    color: #1BD96A;
-    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
-}
-.spec-features-cards h3 {
-    padding: 6vmin;
-    padding-bottom: 2vmin;
-    font-size: 28px;
-}
-.spec-features-cards h3::after {
-    content: "";
-    display: block;
-    width: 100%;
-    background:linear-gradient(to left, #fff, #39FF14);
-    margin-top: 4vh;
-    height: 4px;
-
-}
-.spec-features-cards table {
-    padding-left: 6vmin;
-    padding-right: 6vmin;
-    width: 100%;
-}
-.spec-features-cards tr {
-    border:1px solid rgb(156 163 175);
-}
-.spec-features-cards tr td {
-    padding: 12px 0;
-    color:  rgb(156 163 175);
-}
-.spec-features-cards tr td:last-child {
-    color: #fff;
-    font-weight: 800;
-    text-align: right;
-}
 
 
 #victo-app #download {
@@ -390,84 +224,11 @@ body {                              /*  设置整体背景，布局为flex布局
 
 
 
-#comparison {
-    width: 100%;
-}
-#comparison-features {
-    gap: 50px;
-    margin-top: 15vh;
-    align-items: center;
-    flex-direction: row;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.comparison-features-cards {
-    border-radius: 16px;
-    background: #27292A;
-    width: 25%;
-    transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
-    min-width: 310px;
-}
-.comparison-price {
-    margin: 2vmin 6vmin;
-    color: #39FF14;
-    text-align: center;
-    font-size: 50px;
-}
-.comparison-features-cards h3 {
-    text-align: center;
-}
-.comparison-features-cards ul {
-    list-style: none;
-    margin: 5vh 6vmin 5vmin 6vmin;
-}
-.comparison-features-cards ul li {
-    margin-bottom: 2vmin;
-}
-.comparison-features-cards ul li::after {
-    content: "";
-    display: block;
-    border: 1px solid #1BD96A40;
-    margin-top: 2vmin;
-}
-.check {
-    color:#34c759;
-}
-.crose {
-    color: #ff3b30;
-}
-.comparison-features-cards:hover {
-    background-color: #1BD96A40;
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
-}
-.comparison-buy {
-    border-radius: 10px;
-    background-color: #D2D2D7;
-    height: 10vh;
-    margin: 0 auto;
-    width: 60%;
-    margin-bottom: 6vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: #050505;
-}
-.suggest-buy {
-    background-color: #39FF14;
-    color: #050505;
-    cursor: pointer;
-}
-
-
 
 #target-audience {
     width: 100%;
 }
 #target-audience-container {
-    gap: 40px;
     flex-direction: column;
     display: flex;
     margin-top: 10vh;
@@ -475,7 +236,7 @@ body {                              /*  设置整体背景，布局为flex布局
     justify-content: center;
     width: 90%;
     position: relative;
-    height: 780px;
+    margin-bottom: 700px;
 }
 .age-container {
     width: 15%;
@@ -518,12 +279,12 @@ body {                              /*  设置整体背景，布局为flex布局
     animation-delay: 0s;
 }
 @keyframes scrollUp {
-    0%{scale: 1; transform: translateY(0);opacity: 1;}
-    20%{scale:0.8;transform: translateY(-240px);opacity: 1;}
-    40%{scale:0.8;transform: translateY(-480px);opacity: 0;}
-    60%{scale: 0.8;transform: translateY(480px);opacity: 0;}
-    80%{scale: 0.8;transform: translateY(240px);opacity: 1;}
-    100%{scale: 1;transform: translateY(0);opacity: 1;}
+    0%{scale: 1; transform: translateY(0);opacity: 1;z-index: 1;}
+    20%{scale:0.8;transform: translateY(-240px);opacity: 1;z-index: 1;}
+    40%{scale:0.8;transform: translateY(-480px);opacity: 0;z-index: 1;}
+    60%{scale: 0.8;transform: translateY(480px);opacity: 0;z-index: 1;}
+    80%{scale: 0.8;transform: translateY(240px);opacity: 1;z-index: 1;}
+    100%{scale: 1;transform: translateY(0);opacity: 1;z-index: 1;}
 }
 .target-audience-age {
     justify-content: center;
@@ -550,74 +311,3 @@ body {                              /*  设置整体背景，布局为flex布局
     justify-content: center;
 }
 
-
-
-#buy {
-    width: 100%;
-}
-#buy-options {
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    display: flex;
-    margin-top: 15vh;
-    width: 100%;
-}
-.buy-cards {
-    background: #27292A;
-    min-width: 310px;
-    width: 25%;
-    border-radius: 10px;
-    transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
-}
-.buy-cards:hover {
-    background-color: #1BD96A40;
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
-}
-    
-.buy-cards:nth-child(2) {
-    background: linear-gradient(320deg, #1BD96A80, #39FF1480);
-    position: relative;
-}
-.buy-cards:nth-child(2) .comparison-buy {
-    background-color: #39FF14;
-    color: #050505;
-}
-.buy-cards h3 {
-    font-size: 20px;
-    padding: 6vmin;
-    padding-bottom: 3vmin;
-}
-.buy-cards p {
-    font-size: 16px;
-    padding-bottom: 3vmin;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 3vmin 6vmin;
-}
-.buy-cards ul {
-    padding: 3vmin 6vmin;
-    list-style: none;
-}
-.buy-cards ul li {
-    margin-bottom: 2vmin;
-}
-.buy-price {
-    padding-right: 6vmin;
-    padding-left: 6vmin;
-    font-size: 40px;
-}
-#suppose {
-    border-radius: 15px;
-    position: absolute;
-    left: 38%;
-    top: -15px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24%;
-    background-color: #39FF14;
-    color: #050505;
-}

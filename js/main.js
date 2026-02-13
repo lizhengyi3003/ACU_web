@@ -2,13 +2,16 @@ window.addEventListener('load',function(){
     var ologinBtn=this.document.getElementById('loginbtn');             //获取登录页面按钮
     var ogoRegister=this.document.getElementById('go-register');        //获取前往注册页面按钮
     var ogoLogin=this.document.getElementById('go-login');              //获取前往登录按钮
-    var ocloseLogin = this.document.getElementById('close-login');      //关闭登录页面按钮
-    var ocloseRegister = this.document.getElementById('close-register');    //关闭注册页面按钮
+    var ocloseLogin = this.document.getElementById('login-go-back');      //关闭登录页面按钮
+    var ocloseRegister = this.document.getElementById('register-go-back');    //关闭注册页面按钮
     var oaiAssistant=this.document.getElementById('ai-assistant');      //打开AI浮窗按钮
     var oaiContainer=this.document.getElementById('ai-container');      //获取AI浮窗盒子
     var ocloseAi=this.document.getElementById('close-ai');              //关闭AI界面按钮
     var osnapAi=this.document.getElementById('snap-ai');                //AI界面吸附按钮
-    ologinBtn.onclick=function() {                                      //点击登录按钮时显示登录浮窗并模糊背景
+    ologinBtn.onclick=function() {       
+        window.scrollTo({
+        top: 0,
+        });                               //点击登录按钮时显示登录浮窗并模糊背景
         document.getElementById('login-container').style.display='flex';
         document.getElementById('register-container').style.display='none';
         var features=document.getElementById('features');
@@ -81,7 +84,7 @@ window.addEventListener('load',function(){
         if (nav) nav.classList.remove('blur');
         document.body.style.overflow = '';
     }
-    oaiAssistant.onclick=function() {                                   //点击打开  AI浮窗
+    oaiAssistant.onclick=function() {            //点击打开  AI浮窗
         oaiContainer.style.display='flex';
     }
     ocloseAi.onclick=function(e) {                                      //点击关闭AI浮窗
@@ -100,14 +103,14 @@ window.addEventListener('load',function(){
             oaiHeader.style.pointerEvents='none';
             osnapAi.style.pointerEvents='auto';
             ocloseAi.style.pointerEvents='auto';
-            osnapAi.innerHTML='窗口浮动';
+            osnapAi.innerHTML='<span class="iconfont icon-chuangkoufudong"><span class="tooltip">窗口浮动</span>';
             isclick=1;
         }
         else                                                            //如果先前已经点击过一次再次点击则恢复浮动，取消吸附
         {
             oaiContainer.classList.remove('snap');
             oaiHeader.style.pointerEvents='auto';
-            osnapAi.innerHTML='窗口吸附';
+            osnapAi.innerHTML='<span class="iconfont icon-chuangkouxifu"><span class="tooltip">窗口吸附</span></span>';
             oaiContainer.style.left = '';
             oaiContainer.style.top = '';
             oaiContainer.style.right='9vmin';
@@ -141,10 +144,30 @@ window.addEventListener('load',function(){
         var userMessage=oaiTextarea.value.trim();
         if(!userMessage) return;                                                        
         oaiBody.innerHTML+= `<div style="text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-end; border:1px solid #39FF14; padding:8px 16px; border-radius:16px; background: #39FF14; color: #050505;">你:${userMessage}</div>`;
+        oaiBody.scrollTop = oaiBody.scrollHeight;
         oaiTextarea.value='';
-        setTimeout(function() {
-            oaiBody.innerHTML+=`<div style="text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-start; border:1px solid #39FF14; padding:8px 16px; border-radius:16px; background: rgba(26,26,26,0.7); color: #fff;">AI:这是你的问题的回复。</div>`;
-            oaiBody.scrollTop=oaiBody.scrollHeight;
+        setTimeout(function() {                 
+            ////插入正在获取资料的临时消息
+            const loadingMsg=document.createElement('div');
+            loadingMsg.innerHTML='正在获取资料';
+            loadingMsg.style.cssText='text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-start;  padding:8px 16px; border-radius:16px;  color: #fff;';
+            loadingMsg.id = 'temp-loading-msg';
+            oaiBody.appendChild(loadingMsg);
+            oaiBody.scrollTop = oaiBody.scrollHeight;
+            //两秒后放入正式文字
+            setTimeout(function() {
+            const tempMsg = document.getElementById('temp-loading-msg');
+            if(tempMsg) {
+                tempMsg.remove();
+            }
+            const actualContent = document.createElement('div');
+            actualContent.innerHTML = '这里是实际获取到的资料内容';
+            actualContent.style.cssText = 'text-align:left; color:#fff; margin-left:2vmin; margin-right:2vmin; margin-top:2vmin; word-break: break-word; display: inline-block; max-width: 90%; align-self: flex-start; padding:8px 16px; border-radius:16px; color: #fff;';
+
+            oaiBody.appendChild(actualContent);
+            oaiBody.scrollTop = oaiBody.scrollHeight;
+
+            }, 2000); 
         },500)
    }
    var ogoNav=this.document.getElementById('go-nav');        //回到顶部按钮
@@ -185,5 +208,39 @@ window.addEventListener('load',function(){
         top: 0,
         behavior: 'smooth'
     });
+    }
+    var tabToContentId={
+        '智能传感器':"sensors",
+        '手机APP':"APP",
+        '云端服务':"cloud",
+    }       //Object.values(tabToContentId)获取映射表里所有的Id，然后遍历，得到数组，数组元素是document.getElementById(id)
+    var allContents = Object.values(tabToContentId).map(id => document.getElementById(id));
+    var ocomponentsTab=document.querySelectorAll('.components-tab');
+    ocomponentsTab.forEach(function(tab) {
+        tab.addEventListener('click',function() {
+            ocomponentsTab.forEach(function(i) {i.classList.remove('active');});
+            this.classList.add('active');
+            allContents.forEach(function(div) {                 //每次点击，先隐藏所有容器
+                if (div) div.style.display = 'none';
+            });
+            var key=this.innerText.trim();
+            var contentId=tabToContentId[key]
+            if(contentId)
+            {
+                var contentDiv=document.getElementById(contentId);
+                if(contentDiv)
+                {
+                    contentDiv.style.display='flex';
+                }
+            }
+        });
+    });
+    var ocomparisonBuy=this.document.getElementsByClassName('suggest-buy');
+    ocomparisonBuy[0].onclick=function() {
+        var obuy=document.getElementById('buy');
+        if(obuy)
+        {
+            obuy.scrollIntoView({behavior:'smooth'});
+        }
     }
 })

@@ -23,6 +23,7 @@ body {                          /*  设置整体背景，布局为flex布局 */
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    margin: 18vh auto;
 }
 #side-bar {                     /*侧边栏css*/
     min-width: 240px;
@@ -67,6 +68,7 @@ body {                          /*  设置整体背景，布局为flex布局 */
     margin-right: 2vw;
     margin-left: 2vw;
     flex: 1;
+    min-width: 400px;
 }
 .active {                       /*侧边栏元素点击时添加的active类*/
     background-color: #1BD96A40;
@@ -78,11 +80,13 @@ body {                          /*  设置整体背景，布局为flex布局 */
 
 .highlight-box {                /*重要提醒容器css*/
     padding-left: 3vw;
+    font-size: 20px;
     height: 11vh;
     border-radius: 8px;
-    border-left: 4px solid #39FF14;
+    background-color: #39FF14;
     display: flex;
     align-items: center;
+    color: #050505;
 }
 .prohibited-list {              /*禁止行为列表容器css*/
     background: #f8d7da;
@@ -91,6 +95,9 @@ body {                          /*  设置整体背景，布局为flex布局 */
     padding: 20px;
     border-radius: 8px;
     margin-top: 16px;
+}
+.terms-section .prohibited-list ul li {
+    color:#721c24;
 }
 .warning-box {                  /*警告容器css*/
     background: #fff3cd;
@@ -155,12 +162,12 @@ body {                          /*  设置整体背景，布局为flex布局 */
     color: white;
 }
 .privacy-section ul {
-    color: rgb(156 163 175);
+    color:rgb(156 163 175);
 }
 .privacy-section ul li {
     margin-left: 2vw;
     margin-bottom: 1vh;
-    color:rgb(156 163 175) 
+    color:rgb(156 163 175);
 }
 
 
@@ -224,12 +231,12 @@ body {                          /*  设置整体背景，布局为flex布局 */
     align-items: center;
 }
 .terms-section ul {
-    color: rgb(156 163 175);
+    color:rgb(156 163 175);
 }
 .terms-section ul li {
     margin-left: 2vw;
     margin-bottom: 1vh;
-    color:rgb(156 163 175) 
+    color:rgb(156 163 175);
 }
 
 

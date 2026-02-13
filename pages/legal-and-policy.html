@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
     <link rel="stylesheet" href="../css/legal-and-policy.css">      <!--侧边栏主要内容css-->
     <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
-    <link rel="stylesheet" href="../assets/iconfont.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_5r2k7hd1tll.css">
     <script src="../js/main.js"></script>                           <!--登录注册AI浮窗js-->
     <script src="../js/legal-and-policy.js"></script>               <!--侧边栏内容显示js-->
     <title>法律与政策</title> 
@@ -22,8 +22,6 @@
             <a href="../main.html">首页</a>
         </div>
         <div class="nav__element">
-            <a href="#features">核心功能</a>
-            <a href="#specs">硬件参数</a>
             <button id="loginbtn">
                 <span>登录  /  立即加入</span>
                 <div></div>
@@ -67,10 +65,10 @@
 
         </div>
     </div>
-    <div id="footer">                                       <!--页脚-->
+    <div id="footer">                               <!--页脚-->
         <div class="footer-columns">
             <div>
-                <img src="../assets/logo.png">
+                <img src="./assets/logo.png">
             </div>
         </div>
         <div class="footer-columns">
@@ -85,12 +83,12 @@
             </div>
             <div class="footer-columns-items">
                 <h3>产品</h3>
-                <a href="./device-and-feature.html#buy">支持创作者</a>
+                <a href="../main.html#buy">支持创作者</a>
                 <a href="./device-and-feature.html#victo-app">APP介绍</a>
                 <a href="./device-and-feature.html#overview">产品概览</a>
-                <a href="./device-and-feature.html#features">核心功能</a>
-                <a href="./device-and-feature.html#technical-specifications">技术规格</a>
-                <a href="./device-and-feature.html#target-audience">使用人群</a>
+                <a href="../main.html#system-components">系统核心组件</a>
+                <a href="../main.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">适用人群</a>
             </div>
             <div class="footer-columns-items">
                 <h3>资源</h3>
@@ -110,11 +108,10 @@
             </div>
         </div>
     </div>
-    <div id="login-container">                              <!--登录浮窗-->
+    <div id="login-container">                      <!--登录浮窗-->
         <div id="login">
             <canvas id="particle-canvas"></canvas>
             <h1>登录</h1>
-            <button type="button" id="close-login">关闭</button>
             <br>
             <form id="collector">
                 <div class="userinformation">
@@ -127,13 +124,14 @@
                 </div><br>
                 <button type="submit" class="login-button" >登录</button>
                 <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+                <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
             </form>
         </div>
     </div>
-    <div id="register-container">                           <!--注册浮窗-->
+    <div id="register-container">               <!--注册浮窗-->
         <div id="register">
+            <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
             <h1>注册</h1><br>
-            <button type="button" id="close-register">关闭</button>
             <form id="collector">
                 <div class="userinformation">
                     <label>创建用户名</label>
@@ -153,19 +151,32 @@
                 </div><br>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+                <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
             </form>
         </div>
     </div>
-    <div id="ai-assistant">                                 <!--AI侧边浮窗-->
-        AI助手
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        <span>AI助手</span>
         <div id="ai-container">
             <div id="ai-header">
                 <div class="ai-header-element">
-                    <span>AI云助理</span>
+                    <span id="ai-title">AI云助理</span>
                 </div>
                 <div class="ai-header-element">
-                    <button id="snap-ai">窗口吸附</button>
-                    <button id="close-ai">关闭窗口</button>
+                    <button id="snap-ai">
+                        <span class="iconfont icon-chuangkouxifu">
+                            <span class="tooltip">
+                                窗口吸附
+                            </span>
+                        </span>
+                    </button>
+                    <button id="close-ai">
+                        <span class="iconfont icon-guanbi1">
+                            <span class="tooltip">
+                                关闭窗口
+                            </span>
+                        </span>
+                    </button>
                 </div>
             </div>
             <div id="ai-body">
@@ -174,12 +185,13 @@
             <div id="ai-footer">
                 <div id="ai-input">
                     <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
-                    <button id="ai-send"><i class="iconfont">&#xe65f;</i></button>
+                    <button id="ai-send"><span class="iconfont icon-fasong"></span></button>
                 </div>
             </div>
+            <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
         </div>
     </div>
-    <button id="go-nav"><i class="iconfont">&#xe600;</i></button>                      <!--回到顶部浮窗-->
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->                      <!--回到顶部浮窗-->
     <div id="privacy-policy">                                   <!--隐私政策主要内容-->
         <div class="privacy-hero">
             <h1>隐私政策</h1>

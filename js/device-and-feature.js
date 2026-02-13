@@ -33,23 +33,4 @@ window.addEventListener('load',function() {
             obuy.scrollIntoView({behavior:'smooth'});
         }
     }
-    var ogoSideBar=this.document.getElementById('go-side-bar');
-    var isgoSideBarClick=0;
-    ogoSideBar.addEventListener('click',function(){
-        var osideBarElements=document.getElementById('side-bar-elements');
-        if(isgoSideBarClick==0)
-        {
-            osideBarElements.style.display='flex';
-            ogoSideBar.style.left='20vh';
-            ogoSideBar.innerHTML='<i class="iconfont" id="go-side-bar">&#xeb15;</i>'
-            isgoSideBarClick=1;
-        }
-        else
-        {
-            osideBarElements.style.display='none';
-            ogoSideBar.style.left='';
-            ogoSideBar.innerHTML='<i class="iconfont" id="go-side-bar">&#xe6a1;</i>'
-            isgoSideBarClick=0;
-        }
-    })
 })
