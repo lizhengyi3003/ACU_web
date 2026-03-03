@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">               <!--导航栏css-->
+    <link rel="stylesheet" href="../css/login-register.css">       <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
+    <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
+    <link rel="stylesheet" href="../css/other-pages.css/news-and-update.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_5r2k7hd1tll.css">
+    <script src="../js/functions/login-and-ai.js"></script>
+    <script src="../js/news-and-update.js"></script>
+    <title>新闻动态</title>
+</head>
+<body>
+    <nav >                                                      <!--导航栏-->
+        <div class="nav__element">
+            <a href="#">
+                SWINGCORE
+            </a>
+            <a href="../main.html">首页</a>
+        </div>
+        <div class="nav__element">
+            <button id="loginbtn">
+                <span>登录  /  立即加入</span>
+                <div></div>
+            </button>
+        </div>
+    </nav>
+    <div id="news-gap">新闻</div>
+    <div id="news-container">
+        <a class="news-link">
+            <div class="news">
+                <div class="news-img-container">
+                    <img src="../assets/sample.jpeg">
+                </div>
+                <div class="news-content-container">
+                    <p>专题文章</p>
+                    <h3>这是新闻主要内容</h3>
+                    <p>这是新闻的简介</p>
+                    <div class="news-time">
+                        xxxx年xx月xx日
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div id="articles-gap">更多文章</div>
+    <div id="articles-container">
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+        <a class="articles-link">
+            <div class="articles-img-container">
+                <img src="../assets/sample.jpeg">
+            </div>
+            <div class="articles-content-container">
+                <p>这是文章的标题</p>
+                <h3>这是文章的主要内容概述</h3>
+                <div class="articles-time">
+                    xxxx年xx月xx日
+                </div>
+            </div>
+        </a>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="login-container">                      <!--登录浮窗-->
+        <div id="login">
+            <canvas id="particle-canvas"></canvas>
+            <h1>登录</h1>
+            <br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="请输入密码">
+                </div><br>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+                <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-container">               <!--注册浮窗-->
+        <div id="register">
+            <h1>注册</h1><br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+                <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        <span>AI助手</span>
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span id="ai-title">AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">
+                        <span class="iconfont icon-chuangkouxifu">
+                            <span class="tooltip">
+                                窗口吸附
+                            </span>
+                        </span>
+                    </button>
+                    <button id="close-ai">
+                        <span class="iconfont icon-guanbi1">
+                            <span class="tooltip">
+                                关闭窗口
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send"><span class="iconfont icon-fasong"></span></button>
+                </div>
+            </div>
+            <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
+        </div>
+    </div>
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->           <!--回到顶部按钮-->
+    <div id="footer">                               <!--页脚-->
+        <div class="footer-columns">
+            <div>
+                <img src="../assets/logo.png">
+            </div>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-columns-items">
+                <h3>关于</h3>
+                <a href="./news-and-update.html">新闻动态</a>
+                <a href="./update-log.html">更新日志</a>
+                <a href="#">现状</a>
+                <a href="#">加入我们</a>
+                <a href="./legal-and-policy.html?tab=rewards-terms">奖励计划</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>产品</h3>
+                <a href="../main.html#buy">支持创作者</a>
+                <a href="./device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./device-and-feature.html#overview">产品概览</a>
+                <a href="../main.html#system-components">系统核心组件</a>
+                <a href="../main.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">适用人群</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>资源</h3>
+                <a href="#">帮助中心</a>
+                <a href="#">报告问题</a>
+                <a href="#">API文档</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>法律</h3>
+                <a href="./legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./legal-and-policy.html?tab=sales-policy">销售政策</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/functions/particle.js"></script>
+</body>
+</html>

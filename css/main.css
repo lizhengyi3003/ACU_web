@@ -282,6 +282,8 @@ br.gap-small {                      /*  缩小间隔的css */
 .tab-content-elements {
     display: none;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     gap: 30px;
@@ -304,6 +306,7 @@ br.gap-small {                      /*  缩小间隔的css */
     padding-left: 4vmin;
     margin-top: 8vmin;
     flex: 1;
+    min-width: 450px;
 }
 .main-content h3 {
     padding-left: 6vmin;
@@ -340,12 +343,6 @@ br.gap-small {                      /*  缩小间隔的css */
 }
 .main-content ul li strong {
     color: #fff;
-}
-.main-img {
-    margin-top: 8vmin;
-    margin-right: 4vmin;
-    width: 40%;
-    min-width: 450px
 }
 #download {
     flex-wrap: wrap;
@@ -393,6 +390,26 @@ br.gap-small {                      /*  缩小间隔的css */
 }
 .download-button-text span:last-child {
     font-size: 20px;
+}
+.main-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    margin-top: 8vmin;
+    width: 40%;
+    min-width: 450px;
+    margin-right:3vmin;
+}
+.main-img img {
+    width: 100%;
+    object-fit: cover;
+    max-width: 500px;
+    border-radius: 20px;
+}
+#app-img {
+    height: 100%;
+    width: auto;
 }
 
 

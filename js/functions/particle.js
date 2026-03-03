@@ -15,8 +15,8 @@ class Particle {                    //给每一个粒子的初始量
         this.x=Math.random()*WIDTH;             //初始位置
         this.y=Math.random()*HEIGHT;            
         this.size=Math.random()*2+0.5;          //初始大小
-        this.speedX=Math.random()*0.5+0.1;      //x方向速度
-        this.speedY=Math.random()*-0.8-0.2;     //y方向速度
+        this.speedX=Math.random()*0.1+0.1;      //x方向速度
+        this.speedY=Math.random()*-0.1-0.2;     //y方向速度
         this.opacity=1;         
         this.fadeSpeed=Math.random()*0.001+0.005;      //粒子的消失速度
         this.colorShift = Math.random() > 0.5 ? 20 : -20;   //粒子的颜色变化范围

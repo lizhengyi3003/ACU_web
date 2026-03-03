@@ -8,7 +8,7 @@ nav {                           /* 导航栏容器css  */
     box-sizing: border-box;
     flex-wrap: wrap;
     gap: 10px;
-    z-index: 0;
+    z-index: 4;
     position: fixed;
     width: 100%;
 }

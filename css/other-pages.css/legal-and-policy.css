@@ -18,6 +18,14 @@ body {                          /*  设置整体背景，布局为flex布局 */
     transition: filter 0.3s;
     pointer-events: none; 
 }
+#particle-canvas {                  /*  背景粒子的画布css */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+}
 #main-content {                     /*主要内容容器*/
     display: flex;
     flex-wrap: wrap;

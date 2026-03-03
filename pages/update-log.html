@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">               <!--导航栏css-->
+    <link rel="stylesheet" href="../css/login-register.css">       <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
+    <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
+    <link rel="stylesheet" href="../css/other-pages.css/update-log.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_5r2k7hd1tll.css">
+    <script src="../js/functions/login-and-ai.js"></script>                           <!--登录注册AI浮窗js-->
+    <script src="../js/update-log.js"></script>               <!--侧边栏内容显示js-->
+    <title>更新日志</title>
+</head>
+<body>
+    <nav >                                                      <!--导航栏-->
+        <div class="nav__element">
+            <a href="#">
+                SWINGCORE
+            </a>
+            <a href="../main.html">首页</a>
+        </div>
+        <div class="nav__element">
+            <button id="loginbtn">
+                <span>登录  /  立即加入</span>
+                <div></div>
+            </button>
+        </div>
+    </nav>
+    <div id="main-content">
+        <h1>更新日志</h1>
+        <p>随时关注swing core的最新动态</p>
+        <div id="type-container">
+            <div class="types">网站</div>
+            <div class="types">主机</div>
+            <div class="types">app</div>
+        </div>
+        <div id="type-content">
+            
+        </div>
+    </div>
+    <div id="website-content">
+        <div class="update-time-container">
+            <div class="update-now"></div>
+            <span>2026年3月2日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>解决了网页动画图层冲突问题</li>
+                <li>修改图标</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月13日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>修改布局</li>
+                <li>添加新页面及动画</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月2日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>加入AI浮窗界面</li>
+                <li>加入登录注册界面</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年1月27日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>开始书写网站</li>
+                <li>创建基本页面</li>
+            </ul>
+        </div>
+    </div>
+    <div id="hosting-content">
+        <div class="update-time-container">
+            <div class="update-now"></div>
+            <span>2026年2月15日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>完成服务器数据库搭建</li>
+            </ul>
+        </div>
+    </div>
+    <div id="app-content">
+        <div class="update-time-container">
+            <div class="update-now"></div>
+            <span>2026年2月26日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>更新Android 和iOS CI配置，优化构建步骤</li>
+                <li>添加国家选择器并更新本地化代理</li>
+                <li>修改民族为国家，并更新相关逻辑以支持国家选择</li>
+                <li>移除可配置选项管理器及相关逻辑，简化个人信息页面</li>
+                <li>启用本地模型选项并更新AI调用接口</li>
+                <li>用详细的统计数据和图表来优化报告页面</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月21日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>重构设置页面布局和样式</li>
+                <li>优化通知设置页面并添加成就与功勋页面功能</li>
+                <li>添加训练历史数据图表展示功能</li>
+                <li>添加蓝牙设备数据收发功能</li>
+                <li>为首页快捷链接添加滚动渐隐效果</li>
+                <li>完善个人信息页面功能并优化地区代码存储格式</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月9日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>新增训练快捷入口、历史记录、目标设置及好友互动等页面</li>
+                <li>增加训练快捷入口与视频列表，优化页面交互体验</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月7日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>添加Kotlin编译错误日志文件以便排查问题</li>
+                <li>修改了vip页面</li>
+                <li>新增个人页面UI设计</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年2月5日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>添加SQL支持</li>
+                <li>修复了未使用的部分，并添加了一些用于更改数据的功能</li>
+                <li>添加l10n support并将大部分页面修复为l10n</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年1月12日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>智能助手实现</li>
+                <li>修改运动页面</li>
+                <li>修复安卓编译错误</li>
+                <li>个人页面完善</li>
+                <li>页面组装</li>
+            </ul>
+        </div>
+        <div class="update-time-container">
+            <div class="update-before"></div>
+            <span>2026年1月7日</span>
+        </div>
+        <div class="update-content-container">
+            <h2>改进</h2>
+            <ul>
+                <li>搭建框架</li>
+                <li>启动项目</li>
+            </ul>
+        </div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="login-container">                      <!--登录浮窗-->
+        <div id="login">
+            <h1>登录</h1>
+            <br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="请输入密码">
+                </div><br>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+                <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-container">               <!--注册浮窗-->
+        <div id="register">
+            <h1>注册</h1><br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+                <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        <span>AI助手</span>
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span id="ai-title">AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">
+                        <span class="iconfont icon-chuangkouxifu">
+                            <span class="tooltip">
+                                窗口吸附
+                            </span>
+                        </span>
+                    </button>
+                    <button id="close-ai">
+                        <span class="iconfont icon-guanbi1">
+                            <span class="tooltip">
+                                关闭窗口
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send"><span class="iconfont icon-fasong"></span></button>
+                </div>
+            </div>
+            <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
+        </div>
+    </div>
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>
+    <div id="footer">                               <!--页脚-->
+        <div class="footer-columns">
+            <div>
+                <img src="../assets/logo.png">
+            </div>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-columns-items">
+                <h3>关于</h3>
+                <a href="./news-and-update.html">新闻动态</a>
+                <a href="./update-log.html">更新日志</a>
+                <a href="#">现状</a>
+                <a href="#">加入我们</a>
+                <a href="./legal-and-policy.html?tab=rewards-terms">奖励计划</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>产品</h3>
+                <a href="../main.html#buy">支持创作者</a>
+                <a href="./device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./device-and-feature.html#overview">产品概览</a>
+                <a href="../main.html#system-components">系统核心组件</a>
+                <a href="../main.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">适用人群</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>资源</h3>
+                <a href="#">帮助中心</a>
+                <a href="#">报告问题</a>
+                <a href="#">API文档</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>法律</h3>
+                <a href="./legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./legal-and-policy.html?tab=sales-policy">销售政策</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/functions/particle.js"></script>
+</body>
+</html>
