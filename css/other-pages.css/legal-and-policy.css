@@ -31,7 +31,7 @@ body {                          /*  设置整体背景，布局为flex布局 */
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    margin: 18vh auto;
+    margin: 8vh auto;
 }
 #side-bar {                     /*侧边栏css*/
     min-width: 240px;
@@ -54,7 +54,7 @@ body {                          /*  设置整体背景，布局为flex布局 */
     font-size: 14px;
     margin-left: 10%;
 }
-.items:hover {                  /*侧边栏元素动画*/
+.items:not(.active):hover {                  /*侧边栏元素动画*/
     background-color: #34363C;
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -78,6 +78,12 @@ body {                          /*  设置整体背景，布局为flex布局 */
     flex: 1;
     min-width: 400px;
 }
+@media(max-width:700px) {
+    #side-bar {
+        width: 96%;
+        margin-left: 0;
+    }
+}
 .active {                       /*侧边栏元素点击时添加的active类*/
     background-color: #1BD96A40;
     color: #1BD96A;
@@ -89,12 +95,14 @@ body {                          /*  设置整体背景，布局为flex布局 */
 .highlight-box {                /*重要提醒容器css*/
     padding-left: 3vw;
     font-size: 20px;
-    height: 11vh;
     border-radius: 8px;
     background-color: #39FF14;
     display: flex;
     align-items: center;
     color: #050505;
+}
+.highlight-box p {
+    margin: 20px 10px 20px 10px;
 }
 .prohibited-list {              /*禁止行为列表容器css*/
     background: #f8d7da;
@@ -230,14 +238,6 @@ body {                          /*  设置整体背景，布局为flex布局 */
     font-size: 36px;
     color: white;
 }
-.highlight-box {
-    padding-left: 3vw;
-    height: 11vh;
-    border-radius: 8px;
-    border-left: 4px solid #39FF14;
-    display: flex;
-    align-items: center;
-}
 .terms-section ul {
     color:rgb(156 163 175);
 }
@@ -301,6 +301,7 @@ body {                          /*  设置整体背景，布局为flex布局 */
 }
 .sales-section ul {
     color: rgb(156 163 175);
+    margin: 10px;
 }
 .sales-section ul li {
     margin-left: 2vw;
@@ -311,10 +312,12 @@ body {                          /*  设置整体背景，布局为flex布局 */
     background: #39FF14;
     color: #050505;
     padding-left: 3vw;
-    height: 38vh;
     border-radius: 8px;
     display: flex;
     align-items: center;
+}
+.sales-list ul {
+    margin: 20px 10px 20px 10px;
 }
 .sales-section table {
     border-collapse: collapse;
@@ -326,9 +329,6 @@ body {                          /*  设置整体背景，布局为flex布局 */
 .sales-section table thead tr {
     border-bottom: 1px solid;
     height: 12vh;
-}
-.sales-section .highlight-box {
-    height: 26vh;
 }
 .shipping-info {
     display: flex;

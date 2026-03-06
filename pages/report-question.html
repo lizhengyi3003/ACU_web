@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">               <!--导航栏css-->
+    <link rel="stylesheet" href="../css/login-register.css">       <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
+    <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
+    <link rel="stylesheet" href="../css/other-pages.css/report-question.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_5gi5dj5p9tm.css">
+    <script src="../js/functions/login-and-ai.js"></script>                           <!--登录注册AI浮窗js-->
+    <script src="../js/report-question.js"></script>
+    <title>报告问题</title>
+</head>
+<body>
+    <nav >                                                      <!--导航栏-->
+        <div class="nav__element">
+            <a href="#">
+                SWINGCORE
+            </a>
+            <a href="../main.html">首页</a>
+        </div>
+        <div class="nav__element">
+            <button id="loginbtn">
+                <span>登录  /  立即加入</span>
+                <div></div>
+            </button>
+        </div>
+    </nav>
+    <div id="report-gap">
+        <h2>技术支持与问题报告</h2>
+        <p>请详细描述您遇到的问题，我们会尽快为您处理</p>
+    </div>
+    <div id="report-question">
+        <div class="card">
+            <h2 class="card-title"><span class="iconfont icon-gantanhao"></span>报告问题</h2>
+            <form>
+                <div class="form-group">
+                    <label for="issue-type" class="required">问题类型</label>
+                    <select id="issue-type"  required>
+                        <option>请选择问题类型</option>
+                        <option>技术故障</option>
+                        <option>软件错误/漏洞</option>
+                        <option>功能建议</option>
+                        <option>账户问题</option>
+                        <option>支付问题</option>
+                        <option>其他问题</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="required">问题标题</label>
+                    <input type="text" id="subject" placeholder="请简要描述问题" required>
+                </div>
+                <div class="form-group">
+                    <lable for="description" class="required">详细描述</lable>
+                    <textarea id="description" placeholder="请详细描述您遇到的问题，包括：1.问题的具体表现 2.问题发生的时间 3.您尝试过的解决办法" required></textarea>
+                </div>
+                <div class="form-group">
+                    <lable for="priority" class="required">优先级</lable>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="priority-high" name="priority" value="high">
+                            <label for="priority-high">
+                                <span class="priority-tag priority-high">高</span>
+                                -系统无法使用
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="priority-medium" name="priority" value="medium">
+                            <label for="priority-high">
+                                <span class="priority-tag priority-medium">中</span>
+                                -功能受影响
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="priority-low" name="priority" value="low">
+                            <label for="priority-low">
+                                <span class="priority-tag priority-low">低</span>
+                                -小问题/建议
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <lable for="email" class="required">联系邮箱</lable>
+                    <input type="email" id="email" placeholder="用于接收问题处理进度" required>
+                </div>
+                <div class="form-group">
+                    <lable for="attachment" class="required">附件</lable>
+                    <div class="file-submit">
+                        <p><span class="iconfont icon-shangchuanyunduan"></span></p>
+                        <p>点击上传截图或相关文件</p>
+                        <p>
+                            <small>支持JPG,PNG,PDF格式,最大10MB</small>
+                        </p>
+                    </div>
+                    <input type="file" id="attachment" style="display:none" accept=".jpg,.jpeg,.png,.pdf">
+                    <div id="file-list"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="reset" id="form-reset"><span class="iconfont icon-zhongzhi"></span>重置表单</button>
+                    <button type="submit" id="form-submit" ><span class="iconfont icon-fasong"></span>提交问题报告</button>
+                </div>
+            </form>
+        </div>
+        <div class="card">
+            <h2 class="card-title"><span class="iconfont icon-xinxi"></span>问题提交指南</h2>
+            <div class="report-help">
+                <div class="report-help-option">
+                    <div class="help-question">
+                        <span>如何有效描述问题？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="help-answer">
+                        <p>1. 清晰描述问题现象和发生场景</p>
+                        <p>2. 说明问题发生的时间频率（总是/偶尔/特定操作后）</p>
+                        <p>3. 提供相关截图或录屏有助于快速定位问题</p>
+                        <p>4. 如果可能，提供重现问题的步骤</p>
+                    </div>
+                </div>
+                <div class="report-help-option">
+                    <div class="help-question">
+                        <span>问题处理需要多长时间？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="help-answer">
+                        <p>
+                            <strong>高优先级问题：</strong> 
+                            24小时内响应
+                        </p>
+                        <p>
+                            <strong>中优先级问题：</strong>
+                            1-3个工作日内响应
+                        </p>
+                        <p>
+                            <strong>低优先级问题/建议：</strong>
+                            5-7个工作日内响应
+                        </p>
+                        <p>您可以通过问题ID在状态跟踪器中查看处理进度</p>
+                    </div>
+                </div>
+                <div class="report-help-option">
+                    <div class="help-question">
+                        <span>提交后如何跟踪问题状态？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="help-answer">
+                        <p>1. 提交问题后，系统会生成一个唯一的问题ID</p>
+                        <p>2. 该ID将通过邮件发送到您提供的邮箱</p>
+                        <p>3. 您可以使用此ID在页面底部的状态跟踪器查询进度</p>
+                        <p>4. 问题状态更新时，您会收到邮件通知</p>
+                    </div>
+                </div>
+                <div class="report-help-option">
+                    <div class="help-question">
+                        <span>我可以修改已提交的问题吗？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="help-answer">
+                        <p>问题提交后无法直接修改，但您可以：</p>
+                        <p>1. 回复问题跟进邮件补充信息</p>
+                        <p>2. 通过相同邮箱提交新的问题，并引用原问题ID</p>
+                        <p>3. 如果问题状态为"待处理"，技术支持人员可能会联系您获取更多信息</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="status-tracker">
+        <h2 class="status-title">问题状态跟踪</h2>
+        <div class="tracker-submit">
+            <input type="text" id="tracker-id" placeholder="请输入您的问题id">
+            <button id="tracker-button">查询状态</button>
+        </div>
+        <div id="tracker-result">
+            
+        </div>
+    </div>
+    <div class="help-section">
+        <h2 class="section-title">常见问题解答（FAQ）</h2>
+        <div class="section-item">
+            <div class="item-question">
+                <span>我忘了我的问题id怎么办？</span>
+                <span class="iconfont icon-xiangxia"></span>
+            </div>
+            <div class="item-answer">
+                <p>问题ID会发送到您提交问题时提供的邮箱，请检查您的收件箱（包括垃圾邮件文件夹）。如果您仍然找不到，请通过 support@example.com 联系客服，提供您的邮箱地址和问题标题，我们将协助您找回。</p>
+            </div>
+        </div>
+        <div class="section-item">
+            <div class="item-question">
+                <span>我可以报告安全漏洞吗？</span>
+                <span class="iconfont icon-xiangxia"></span>
+            </div>
+            <div class="item-answer">
+                <p>是的，我们非常重视安全问题。如果您发现安全漏洞，请：</p>
+                <p>1. 在问题类型中选择"软件错误/漏洞"</p>
+                <p>2. 在详细描述中说明漏洞细节，但请勿包含攻击代码</p>
+                <p>3. 将优先级设为"高"</p>
+                <p>4. 我们会对安全漏洞报告优先处理，并可能提供奖励</p>
+            </div>
+        </div>
+        <div class="section-item">
+            <div class="item-question">
+                <span>提交问题报告会收取费用吗？</span>
+                <span class="iconfont icon-xiangxia"></span>
+            </div>
+            <div class="item-answer">不，问题报告和技术支持是完全免费的。我们的技术支持团队会免费为您解决使用中遇到的问题。只有在涉及定制开发或特殊服务时才会产生费用，且会事先与您沟通确认。</div>
+        </div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="login-container">                      <!--登录浮窗-->
+        <div id="login">
+            <h1>登录</h1>
+            <br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="请输入密码">
+                </div><br>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+                <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-container">               <!--注册浮窗-->
+        <div id="register">
+            <h1>注册</h1><br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+                <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        <span>AI助手</span>
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span id="ai-title">AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">
+                        <span class="iconfont icon-chuangkouxifu">
+                            <span class="tooltip">
+                                窗口吸附
+                            </span>
+                        </span>
+                    </button>
+                    <button id="close-ai">
+                        <span class="iconfont icon-guanbi1">
+                            <span class="tooltip">
+                                关闭窗口
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send"><span class="iconfont icon-fasong"></span></button>
+                </div>
+            </div>
+            <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
+        </div>
+    </div>
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>
+    <div id="footer">                               <!--页脚-->
+        <div class="footer-columns">
+            <div>
+                <img src="../assets/logo.png">
+            </div>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-columns-items">
+                <h3>关于</h3>
+                <a href="./news-and-update.html">新闻动态</a>
+                <a href="./update-log.html">更新日志</a>
+                <a href="#">加入我们</a>
+                <a href="./legal-and-policy.html?tab=rewards-terms">奖励计划</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>产品</h3>
+                <a href="../main.html#buy">支持创作者</a>
+                <a href="./device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./device-and-feature.html#overview">产品概览</a>
+                <a href="../main.html#system-components">系统核心组件</a>
+                <a href="../main.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">适用人群</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>资源</h3>
+                <a href="#">帮助中心</a>
+                <a href="./report-question.html">报告问题</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>法律</h3>
+                <a href="./legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./legal-and-policy.html?tab=sales-policy">销售政策</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/functions/particle.js"></script>
+</body>
+</html>

@@ -10,88 +10,91 @@ window.addEventListener('load',function(){
     var osnapAi=this.document.getElementById('snap-ai');                //AI界面吸附按钮
     if(ologinBtn) {
     ologinBtn.onclick=function() {       
-        window.scrollTo({
-        top: 0,
-        });                               //点击登录按钮时显示登录浮窗并模糊背景
-        document.getElementById('login-container').style.display='flex';
-        document.getElementById('register-container').style.display='none';
-        var features=document.getElementById('features');
-        if (features) features.classList.add('blur');
-        var deviceIntro = document.getElementById('device-introduction');
-        if (deviceIntro) deviceIntro.classList.add('blur');
-        var footer = document.getElementById('footer');
-        if (footer) footer.classList.add('blur');
-        var mainContent = document.getElementById('main-content');
-        if (mainContent) mainContent.classList.add('blur');
-        var nav = document.querySelector('nav');
-        if (nav) nav.classList.add('blur');
-        document.body.style.overflow = 'hidden';
+        window.scrollTo({ top: 0 });
+    document.getElementById('login-container').style.display = 'flex';
+    document.getElementById('register-container').style.display = 'none';
+    document.body.style.overflow = 'hidden';
+
+    // 自动添加 blur
+    const allElements = document.body.children;
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        if (
+            el.id !== 'login-container' &&
+            el.id !== 'register-container' &&
+            el.id !== 'loginbtn'
+        ) {
+            el.classList.add('blur');
+        }
+    }
     }
     }
     if(ogoRegister) {
     ogoRegister.onclick=function() {                                    //前往注册页面并模糊背景
         document.getElementById('login-container').style.display='none';
         document.getElementById('register-container').style.display='flex';
-        var features=document.getElementById('features');
-        if (features) features.classList.add('blur');
-        var deviceIntro = document.getElementById('device-introduction');
-        if (deviceIntro) deviceIntro.classList.add('blur');
-        var footer = document.getElementById('footer');
-        if (footer) footer.classList.add('blur');
-        var mainContent = document.getElementById('main-content');
-        if (mainContent) mainContent.classList.add('blur');
-        var nav = document.querySelector('nav');
-        if (nav) nav.classList.add('blur');
-        document.body.style.overflow = 'hidden';
+         const allElements = document.body.children;
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        if (
+            el.id !== 'login-container' &&
+            el.id !== 'register-container' &&
+            el.id !== 'loginbtn'
+        ) {
+            el.classList.add('blur');
+        }
+    }
     }
 }
     if(ogoLogin){
     ogoLogin.onclick=function() {                                       //回到登录页面并模糊背景
         document.getElementById('login-container').style.display='flex';
         document.getElementById('register-container').style.display='none';
-        var features=document.getElementById('features');
-        if (features) features.classList.add('blur');
-        var deviceIntro = document.getElementById('device-introduction');
-        if (deviceIntro) deviceIntro.classList.add('blur');
-        var footer = document.getElementById('footer');
-        if (footer) footer.classList.add('blur');
-        var mainContent = document.getElementById('main-content');
-        if (mainContent) mainContent.classList.add('blur');
-        var nav = document.querySelector('nav');
-        if (nav) nav.classList.add('blur');
-        document.body.style.overflow = 'hidden';
+         const allElements = document.body.children;
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        if (
+            el.id !== 'login-container' &&
+            el.id !== 'register-container' &&
+            el.id !== 'loginbtn'
+        ) {
+            el.classList.add('blur');
+        }
+    }
     }
 }
     if(ocloseLogin){
     ocloseLogin.onclick = function() {                                  //关闭登录页面并恢复背景
         document.getElementById('login-container').style.display = 'none';
-        var features=document.getElementById('features');
-        if (features) features.classList.remove('blur');
-        var deviceIntro = document.getElementById('device-introduction');
-        if (deviceIntro) deviceIntro.classList.remove('blur');
-        var footer = document.getElementById('footer');
-        if (footer) footer.classList.remove('blur');
-        var mainContent = document.getElementById('main-content');
-        if (mainContent) mainContent.classList.remove('blur');
-        var nav = document.querySelector('nav');
-        if (nav) nav.classList.remove('blur');
-        document.body.style.overflow = '';
+         const allElements = document.body.children;
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        if (
+            el.id !== 'login-container' &&
+            el.id !== 'register-container' &&
+            el.id !== 'loginbtn'
+        ) {
+            el.classList.remove('blur');
+        }
+    }
+    document.body.style.overflow = '';
     }
 }
     if(ocloseRegister){
     ocloseRegister.onclick = function() {                               //关闭注册页面并恢复背景
         document.getElementById('register-container').style.display = 'none';
-        var features=document.getElementById('features');
-        if (features) features.classList.remove('blur');
-        var deviceIntro = document.getElementById('device-introduction');
-        if (deviceIntro) deviceIntro.classList.remove('blur');
-        var footer = document.getElementById('footer');
-        if (footer) footer.classList.remove('blur');
-        var mainContent = document.getElementById('main-content');
-        if (mainContent) mainContent.classList.remove('blur');
-        var nav = document.querySelector('nav');
-        if (nav) nav.classList.remove('blur');
-        document.body.style.overflow = '';
+         const allElements = document.body.children;
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        if (
+            el.id !== 'login-container' &&
+            el.id !== 'register-container' &&
+            el.id !== 'loginbtn'
+        ) {
+            el.classList.remove('blur');
+        }
+    }
+    document.body.style.overflow = '';
     }
 }
     oaiAssistant.onclick=function() {            //点击打开  AI浮窗

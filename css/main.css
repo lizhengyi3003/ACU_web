@@ -40,7 +40,7 @@ br.gap-small {                      /*  缩小间隔的css */
     font-size: 38px;
     padding: 20px;
     width: 100%;
-    margin-top: 18vh;
+    margin-top: 4vh;
 }
 #device-introduction h1 {               /*  产品简介标题css */
     flex: 1;
@@ -102,7 +102,7 @@ br.gap-small {                      /*  缩小间隔的css */
     padding: 40px 20px;
 }
 #features-container {                           /*  产品特点容器css */
-    width: 100%;
+    width: 70%;
     max-width: 1200px;
     margin: 120px auto;
 }
@@ -302,11 +302,10 @@ br.gap-small {                      /*  缩小间隔的css */
     box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
 .main-content {
-    width: 50%;
+    flex: 0 0 calc(50%);
     padding-left: 4vmin;
     margin-top: 8vmin;
     flex: 1;
-    min-width: 450px;
 }
 .main-content h3 {
     padding-left: 6vmin;
@@ -397,8 +396,7 @@ br.gap-small {                      /*  缩小间隔的css */
     justify-content: center;
     height: 500px;
     margin-top: 8vmin;
-    width: 40%;
-    min-width: 450px;
+    flex: 0 0 calc(40%);
     margin-right:3vmin;
 }
 .main-img img {
@@ -410,6 +408,17 @@ br.gap-small {                      /*  缩小间隔的css */
 #app-img {
     height: 100%;
     width: auto;
+}
+@media(max-width:840px) {
+    .main-content {
+        flex: 0 0 calc(90%);
+        padding-left: 0;
+    }
+    .main-img {
+        flex: 0 0 calc(90%);
+        margin-right: 0;
+        margin-top: 0;
+    }
 }
 
 

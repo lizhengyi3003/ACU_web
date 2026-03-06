@@ -25,8 +25,8 @@
     transform: scale(1.15),translateY(-2px);
 }
 #ai-container {             /*ai助手容器*/ 
-    width: 60vmin;
-    height: 80vmin;
+    width: 60vw;
+    height: 80vh;
     background: rgba(128, 128, 128, 0.3);
     backdrop-filter: blur(20px);
     flex-wrap: wrap;

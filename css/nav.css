@@ -9,7 +9,6 @@ nav {                           /* 导航栏容器css  */
     flex-wrap: wrap;
     gap: 10px;
     z-index: 4;
-    position: fixed;
     width: 100%;
 }
 
@@ -79,4 +78,14 @@ nav button:hover {              /*  导航栏按钮动画 */
     color: #050505;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(57, 255, 20, 0.3);
+}
+@media(max-width:800px) {
+    .nav__element:nth-child(2) {
+        order: 2;
+        margin: 0 auto;
+    }
+    .nav__element:last-child {                  /*  导航栏右侧css */
+    margin: 0;
+    order: 1;
+    }
 }

@@ -54,7 +54,6 @@ body {                              /*  设置整体背景，布局为flex布局
     flex-direction: row;
     display: flex;
     width: 100%;
-    justify-content: center;
 }
 .news-img-container {
     justify-content: center;
@@ -90,6 +89,14 @@ body {                              /*  设置整体背景，布局为flex布局
     color: #96A2B0;
     margin-top: 30%;
 }
+@media(max-width:840px) {
+    .news-img-container {
+        width: 75%;
+    }
+    .news-content-container {
+        width: 75%;
+    }
+}
 
 
 
@@ -112,6 +119,13 @@ body {                              /*  设置整体背景，布局为flex布局
 .articles-link {
     flex: 0 0 calc(33.333%);
     min-width: 250px;
+    cursor: pointer;
+}
+.articles-link:hover p {
+    text-decoration: underline;
+}
+.articles-link:hover .articles-img-container img {
+    filter: brightness(1.1);
 }
 .articles-img-container {
     padding: 20px 20px 20px 0;
@@ -119,6 +133,8 @@ body {                              /*  设置整体背景，布局为flex布局
 .articles-img-container img {
     width: 100%;
     border-radius: 10px;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
 }
 .articles-content-container h3 {
     color: #B0BAC5;
