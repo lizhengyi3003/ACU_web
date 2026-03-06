@@ -55,7 +55,7 @@ body {                              /*  设置整体背景，布局为flex布局
     border-radius: 20px;
     background-color: #27292E;
     width: 46%;
-    min-width: 480px;
+    min-width: 300px;
     flex: 1;
     transition: background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;
 }
@@ -262,7 +262,7 @@ body {                              /*  设置整体背景，布局为flex布局
     display: none;
 }
 #status-tracker {
-    margin: 30px auto;
+    margin: 15vh auto;
     width: 90%;
     background-color: #27292E;
     border-radius: 20px;
@@ -312,7 +312,7 @@ body {                              /*  设置整体背景，布局为flex布局
     color: #1BD96A;
     box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
-.help-section {
+#help-section {
     gap: 30px;
     flex-direction: column;
     display: flex;
@@ -323,14 +323,14 @@ body {                              /*  设置整体背景，布局为flex布局
     border-radius: 20px;
     transition: box-shadow 0.3s ease,transform 0.3s ease;
 }
-.help-section h2 {
+#help-section h2 {
     transition: color 0.3s ease;
 }
-.help-section:hover {
+#help-section:hover {
     box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
     transform: translateY(-10px);
 }
-.help-section:hover h2 {
+#help-section:hover h2 {
     color: #1BD96A;
 }
 .section-item {

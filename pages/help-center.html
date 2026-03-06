@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/nav.css">               <!--导航栏css-->
-    <link rel="stylesheet" href="../css/login-register.css">       <!--登录注册浮窗css-->
-    <link rel="stylesheet" href="../css/aiContainer.css">           <!--ai浮窗css-->
-    <link rel="stylesheet" href="../css/footer.css">                <!--页脚css-->
-    <link rel="stylesheet" href="../css/other-pages.css/news-and-update.css">
+    <link rel="stylesheet" href="../css/nav.css">            <!--导航栏css-->
+    <link rel="stylesheet" href="../css/footer.css">         <!--页脚css-->
+    <link rel="stylesheet" href="../css/main.css">           <!--主页面css-->
+    <link rel="stylesheet" href="../css/login-register.css">     <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">        <!--AI助手浮窗css-->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_reaxsyg0wci.css">
+    <link rel="stylesheet" href="../css/other-pages.css/help-center.css">
     <script src="../js/functions/login-and-ai.js"></script>
-    <script src="../js/news-and-update.js"></script>
-    <title>新闻动态</title>
+    <script src="../js/help-center.js"></script>
+    <title>帮助中心</title>
 </head>
 <body>
     <nav >                                                      <!--导航栏-->
@@ -22,104 +23,158 @@
             <a href="../main.html">首页</a>
         </div>
         <div class="nav__element">
+            <a href="#overview">搜索问题</a>
+            <a href="#victo-app">帮助分类</a>
+            <a href="#target-audience">常见问题</a>
+        </div>
+        <div class="nav__element">
             <button id="loginbtn">
                 <span>登录  /  立即加入</span>
                 <div></div>
             </button>
         </div>
     </nav>
-    <div id="news-gap">新闻</div>
-    <div id="news-container">
-        <a class="news-link">
-            <div class="news">
-                <div class="news-img-container">
-                    <img src="../assets/sample.jpeg">
+    <section>
+        <div id="hero">
+            <h1>您好，需要什么帮助？</h1>
+            <p>查找常见问题解答、技术文档或直接联系我们的支持团队</p>
+            <div id="search-container">
+                <input type="text" class="search-box" placeholder="输入关键词搜索问题,例如:登录问题,支付故障,账户安全....">
+                <button class="delete-btn">
+                    <span class="iconfont icon-guanbi1"></span>
+                    <span class="tooltip">清除文字</span>
+                </button>
+                <button class="search-btn">
+                    <span class="iconfont icon-sousuo"></span>
+                    <span class="tooltip">开始搜索</span>
+                </button>
+            </div>
+            <div id="hot-search">
+                热门搜索：
+                <a href="#">密码重置</a>
+                |<a href="#">订单退款</a>
+                |<a href="#">账号安全</a>
+                |<a href="#">隐私设置</a>
+            </div>
+        </div>
+    </section>
+    <div id="main-content">
+        <h2 id="help-kinds-gap">帮助分类</h2>
+        <div id="help-kinds">
+            <a class="help-kinds-link">
+                <div class="font-container">
+                    <span class="iconfont icon-wode"></span>
                 </div>
-                <div class="news-content-container">
-                    <p>专题文章</p>
-                    <h3>这是新闻主要内容</h3>
-                    <p>这是新闻的简介</p>
-                    <div class="news-time">
-                        xxxx年xx月xx日
+                <div class="content-container">
+                    <h2>账户与安全</h2>
+                    <p>账户注册、登录、密码重置、安全设置等</p>
+                    <h3>xx篇文章</h3>
+                </div>
+            </a>
+            <a class="help-kinds-link">
+                <div class="font-container">
+                    <span class="iconfont icon-gouwuchekong"></span>
+                </div>
+                <div class="content-container">
+                    <h2>账户与安全</h2>
+                    <p>账户注册、登录、密码重置、安全设置等</p>
+                    <h3>xx篇文章</h3>
+                </div>
+            </a>
+            <a class="help-kinds-link">
+                <div class="font-container">
+                    <span class="iconfont icon-xinxi"></span>
+                </div>
+                <div class="content-container">
+                    <h2>账户与安全</h2>
+                    <p>账户注册、登录、密码重置、安全设置等</p>
+                    <h3>xx篇文章</h3>
+                </div>
+            </a>
+            <a class="help-kinds-link">
+                <div class="font-container">
+                    <span class="iconfont icon-guzhang"></span>
+                </div>
+                <div class="content-container">
+                    <h2>账户与安全</h2>
+                    <p>账户注册、登录、密码重置、安全设置等</p>
+                    <h3>xx篇文章</h3>
+                </div>
+            </a>
+        </div>
+        <div id="normal-question">
+            <div class="normal-question-title">
+                <h2><span class="iconfont icon-wenhao"></span>常见问题</h2>
+                <div id="title-nav">
+                    <button class="filter-btn" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="account">账户</button>
+                    <button class="filter-btn" data-filter="payment">支付</button>
+                    <button class="filter-btn" data-filter="technical">技术</button>
+                </div>
+            </div>
+            <div class="normal-question-content">
+                <div class="normal-question-item" data-category="account">
+                    <div class="normal-question">
+                        <span>如何重置我的账户密码？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="normal-question-answer">
+                        <p>如果您忘记了密码，可以按照以下方法重置</p>
+                        <ul>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="normal-question-item" data-category="payment">
+                    <div class="normal-question">
+                        <span>如何处理订单退款？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="normal-question-answer">
+                        <p>退款流程如下</p>
+                        <ul>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="normal-question-item" data-category="technical">
+                    <div class="normal-question">
+                        <span>为什么我无法登录账户？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="normal-question-answer">
+                        <p>无法登录账户可能有多种原因，请尝试以下解决方案:</p>
+                        <ul>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="normal-question-item" data-category="account">
+                    <div class="normal-question">
+                        <span>如何启用两步验证提高账户安全？</span>
+                        <span class="iconfont icon-xiangxia"></span>
+                    </div>
+                    <div class="normal-question-answer">
+                        <p>启用两步验证可以显著提高您的账户安全性：</p>
+                        <ul>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                            <li>********</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </a>
-    </div>
-    <div id="articles-gap">更多文章</div>
-    <div id="articles-container">
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
-        <a class="articles-link">
-            <div class="articles-img-container">
-                <img src="../assets/sample.jpeg">
-            </div>
-            <div class="articles-content-container">
-                <p>这是文章的标题</p>
-                <h3>这是文章的主要内容概述</h3>
-                <div class="articles-time">
-                    xxxx年xx月xx日
-                </div>
-            </div>
-        </a>
+        </div>
     </div>
     <canvas id="particle-canvas"></canvas>
     <div id="login-container">                      <!--登录浮窗-->

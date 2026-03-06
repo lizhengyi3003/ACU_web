@@ -1,0 +1,338 @@
+* {                                 /*  清除所有的外内边距并改变盒子模式为border-box */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {                         /*  设置初始高度 */
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {                              /*  设置整体背景，布局为flex布局 */
+    min-height: 100vh;
+    background-color: #050505;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#particle-canvas {                  /*  背景粒子的画布css */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+}
+.blur {                         /*  点击登录或注册时添加的背景模糊类 */
+    filter: blur(12px);
+    transition: filter 0.3s;
+    pointer-events: none; 
+}
+
+#hero {
+    gap: 14px;
+    margin-top: 6vh;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+#hero h1 {
+    font-weight: 800;
+    font-size: 45px;
+    text-align: center
+}
+#hero p {
+    margin: 10px 0 30px 0;
+    color: rgb(156 163 175);
+    font-size: 20px;
+    text-align: center;
+}
+#search-container {
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    background: #27292E;
+    max-width: 700px;
+    min-width: 400px;
+    border-radius: 60px;
+    height: 60px;
+    flex-direction: row;
+    width: 60%;
+    display: flex;
+    transition: box-shadow 0.5s ease;
+}
+.search-box {
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 70px;
+    padding-left: 3vmin;
+    padding-right: 1vmin;
+    border: none;
+    background: #27292E;
+    flex: 1;
+    height: 60px;
+}
+.search-box:focus {
+    border: none;
+    outline: none;
+}
+#search-container.active {
+    box-shadow:                     /* 高亮边框*/
+    0 0 5px #0f0,
+    0 0 10px #0f0,
+    0 0 15px #0f0,
+    0 0 20px #0ff0,
+    0 0 35px rgba(0, 255, 0, 0.7),
+    0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 50px rgba(0, 255, 0, 0.3);
+}
+.search-btn {
+    margin-right: 10px;
+    border-radius: 10000px;
+    width: 50px;
+    height: 50px;
+    background-color: #39FF14;
+    transition: background-color 0.3s ease,color 0.3s ease,box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+.search-btn:hover {
+    color: #1BD96A;
+    background-color: #1BD96A40;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+#hot-search {
+    gap: 10px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    margin-top: 14px;
+    align-items: center;
+}
+#hot-search a {
+    text-decoration: none;
+    color: #1BD96A;
+}
+.delete-btn {
+    font-size: 18px;
+    background: #27292E;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    height: 50px;
+}
+#search-container .tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+#search-container .delete-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+#search-container .search-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.main-content {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+
+
+#help-kinds-gap {
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: 800;
+    width: 90%;
+    margin: 80px auto 30px auto;
+}
+#help-kinds {
+    align-items: center;
+    justify-content: flex-start;
+    margin: 25px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.help-kinds-link {
+    flex: 0 0 calc(33.333%);
+    min-width: 250px;
+    cursor: pointer;
+    padding-right: 30px;
+    margin-bottom: 40px;
+    transition: box-shadow 0.3s ease,transform 0.3s ease;
+    border-radius: 16px;
+}
+.help-kinds-link:hover {
+    box-shadow:                     /* 高亮边框*/
+    0 0 5px #0f0,
+    0 0 10px #0f0,
+    0 0 15px #0f0,
+    0 0 20px #0ff0,
+    0 0 35px rgba(0, 255, 0, 0.7),
+    0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 50px rgba(0, 255, 0, 0.3);
+    transform: translateY(-10px);
+}
+.font-container {
+    padding: 20px 20px 20px 20px;
+}
+.font-container span {
+    border-radius: 99999px;
+    background: #1BD96A40;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    font-size: 30px;
+    color: #39FF14;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+.content-container h3 {
+    color: #B0BAC5;
+    font-size: 14px;
+    margin-top: 1vmin;
+}
+@media (max-width: 845px) {
+    .help-kinds-link {
+        flex: 0 0 calc(50%);
+    }
+}
+@media (max-width: 575px) {
+    .help-kinds-link {
+        flex: 0 0 calc(100%);
+    }
+}
+
+
+
+#normal-question {
+    margin: 30px auto;
+    gap: 30px;
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+}
+.normal-question-title {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+.normal-question-title h2 {
+    font-size: 30px;
+}
+.normal-question-title h2 span {
+    font-size: 30px;
+    margin-right: 1vmin;
+}
+#title-nav {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    display: flex;
+}
+.filter-btn {
+    color: #ffffff;
+    border: none;
+    background: #27292E;
+    border-radius: 100px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease,box-shadow 0.3s ease,color 0.3s ease;
+}
+.filter-btn:hover {
+    background-color: #1BD96A40;
+    color: #1BD96A;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+.normal-question-content {
+    gap: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.normal-question-item {
+    gap: 20px;
+    flex-direction: column;
+    display: flex;
+    padding: 30px;
+    border-radius: 20px;
+    background: #27292E;
+    transition: transform 0.3s ease;
+    display: none;
+}
+.normal-question-item:hover {
+    transform: translateY(-10px);
+}
+.normal-question {
+    align-items: center;
+    height: 7vh;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    padding: 10px;
+    border-radius: 14px;
+    transition: background-color 0.3s ease,box-shadow 0.3s ease;
+}
+.normal-question:not(.active):hover {
+    background-color: #1BD96A40;
+    color: #1BD96A;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+.normal-question-answer {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.normal-question-answer p {
+    margin-bottom: 1vmin;
+}
+.normal-question-answer ul li {
+    margin-bottom: 1vmin;
+}
+.active {                       /*侧边栏元素点击时添加的active类*/
+    background-color: #1BD96A40;
+    color: #1BD96A;
+}

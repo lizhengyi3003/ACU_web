@@ -124,6 +124,9 @@
 }
 .ai-header-element:first-child {            /*ai助手头部的左侧元素容器*/ 
     width: 30%;
+    padding-left: 6vmin;
+    display: flex;
+    justify-content: flex-start;
 }
 #ai-body {                      /*ai助手容器的主要内容部分*/ 
     flex: 1;
