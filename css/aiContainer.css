@@ -16,7 +16,7 @@
     justify-content: center;
     color: #96A2B0;
     transition: transform 0.3s ease;
-    z-index: 5;
+    z-index: 10;
 }
 #ai-title {
     color: #0f0;
@@ -205,6 +205,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
+    z-index: 10;
 }
 #go-nav:hover {
     transform: scale(1.15);

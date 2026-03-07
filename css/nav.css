@@ -61,9 +61,10 @@ nav button {                /*  导航栏链按钮css */
     border: 2px solid #39FF14;
     background-color: #050505;
     color: #39FF14;
-    padding: 10px 20px;
+    padding: 8px 15px;
     height: 44px;
     min-width: 120px;
+    max-width: 130px;
     margin-top: 10px ;
     text-align: center;
     cursor: pointer;

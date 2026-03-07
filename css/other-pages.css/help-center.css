@@ -258,6 +258,7 @@ body {                              /*  设置整体背景，布局为flex布局
     flex-direction: row;
     display: flex;
     justify-content: space-between;
+    gap:20px;
 }
 .normal-question-title h2 {
     font-size: 30px;
@@ -334,5 +335,83 @@ body {                              /*  设置整体背景，布局为flex布局
 }
 .active {                       /*侧边栏元素点击时添加的active类*/
     background-color: #1BD96A40;
+    color: #1BD96A;
+}
+
+
+
+#more-help {
+    margin: 20px auto;
+    width: 90%;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin-top: 20vh;
+    gap: 40px;
+}
+#more-help h2 {
+    font-size: 28px;
+}
+#more-help h2 span {
+    font-size: 28px;
+    margin-right: 1vmin;
+}
+#more-help p {
+    color: #B0BAC5;
+}
+#more-help-ways {
+    margin-top: 4vh;
+    gap: 40px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ways {
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background: #27292E;
+    flex: 1;
+    border-radius: 20px;
+    transition: background-color 0.3s ease,box-shadow 0.3s ease,transform 0.3s ease;
+    min-width: 260px;
+}
+.ways:hover {
+    background-color: #1BD96A40;
+    color: #1BD96A;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+    transform:translateY(-10px);
+}
+.ways div {
+    color: #39FF14;
+    border-radius: 9999999px;
+    background-color: #1BD96A40;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+}
+.ways div span {
+    font-size: 28px;
+}
+.ways p {
+    color: #B0BAC5;
+}
+.ways a {
+    border-radius: 1vmin;
+    background-color: #39FF14;
+    text-align: center;
+    color: #050505;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: transform 0.3s ease,background-color 0.3s ease,color 0.3s ease;
+}
+.ways a:hover {
+    background-color: #1BD96A40;
+    transform: translateY(-10px);
     color: #1BD96A;
 }
