@@ -40,29 +40,32 @@
     <div id="report-question">
         <div class="card">
             <h2 class="card-title"><span class="iconfont icon-gantanhao"></span>报告问题</h2>
-            <form>
+            <form id="report">
                 <div class="form-group">
                     <label for="issue-type" class="required">问题类型</label>
                     <select id="issue-type"  required>
-                        <option>请选择问题类型</option>
-                        <option>技术故障</option>
-                        <option>软件错误/漏洞</option>
-                        <option>功能建议</option>
-                        <option>账户问题</option>
-                        <option>支付问题</option>
-                        <option>其他问题</option>
+                        <option value="">请选择问题类型</option>
+                        <option value="技术故障">技术故障</option>
+                        <option value="软件错误/漏洞">软件错误/漏洞</option>
+                        <option value="功能建议">功能建议</option>
+                        <option value="账户问题">账户问题</option>
+                        <option value="支付问题">支付问题</option>
+                        <option value="其他问题">其他问题</option>
                     </select>
+                    <div class="error-message" id="issueTypeError" style="display: none;">请选择问题类型</div>
                 </div>
                 <div class="form-group">
                     <label for="subject" class="required">问题标题</label>
-                    <input type="text" id="subject" placeholder="请简要描述问题" required>
+                    <input type="text" id="subject" placeholder="请简要描述问题" required autocomplete="off">
+                    <div class="error-message" id="subjectError" style="display: none;">请概述您的问题</div>
                 </div>
                 <div class="form-group">
-                    <lable for="description" class="required">详细描述</lable>
+                    <label for="description" class="required">详细描述</label>
                     <textarea id="description" placeholder="请详细描述您遇到的问题，包括：1.问题的具体表现 2.问题发生的时间 3.您尝试过的解决办法" required></textarea>
+                    <div class="error-message" id="descriptionError" style="display: none;">请描述您遇到的问题</div>
                 </div>
                 <div class="form-group">
-                    <lable for="priority" class="required">优先级</lable>
+                    <label for="priority" class="required">优先级</label>
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="priority-high" name="priority" value="high">
@@ -86,13 +89,15 @@
                             </label>
                         </div>
                     </div>
+                    <div class="error-message" id="priorityError" style="display: none;">请选择优先级</div>
                 </div>
                 <div class="form-group">
-                    <lable for="email" class="required">联系邮箱</lable>
-                    <input type="email" id="email" placeholder="用于接收问题处理进度" required>
+                    <label for="email" class="required">联系邮箱</label>
+                    <input type="email" id="email" placeholder="用于接收问题处理进度" required autocomplete="off">
+                    <div class="error-message" id="emailError" style="display: none;">请填写您的邮箱</div>
                 </div>
                 <div class="form-group">
-                    <lable for="attachment" class="required">附件</lable>
+                    <label for="attachment" id="not-essential">附件</label>
                     <div class="file-submit">
                         <p><span class="iconfont icon-shangchuanyunduan"></span></p>
                         <p>点击上传截图或相关文件</p>

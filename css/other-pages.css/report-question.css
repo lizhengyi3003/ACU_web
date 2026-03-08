@@ -96,6 +96,17 @@ body {                              /*  设置整体背景，布局为flex布局
     color: #e74c3c;
     margin-left: 4px;
 }
+#not-essential {
+    display: block;
+    font-size: 16px;
+    color: rgb(156 163 175);
+    padding-bottom: 10px;
+}
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
 #issue-type {
     color: #ffffff;
     background: #27292E;

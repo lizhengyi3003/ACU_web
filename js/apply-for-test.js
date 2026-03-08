@@ -46,8 +46,8 @@ window.addEventListener('load',function(){
             document.getElementById('termsError').style.display='none';
         }
     })
-    let valid=true;
     form.addEventListener('submit',function(e){
+        let valid=true;
         elements.forEach(function(el){
             if(el.value.trim()==='')
             {
