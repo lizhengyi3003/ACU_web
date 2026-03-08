@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/other-pages.css/apply-for-test.css">
+    <link rel="stylesheet" href="../css/login-register.css">     <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../css/aiContainer.css">        <!--AI助手浮窗css-->
+    <link rel="stylesheet" href="../css/nav.css">            <!--导航栏css-->
+    <link rel="stylesheet" href="../css/footer.css">         <!--页脚css-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_x0frezb83s9.css">
+    <script src="../js/apply-for-test.js"></script>
+    <script src="../js/functions/login-and-ai.js"></script>                           <!--登录注册AI浮窗js-->
+    <title>申请内测</title>
+</head>
+<body>
+    <nav >                                                      <!--导航栏-->
+        <div class="nav__element">
+            <a href="#">
+                SWINGCORE
+            </a>
+            <a href="../main.html">首页</a>
+        </div>
+        <div class="nav__element">
+            <button id="loginbtn">
+                <span>登录  /  立即加入</span>
+                <div></div>
+            </button>
+        </div>
+    </nav>
+    <div id="main-content">
+        <div class="content-item">
+            <div id="hero">
+                <h1>抢先体验下一代创新产品</h1>
+                <p>加入我们的小规模内测计划，成为首批体验创新功能的用户，为产品的最终形态提供宝贵意见。</p>
+                <div id="features">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <span class="iconfont icon-shoucang"></span>
+                        </div>
+                        <div class="features-content">
+                            <h3>优先访问权</h3>
+                            <p>在正式发布前体验最新功能，比其他用户提前数周或数月</p>
+                        </div>
+                    </div>
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <span class="iconfont icon-duihua"></span>
+                        </div>
+                        <div class="features-content">
+                            <h3>直接反馈渠道</h3>
+                            <p>与产品团队直接沟通，您的建议将直接影响产品发展方向</p>
+                        </div>
+                    </div>
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <span class="iconfont icon-liwu"></span>
+                        </div>
+                        <div class="features-content">
+                            <h3>专属奖励</h3>
+                            <p>内测用户将获得专属徽章、高级功能试用和特别福利</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="stats">
+                    <div class="stats-item">
+                        <div class="stats-number">
+                            ***
+                        </div>
+                        <div class="stats-label">
+                            已参与用户
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-number">
+                            **%
+                        </div>
+                        <div class="stats-label">
+                            满意度
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-number">
+                            **
+                        </div>
+                        <div class="stats-label">
+                            剩余名额
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-item">
+            <form id="apply" autocomplete="off">
+                <div class="form-header">
+                    <h2>申请内测资格</h2>
+                    <p>填写以下信息申请内测资格，我们将在3个工作日内审核您的申请</p>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name" class="required">名字</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="请输入您的名字" class="text" autocomplete="off">
+                        <div class="error-message" id="firstNameError" style="display: none;">请输入有效的名字</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="required">姓氏</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="请输入您的姓氏" class="text" autocomplete="off">
+                        <div class="error-message" id="lastNameError" style="display: none;">请输入您的姓氏</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="required">邮箱地址</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" class="text" autocomplete="off">
+                    <div class="error-message" id="emailError" style="display: none;">请输入有效的邮箱地址</div>
+                </div>
+                <div class="form-group">
+                    <label for="company" class="required">公司/组织</label>
+                    <input type="text" id="company" name="company" placeholder="您所在的公司或组织" class="text" autocomplete="off">
+                    <div class="error-message" id="companyError" style="display: none;">请输入公司或组织名称</div>
+                </div>
+                <div class="form-group">
+                    <label for="role" class="required">职位/角色</label>
+                    <select id="role" name="role" class="error">
+                        <option value="">请选择您的职位</option>
+                        <option value="developer">开发人员</option>
+                        <option value="designer">设计师</option>
+                        <option value="product">产品经理</option>
+                        <option value="manager">管理/决策者</option>
+                        <option value="student">学生/研究人员</option>
+                        <option value="other">其他</option>
+                    </select>
+                    <div class="error-message" id="roleError" style="display: none;">请选择您的职位</div>
+                </div>
+                <div class="form-group">
+                    <label for="useCase" class="required">您计划如何使用我们的产品？</label>
+                    <textarea id="useCase" name="useCase" placeholder="请简要描述您计划如何使用我们的产品，这有助于我们了解您的需求"></textarea>
+                    <div class="error-message" id="useCaseError" style="display: none;">请描述您的使用场景</div>
+                </div>
+                <div class="form-group">
+                    <label for="referral" class="required">如何了解到我们的内测计划？</label>
+                    <select id="referral" name="referral">
+                        <option value="">请选择了解渠道</option>
+                        <option value="social">社交媒体</option>
+                        <option value="friend">朋友推荐</option>
+                        <option value="newsletter">新闻邮件</option>
+                        <option value="search">搜索引擎</option>
+                        <option value="event">行业活动</option>
+                        <option value="other">其他</option>
+                    </select>
+                    <div class="error-message" id="useCaseError" style="display: none;">请描述您如何了解到我们</div>
+                </div>
+                <div class="form-group">
+                    <label class="required">您最感兴趣的功能是？</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature1" name="interests" value="ai">
+                            <label for="feature1" class="checkbox-label">AI智能助手</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature2" name="interests" value="collaboration">
+                            <label for="feature2" class="checkbox-label">团队协作工具</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature3" name="interests" value="analytics">
+                            <label for="feature3" class="checkbox-label">数据分析仪表盘</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature4" name="interests" value="integration">
+                            <label for="feature4" class="checkbox-label">第三方集成</label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="interestsError" style="display: none;">请至少选择一项感兴趣的功能</div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="terms" name="terms">
+                        <label for="terms" class="checkbox-label">
+                            我同意遵守<a href="#">内测协议</a>，理解内测产品可能存在不稳定情况，并同意接收与内测相关的邮件通知
+                        </label>
+                        <div class="error-message" id="termsError" style="display: none;">请同意内测协议</div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn"><span class="iconfont icon-fasong"></span>提交内测申请</button>
+                <button type="reset" class="reset-btn"><span class="iconfont icon-zhongzhi"></span>重置表单内容</button>
+            </form>
+        </div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="login-container">                      <!--登录浮窗-->
+        <div id="login">
+            <canvas id="particle-canvas"></canvas>
+            <h1>登录</h1>
+            <br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>邮箱或用户名</label>
+                    <input type="text" placeholder="请输入邮箱或用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>密码</label>
+                    <input type="text" placeholder="请输入密码">
+                </div><br>
+                <button type="submit" class="login-button" >登录</button>
+                <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
+                <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-container">               <!--注册浮窗-->
+        <div id="register">
+            <h1>注册</h1><br>
+            <form id="collector">
+                <div class="userinformation">
+                    <label>创建用户名</label>
+                    <input type="text" placeholder="选择独创用户名">
+                </div><br>
+                <div class="userinformation">
+                    <label>邮箱</label>
+                    <input type="text" placeholder="输入您的邮箱">
+                </div><br>
+                <div class="userinformation">
+                    <label>设置密码</label>
+                    <input type="text" placeholder="最小8位有效字符">
+                </div><br>
+                <div class="userinformation">
+                    <label>再次确认密码</label>
+                    <input type="text" placeholder="与上面设置密码一致">
+                </div><br>
+                <button type="submit" class="login-button">成为新用户</button>
+                <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
+                <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
+            </form>
+        </div>
+    </div>
+    <div id="ai-assistant">                 <!--AI助手浮窗-->
+        <span>AI助手</span>
+        <div id="ai-container">
+            <div id="ai-header">
+                <div class="ai-header-element">
+                    <span id="ai-title">AI云助理</span>
+                </div>
+                <div class="ai-header-element">
+                    <button id="snap-ai">
+                        <span class="iconfont icon-chuangkouxifu">
+                            <span class="tooltip">
+                                窗口吸附
+                            </span>
+                        </span>
+                    </button>
+                    <button id="close-ai">
+                        <span class="iconfont icon-guanbi1">
+                            <span class="tooltip">
+                                关闭窗口
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="ai-body">
+
+            </div>
+            <div id="ai-footer">
+                <div id="ai-input">
+                    <textarea placeholder="有什么问题就尽管问我吧" id="ai-textarea"></textarea>
+                    <button id="ai-send"><span class="iconfont icon-fasong"></span></button>
+                </div>
+            </div>
+            <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
+        </div>
+    </div>
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->           <!--回到顶部按钮-->
+    <div id="footer">                               <!--页脚-->
+        <div class="footer-columns">
+            <div>
+                <img src="../assets/logo.png">
+            </div>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-columns-items">
+                <h3>关于</h3>
+                <a href="./news-and-update.html">新闻动态</a>
+                <a href="./update-log.html">更新日志</a>
+                <a href="./join-us.html">加入我们</a>
+                <a href="./legal-and-policy.html?tab=rewards-terms">奖励计划</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>产品</h3>
+                <a href="../main.html#buy">支持创作者</a>
+                <a href="./device-and-feature.html#victo-app">APP介绍</a>
+                <a href="./device-and-feature.html#overview">产品概览</a>
+                <a href="../main.html#system-components">系统核心组件</a>
+                <a href="../main.html#technical-specifications">技术规格</a>
+                <a href="./device-and-feature.html#target-audience">适用人群</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>资源</h3>
+                <a href="./help-center.html">帮助中心</a>
+                <a href="./report-question.html">报告问题</a>
+            </div>
+            <div class="footer-columns-items">
+                <h3>法律</h3>
+                <a href="./legal-and-policy.html?tab=content-rules">内容规则</a>
+                <a href="./legal-and-policy.html?tab=terms-of-use">使用条款</a>
+                <a href="./legal-and-policy.html?tab=privacy-policy">隐私政策</a>
+                <a href="./legal-and-policy.html?tab=security-notice">安全通知</a>
+                <a href="./legal-and-policy.html?tab=copyright-policy">版权政策</a>
+                <a href="./legal-and-policy.html?tab=sales-policy">销售政策</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/functions/particle.js"></script>
+</body>
+</html>

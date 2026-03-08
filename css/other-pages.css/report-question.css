@@ -103,6 +103,12 @@ body {                              /*  设置整体背景，布局为flex布局
     height: 50px;
     width: 100%;
     padding-left: 1vmin;
+    outline: none;
+    transition: all 0.5s ease;
+}
+#issue-type:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
 #subject {
     border: 1px solid;
@@ -113,6 +119,12 @@ body {                              /*  设置整体背景，布局为flex布局
     border-radius: 10px;
     height: 50px;
     width: 100%;
+    outline: none;
+    transition: all 0.5s ease;
+}
+#subject:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
 #description {
     border-radius: 10px;
@@ -121,6 +133,12 @@ body {                              /*  设置整体背景，布局为flex布局
     padding: 1vmin;
     height: 20vh;
     width: 100%;
+    outline: none;
+    transition: all 0.5s ease;
+}
+#description:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
 .radio-group {
     display: flex;
@@ -162,6 +180,12 @@ body {                              /*  设置整体背景，布局为flex布局
     width: 100%;
     padding-left: 1vmin;
     border: 1px solid;
+    outline: none;
+    transition: all 0.5s ease;
+}
+#email:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
 }
 .file-submit {
     width: 100%;

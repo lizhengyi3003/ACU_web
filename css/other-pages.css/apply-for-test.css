@@ -1,0 +1,278 @@
+* {                                 /*  清除所有的外内边距并改变盒子模式为border-box */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {                         /*  设置初始高度 */
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {                              /*  设置整体背景，布局为flex布局 */
+    min-height: 100vh;
+    background-color: #050505;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.blur {                             /*  点击登录或注册时添加的背景模糊类 */
+    filter: blur(12px);
+    transition: filter 0.3s;
+    pointer-events: none; 
+}
+#particle-canvas {                  /*  背景粒子的画布css */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+}
+
+
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+}
+.content-item {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10vh;
+}
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+#hero h1 {
+    font-size: 56px;
+    text-align: center;
+    background: linear-gradient(to left, #fff, #39FF14);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#hero p {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(156, 163, 175);
+}
+#features {
+    gap: 40px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+.features-item {
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.features-icon {
+    border-radius: 9999999px;
+    color: #39FF14;
+    text-align: center;
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    background: #1BD96A40;
+}
+.features-icon span {
+    font-size:28px;
+}
+.features-content h3 {
+    font-size: 20px;
+    color: #39ff1a;
+}
+#features .features-content p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+#stats {
+    margin-top: 6vh;
+    flex-direction: row;
+    gap: 6vw;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.stats-items {
+    flex-direction: column;
+    display: flex；
+}
+.stats-number {
+    padding: 10px;
+    font-size: 40px;
+    color: #39FF14;
+}
+.stats-label {
+    text-align: center;
+}
+
+
+#apply {
+    width: 100%;
+    background-color: #27292E;
+    flex-direction: column;
+    display: flex;
+    gap: 40px;
+    padding: 40px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+#apply:hover {
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+    transform: translateY(-10px);
+}
+.form-header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-header h2 {
+    font-size: 36px;
+}
+.form-header p {
+    color: rgb(156 163 175);
+    font-size: 20px;
+}
+.form-row {
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.form-group {
+    flex: 1;
+}
+.required {
+    display: block;
+    font-size: 16px;
+    color: rgb(156 163 175);
+    padding-bottom: 10px;
+}
+.required::after {
+    content: '*';
+    color: #e74c3c;
+    margin-left: 4px;
+}
+.form-group .text {
+    min-width: 230px;
+    color: #ffffff ;
+    background: #27292E ;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    padding-left: 1vmin;
+    outline: none;
+    border: 1px solid rgb(176, 186, 197) ;
+    transition: all 0.5s ease;
+}
+.form-group .text:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+.form-group select {
+    color: #ffffff;
+    background: #27292E;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    padding-left: 1vmin;
+    outline: none;
+    border: 1px solid rgb(176, 186, 197);
+    transition: all 0.5s ease;
+}
+.form-group select:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+#useCase {
+    padding-top: 1vmin;
+    color: #ffffff;
+    background: #27292E;
+    border-radius: 10px;
+    height: 16vh;
+    width: 100%;
+    padding-left: 1vmin;
+    outline: none;
+    border: 1px solid rgb(176, 186, 197);
+    transition:all 0.3s ease;
+}
+#useCase:focus {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+.checkbox-item {
+    gap: 10px;
+    align-items: center;
+    display: flex;
+}
+.checkbox-group {
+    gap: 16px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+.checkbox-item label {
+    display: block;
+    font-size: 16px;
+    color: rgb(156 163 175);
+    padding-bottom: 0;
+}
+.checkbox-item a {
+    text-decoration: none;
+    color: #39ff14;
+}
+.submit-btn {
+    font-size: 16px;
+    border: none;
+    background: #39ff14;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.submit-btn span {
+    padding-right: 1vmin;
+}
+.submit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 4px #1BD96A80, 0 0 40px 8px #1BD96A40;
+}
+.reset-btn {
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #27292E;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.reset-btn span {
+    padding-right: 1vmin;
+}
+.reset-btn:hover {          /*  产品简介按钮动画 */
+    border-color: #39FF14;
+    color: #39FF14;
+    transform: scale(1.1);
+}
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
