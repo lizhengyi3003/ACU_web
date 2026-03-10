@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/nav.css">            <!--导航栏css-->
-    <link rel="stylesheet" href="../css/footer.css">         <!--页脚css-->
-    <link rel="stylesheet" href="../css/main.css">           <!--主页面css-->
-    <link rel="stylesheet" href="../css/login-register.css">     <!--登录注册浮窗css-->
-    <link rel="stylesheet" href="../css/aiContainer.css">        <!--AI助手浮窗css-->
+    <link rel="stylesheet" href="../src/styles/pages/join-us.css">
+    <link rel="stylesheet" href="../src/styles/components/login-register.css">     <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="../src/styles/components/aiContainer.css">        <!--AI助手浮窗css-->
+    <link rel="stylesheet" href="../src/styles/base/nav.css">            <!--导航栏css-->
+    <link rel="stylesheet" href="../src/styles/base/footer.css">         <!--页脚css-->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_x0frezb83s9.css">
-    <link rel="stylesheet" href="../css/other-pages.css/join-us.css">
-    <script src="../js/functions/login-and-ai.js"></script>
-    <script src="../js/join-us.js"></script>
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <link rel="icon" href="../src/assets/images/logo.png" type="image/png">
+    <script src="../scripts/pages/join-us.js"></script>
+    <script src="../scripts/components/login-and-ai.js"></script>                           <!--登录注册AI浮窗js-->
     <title>加入我们</title>
 </head>
 <body>
     <nav >                                                      <!--导航栏-->
         <div class="nav__element">
-            <a href="#">
+            <a href="../main.html">
                 SWINGCORE
             </a>
             <a href="../main.html">首页</a>
@@ -364,7 +365,7 @@
             <div id="team-main">
                 <div class="team-card">
                     <div class="team-img">
-                        <img src="../assets/sample.jpeg">
+                        <img src="../src/assets/images/sample.jpeg">
                     </div>
                     <div class="team-content">
                         <h4 class="team-name">张明</h4>
@@ -374,7 +375,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-img">
-                        <img src="../assets/sample.jpeg">
+                        <img src="../src/assets/images/sample.jpeg">
                     </div>
                     <div class="team-content">
                         <h4 class="team-name">张明</h4>
@@ -384,7 +385,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-img">
-                        <img src="../assets/sample.jpeg">
+                        <img src="../src/assets/images/sample.jpeg">
                     </div>
                     <div class="team-content">
                         <h4 class="team-name">张明</h4>
@@ -394,7 +395,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-img">
-                        <img src="../assets/sample.jpeg">
+                        <img src="../src/assets/images/sample.jpeg">
                     </div>
                     <div class="team-content">
                         <h4 class="team-name">张明</h4>
@@ -404,7 +405,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-img">
-                        <img src="../assets/sample.jpeg">
+                        <img src="../src/assets/images/sample.jpeg">
                     </div>
                     <div class="team-content">
                         <h4 class="team-name">张明</h4>
@@ -451,7 +452,7 @@
     <div id="footer">                               <!--页脚-->
         <div class="footer-columns">
             <div>
-                <img src="../assets/logo.png">
+                <img src="../src/assets/images/logo.png">
             </div>
         </div>
         <div class="footer-columns">
@@ -571,6 +572,6 @@
         </div>
     </div>
     <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->                      <!--回到顶部浮窗-->
-    <script src="../js/functions/particle.js"></script>
+    <script src="../scripts/components/particle.js"></script>
 </body>
 </html>

@@ -7,20 +7,21 @@
     <meta name="copyright" content="挥迹项目组版权所有">        <!--版权-->
     <meta name="keywords" content="拍核 (SwingCore), 智能运动传感器, 多模态数据融合算法, 颠覆性性价比,硬件+SaaS+平台, 大众市场,智慧体育">       <!--关键字-->
     <meta name="decorations" content="旨在用极低价格的专业级运动数据分析硬件，引爆大众智慧体育市场的创业项目">      <!--介绍-->
-    <link rel="stylesheet" href="./css/nav.css">            <!--导航栏css-->
-    <link rel="stylesheet" href="./css/footer.css">         <!--页脚css-->
-    <link rel="stylesheet" href="./css/main.css">           <!--主页面css-->
-    <link rel="stylesheet" href="./css/login-register.css">     <!--登录注册浮窗css-->
-    <link rel="stylesheet" href="./css/aiContainer.css">        <!--AI助手浮窗css-->
+    <link rel="stylesheet" href="./src/styles/base/nav.css">            <!--导航栏css-->
+    <link rel="stylesheet" href="./src/styles/base/footer.css">         <!--页脚css-->
+    <link rel="stylesheet" href="./src/styles/main.css">           <!--主页面css-->
+    <link rel="stylesheet" href="./src/styles/components/login-register.css">     <!--登录注册浮窗css-->
+    <link rel="stylesheet" href="./src/styles/components/aiContainer.css">        <!--AI助手浮窗css-->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_x0frezb83s9.css">
-    <script src="./js/main.js"></script>
-    <script src="./js/functions/login-and-ai.js"></script>
+    <link rel="icon" href="./src/assets/images/logo.png" type="image/png">
+    <script src="./scripts/pages/main.js"></script>
+    <script src="./scripts/components/login-and-ai.js"></script>
     <title>SWINGCORE 挥迹 | 智能运动传感器</title>              <!--网页标题-->
 </head>
 <body>
     <nav >                                                   <!--导航栏-->
         <div class="nav__element">
-            <a href="#">
+            <a href="./main.html">
                 SWINGCORE
             </a>
             <a href="./main.html">首页</a>
@@ -122,7 +123,7 @@
                         </ul>
                     </div>
                     <div class="main-img">
-                        <img src="./assets/sensors.jpg">
+                        <img src="./src/assets/images/sensors.jpg">
                     </div>
                 </div>
                 <div id="APP" class="tab-content-elements">
@@ -165,7 +166,7 @@
                         </div>
                     </div>
                     <div class="main-img">
-                        <img src="./assets/app.png" id="app-img">
+                        <img src="./src/assets/images/app.png" id="app-img">
                     </div>
                 </div>
                 <div id="cloud" class="tab-content-elements">
@@ -192,7 +193,7 @@
                         </ul>
                     </div>
                     <div class="main-img">
-                        <img src="./assets/cloud.png">
+                        <img src="./src/assets/images/cloud.png">
                     </div>
                 </div>
             </div>
@@ -399,11 +400,11 @@
             <form id="collector">
                 <div class="userinformation">
                     <label>邮箱或用户名</label>
-                    <input type="text" placeholder="请输入邮箱或用户名">
+                    <input type="text" placeholder="请输入邮箱或用户名" required name="username" autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>密码</label>
-                    <input type="text" placeholder="请输入密码">
+                    <input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">
                 </div><br>
                 <button type="submit" class="login-button" >登录</button>
                 <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
@@ -418,19 +419,19 @@
             <form id="collector">
                 <div class="userinformation">
                     <label>创建用户名</label>
-                    <input type="text" placeholder="选择独创用户名">
+                    <input type="text" placeholder="选择独创用户名" name="username" required autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>邮箱</label>
-                    <input type="text" placeholder="输入您的邮箱">
+                    <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>设置密码</label>
-                    <input type="text" placeholder="最小8位有效字符">
+                    <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>再次确认密码</label>
-                    <input type="text" placeholder="与上面设置密码一致">
+                    <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
                 </div><br>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
@@ -478,7 +479,7 @@
     <div id="footer">                               <!--页脚-->
         <div class="footer-columns">
             <div>
-                <img src="./assets/logo.png">
+                <img src="./src/assets/images/logo.png">
             </div>
         </div>
         <div class="footer-columns">
@@ -514,6 +515,6 @@
             </div>
         </div>
     </div>
-    <script src="./js/functions/particle.js"></script>      <!--背景粒子效果js-->
+    <script src="./scripts/components/particle.js"></script>      <!--背景粒子效果js-->
 </body>
 </html>
