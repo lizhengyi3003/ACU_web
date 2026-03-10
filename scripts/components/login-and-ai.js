@@ -1,4 +1,5 @@
 window.addEventListener('load',function(){
+    updateSpanTitle;
     var ologinBtn=this.document.getElementById('loginbtn');             //获取登录页面按钮
     var ogoRegister=this.document.getElementById('go-register');        //获取前往注册页面按钮
     var ogoLogin=this.document.getElementById('go-login');              //获取前往登录按钮
@@ -99,6 +100,13 @@ window.addEventListener('load',function(){
 }
     oaiAssistant.onclick=function() {            //点击打开  AI浮窗
         oaiContainer.style.display='flex';
+        oaiContainer.style.inset='';
+    }
+    var oaiContainer = document.getElementById('ai-container');
+    if (oaiContainer) {
+        oaiContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
     }
     ocloseAi.onclick=function(e) {                                      //点击关闭AI浮窗
         e.stopPropagation();
@@ -222,4 +230,33 @@ window.addEventListener('load',function(){
         behavior: 'smooth'
     });
     }
+    const resizable = document.getElementById('ai-container');
+    const handle = document.getElementById('handle');
+    handle.onmousedown = function(e) {
+        const startX = e.clientX, startY = e.clientY;
+        const startW = resizable.offsetWidth, startH = resizable.offsetHeight;
+        document.onmousemove = function(ev) {
+            resizable.style.width = startW + (ev.clientX - startX) + 'px';
+            resizable.style.height = startH + (ev.clientY - startY) + 'px';
+        };
+        document.onmouseup = function() {
+            document.onmousemove = document.onmouseup = null;
+        };
+    };
+    function updateSpanTitle() {
+        var snapAi=document.getElementById('snap-ai');
+        var closeAi=document.getElementById('close-ai');
+        if(!snapAi||!closeAi) return;
+        if(window,innerWidth<=600) 
+        {
+            snapAi.innerHTML=''
+            closeAi.setAttribute('title','关闭窗口');
+        }
+        else
+        {
+            snapAi.innerHTML='<span class="iconfont icon-chuangkouxifu"><span class="tooltip">窗口吸附</span></span>';
+            closeAi.removeAttribute('title');
+        }
+    }
+    window.addEventListener('resize', updateSpanTitle);
 })

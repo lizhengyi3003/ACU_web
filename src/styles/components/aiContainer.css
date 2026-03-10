@@ -18,6 +18,14 @@
     transition: transform 0.3s ease;
     z-index: 10;
 }
+#handle  {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+}
 #ai-title {
     color: #0f0;
 }
@@ -49,7 +57,25 @@
     0 0 35px rgba(0, 255, 0, 0.7),
     0 0 40px rgba(0, 255, 0, 0.5),
     0 0 50px rgba(0, 255, 0, 0.3),
-    inset 0 0 15px rgba(0, 255, 0, 1.2);;
+    inset 0 0 15px rgba(0, 255, 0, 1.2); 
+    min-width: 380px;
+    min-height: 400px;
+}
+@media(max-width:600px) {
+    #ai-container {
+        position: fixed;      
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+    #go-nav {
+        z-index: 5;
+    }
+    .tooltip {
+        display: none;
+    }
 }
 #ai-container p {
     margin-bottom: 2px;
@@ -144,6 +170,7 @@
     align-items: center;
     height: 20%;
     gap: 5px;
+    position: relative;
 }
 #ai-input {                 /*ai助手容器底部输入部分*/ 
     width: 80%;
@@ -151,7 +178,6 @@
     margin-top: 1.5vmin;
     margin-bottom: 1.5vmin;
     border: 1px solid rgba(128, 128, 128, 0.7);
-    position: relative;
     border-radius: 10px;
     background-color: #050505;
     backdrop-filter: blur(20px);
@@ -205,7 +231,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
-    z-index: 10;
+    z-index: 5;
 }
 #go-nav:hover {
     transform: scale(1.15);
