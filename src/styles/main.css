@@ -428,7 +428,7 @@ br.gap-small {                      /*  缩小间隔的css */
     width: 100%;
 }
 #spec-features {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -586,7 +586,7 @@ br.gap-small {                      /*  缩小间隔的css */
 }
     
 .buy-cards:nth-child(2) {
-    background: linear-gradient(320deg, #1BD96A80, #39FF1480);
+    background: linear-gradient(320deg, #1BD96A60, #1bd96a40);
     position: relative;
 }
 .buy-cards:nth-child(2) .comparison-buy {
@@ -610,11 +610,18 @@ br.gap-small {                      /*  缩小间隔的css */
 }
 .buy-cards ul li {
     margin-bottom: 2vmin;
+    background: linear-gradient(to left, #fff, #39FF14);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
 }
 .buy-price {
     padding-right: 6vmin;
     padding-left: 6vmin;
     font-size: 40px;
+    margin-bottom: 3vmin;
+    text-align: center;
 }
 #suppose {
     border-radius: 15px;

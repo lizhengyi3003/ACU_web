@@ -113,12 +113,12 @@
             <br>
             <form id="collector">
                 <div class="userinformation">
-                    <label>邮箱或用户名</label>
-                    <input type="text" placeholder="请输入邮箱或用户名">
+                    <label>手机号或邮箱</label>
+                    <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>密码</label>
-                    <input type="text" placeholder="请输入密码">
+                    <input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">
                 </div><br>
                 <button type="submit" class="login-button" >登录</button>
                 <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
@@ -128,24 +128,34 @@
     </div>
     <div id="register-container">               <!--注册浮窗-->
         <div id="register">
+            <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
             <h1>注册</h1><br>
             <form id="collector">
-                <div class="userinformation">
-                    <label>创建用户名</label>
-                    <input type="text" placeholder="选择独创用户名">
-                </div><br>
-                <div class="userinformation">
-                    <label>邮箱</label>
-                    <input type="text" placeholder="输入您的邮箱">
-                </div><br>
-                <div class="userinformation">
-                    <label>设置密码</label>
-                    <input type="text" placeholder="最小8位有效字符">
-                </div><br>
-                <div class="userinformation">
-                    <label>再次确认密码</label>
-                    <input type="text" placeholder="与上面设置密码一致">
-                </div><br>
+                <div id="input">
+                    <div class="userinformation">
+                        <label>输入手机号</label>
+                        <input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>验证码</label>
+                        <div id="input-code">
+                            <input type="text" placeholder="输入验证码" name="code" required autocomplete="off">
+                            <button id="send-code" type="button">获取验证码</button>
+                        </div>
+                    </div><br>
+                    <div class="userinformation">
+                        <label>邮箱</label>
+                        <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>设置密码</label>
+                        <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>再次确认密码</label>
+                        <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
+                    </div><br>
+                </div>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
                 <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
@@ -189,7 +199,7 @@
             <p>内容由 AI 生成，仅供参考，您据此所作判断及操作均由您自行承担责任。</p>
         </div>
     </div>
-    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->                      <!--回到顶部浮窗-->
+    <button id="go-nav"><span class="iconfont icon-xiangshang"></span></button>           <!--回到顶部按钮-->
     <div id="privacy-policy">                                   <!--隐私政策主要内容-->
         <div class="privacy-hero">
             <h1>隐私政策</h1>
@@ -361,16 +371,16 @@
             <h3>2. 服务模式</h3>
             <p>我们提供基础版和专业版两种服务模式，具体功能和服务范围详见产品介绍页面。</p>
             <h3>3. 服务变更</h3>
-            <p>我们保留随时修改、中断或终止部分或全部服务的权利，恕不另行通知。</p>
+            <p>我们保留合理调整服务内容的权利。若涉及服务模式重大变更、部分/全部服务中断或终止，将提前30日通过APP推送、短信或邮件等方式通知您。您可选择继续使用变更后的服务或申请退款，未在通知期内提出异议的，视为接受变更。</p>
         </div>
         <div class="terms-section">
             <h2>用户账户</h2>
             <h3>1. 账户注册</h3>
             <p>使用本产品需要注册账户。您承诺提供真实、准确、完整的注册信息。</p>
             <h3>2. 账户安全</h3>
-            <p>您有责任维护账户信息的保密性，并对账户下的所有活动负责。如发现账户异常，请立即联系我们。</p>
+            <p>您有责任维护账户信息的保密性，并对账户下的所有活动负责。同时我们将采取技术措施保障您的账户安全，如发现异常登录将及时向您推送提醒。因我们未尽到安全保障义务导致的账户损失，将依法承担相应责任。</p>
             <h3>3. 账户注销</h3>
-            <p>您可以随时申请注销账户。注销后，我们将删除您的个人信息，但法律法规要求保存的除外。</p>
+            <p>您可通过APP内“账户设置-注销账户”入口或客服渠道提交注销申请，我们将在15个工作日内完成审核与处理。注销后，除法律法规要求保存的信息外，我们将对您的个人信息进行不可逆删除或匿名化处理。</p>
         </div>
         <div class="terms-section">
             <h2>用户行为规范</h2>
@@ -384,15 +394,15 @@
             </ul>
             <h3>2. 禁止行为</h3>
             <div class="prohibited-list">
-                <p>严禁以下行为：</p>
+                <p>严禁以下故意或重大过失行为：</p>
                 <ul>
                     <li>破解、反编译、逆向工程本产品</li>
-                    <li>复制、传播、销售本产品的任何部分</li>
+                    <li>复制、传播、销售本产品的任何部分用于营利活动</li>
                     <li>利用本产品传播病毒、恶意软件</li>
                     <li>干扰或破坏本产品服务器或网络</li>
-                    <li>伪造数据或进行虚假训练记录</li>
-                    <li>将本产品用于商业培训以外的营利活动</li>
-                    <li>超出正常使用范围大量占用系统资源</li>
+                    <li>伪造数据或进行虚假训练记录以骗取服务或奖励</li>
+                    <li>未经授权将本产品用于面向第三方的收费培训服务</li>
+                    <li>故意大量占用系统资源导致服务拥堵</li>
                 </ul>
             </div>
         </div>
@@ -401,33 +411,34 @@
             <h3>1. 我们的权利</h3>
             <p>本产品的所有内容，包括但不限于文字、图片、音频、视频、软件、商标、专利等均受知识产权保护，归我们或相关权利人所有。</p>
             <h3>2. 用户生成内容</h3>
-            <p>您在平台上创建的训练数据、评论等内容，授予我们全球范围内免费的、非独家的使用权。</p>
+            <p>您在平台上创建的训练数据、评论等内容，仅授予我们用于提供、优化本产品服务的全球范围内、免费的、非独家的、不可转让的使用权，期限至您注销账户或主动删除该内容为止。</p>
             <h3>3. 侵权投诉</h3>
-            <p>如认为本产品侵犯了您的知识产权，请提供书面通知：service@intellicore.com</p>
+            <p>如认为本产品侵犯了您的知识产权，请提供书面通知至：service@intellicore.com，我们将在7个工作日内完成初步核查并向您反馈处理进展。</p>
         </div>
         <div class="terms-section">
             <h2>免责声明</h2>
             <div class="warning-box">
                 <p>
                     <strong>重要警告：</strong>
-                    本产品仅为训练辅助工具，不能替代专业教练指导。请根据自身情况合理使用，注意运动安全。
+                    本产品仅为网球训练辅助工具，不能替代专业教练指导或医疗建议。请在运动前做好热身，根据自身身体状况合理安排训练，避免运动损伤。
                 </p>
             </div>
             <p>我们对以下情况不承担法律责任：</p>
             <ul>
                 <li>
-                    因网络状况、设备故障导致的服务中断
+                    因第三方网络运营商故障、不可抗力导致的服务中断
                 </li>
                 <li>
-                    用户不当使用造成的设备损坏或人身伤害
+                    用户故意或重大过失不当使用造成的设备损坏或人身伤害
                 </li>
                 <li>
-                    训练建议仅供参考，实际效果因人而异
+                    训练建议仅为数据参考，实际效果因人而异
                 </li>
                 <li>
-                    不可抗力因素导致的服务无法提供
+                    因用户自身设备兼容性问题导致的服务无法正常使用
                 </li>
             </ul>
+            <p>因我们自身系统故障、维护不当等可预见原因导致的服务中断，我们将及时修复并为您提供相应补偿（如延长服务期限）。</p>
         </div>
         <div class="terms-section">
             <h2>付费服务</h2>
@@ -438,7 +449,7 @@
             <h3>3. 退款政策</h3>
             <p>自购买之日起7天内可申请无理由退款。超过7天的退款申请将根据具体情况处理。</p>
             <h3>4. 自动续费</h3>
-            <p>专业版的订阅服务可能包含自动续费，您可以在账户设置中管理订阅状态。</p>
+            <p>专业版订阅服务包含自动续费功能，我们将在每期订阅到期前7日通过APP推送、短信或邮件向您发送续费提醒。您可在“账户设置-订阅管理”中随时取消自动续费，取消后当期服务将持续至订阅期结束。</p>
         </div>
         <div class="terms-section">
             <h2>违约责任</h2>
@@ -452,11 +463,11 @@
         </div>
         <div class="terms-section">
             <h2>条款修改</h2>
-            <p>我们保留随时修改本条款的权利。重大变更时将提前通知您，继续使用视为接受修改后的条款。</p>
+            <p>我们保留修改本条款的权利。若涉及服务模式、收费标准、用户权利义务等重大变更，将提前30日通过APP首页公告、短信或邮件等方式通知您。您若不同意变更，可在通知期内申请注销账户并退款；继续使用本产品的，视为接受修改后的条款。</p>
         </div>
         <div class="terms-section">
             <h2>管辖法律</h2>
-            <p>本条款适用中华人民共和国法律。因本条款产生的争议，提交上海市人民法院诉讼解决。</p>
+            <p>本条款适用中华人民共和国法律。因本条款产生的争议，双方应首先协商解决；协商不成的，可向被告住所地或合同履行地有管辖权的人民法院提起诉讼（或约定为“上海市浦东新区人民法院等具体法院”，若公司注册地在此）。</p>
         </div>
     </div>
     <div id="sales-policy">                                     <!--销售政策主要内容-->

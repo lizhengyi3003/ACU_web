@@ -50,7 +50,7 @@
             <br>COACH
             <br><span>IS INVISIBLE</span>
         </h1>
-        <p>毫秒级动作捕捉。军工级姿态分析。重新定义你的每一次挥拍。</p>
+        <p>毫秒级动作捕捉。工业级姿态分析。重新定义你的每一次挥拍。</p>
         <div>
             <button class="main-button" id="explore-device-btn">探 索 设 备</button>
             <button class="main-button">查 看 演 示</button>
@@ -352,7 +352,7 @@
             <div id="buy-options">
                 <div class="buy-cards">
                     <h3>Swing Core基础版</h3>
-                    <div class="buy-price">¥ 399</div>
+                    
                     <p>包含传感器模块 + APP会员1年</p>
                     <ul>
                         <li>✓ Swing Core传感器模块 x1</li>
@@ -360,12 +360,13 @@
                         <li>✓ 1年云存储服务</li>
                         <li>✓ 在线客服支持</li>
                     </ul>
+                    <div class="buy-price">¥ xxx</div>
                     <div class="comparison-buy">立即购买</div>
                 </div>
                 <div class="buy-cards">
                     <div id="suppose">推荐</div>
                     <h3>Swing Core专业版</h3>
-                    <div class="buy-price">¥ 599</div>
+                    
                     <p>包含传感器模块 + APP永久会员</p>
                     <ul>
                         <li>✓ Swing Core传感器模块 x1</li>
@@ -374,11 +375,12 @@
                         <li>✓ 专属客服支持</li>
                         <li>✓ 1对1技术指导</li>
                     </ul>
+                    <div class="buy-price">¥ xxx</div>
                     <div class="comparison-buy">立即购买</div>
                 </div>
                 <div class="buy-cards">
                     <h3>俱乐部团购版</h3>
-                    <div class="buy-price">¥ 299 /套</div>
+                    
                     <p>10套起订，含教练后台权限</p>
                     <ul>
                         <li>✓ Swing Core传感器模块 x10+</li>
@@ -387,6 +389,7 @@
                         <li>✓ 教练端管理后台</li>
                         <li>✓ 批量部署支持</li>
                     </ul>
+                    <div class="buy-price">¥ xxx /套</div>
                     <div class="comparison-buy">联系客服</div>
                 </div>
             </div>
@@ -399,8 +402,8 @@
             <br>
             <form id="collector">
                 <div class="userinformation">
-                    <label>邮箱或用户名</label>
-                    <input type="text" placeholder="请输入邮箱或用户名" required name="username" autocomplete="off">
+                    <label>手机号或邮箱</label>
+                    <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off">
                 </div><br>
                 <div class="userinformation">
                     <label>密码</label>
@@ -417,22 +420,31 @@
             <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
             <h1>注册</h1><br>
             <form id="collector">
-                <div class="userinformation">
-                    <label>创建用户名</label>
-                    <input type="text" placeholder="选择独创用户名" name="username" required autocomplete="off">
-                </div><br>
-                <div class="userinformation">
-                    <label>邮箱</label>
-                    <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
-                </div><br>
-                <div class="userinformation">
-                    <label>设置密码</label>
-                    <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
-                </div><br>
-                <div class="userinformation">
-                    <label>再次确认密码</label>
-                    <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
-                </div><br>
+                <div id="input">
+                    <div class="userinformation">
+                        <label>输入手机号</label>
+                        <input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>验证码</label>
+                        <div id="input-code">
+                            <input type="text" placeholder="输入验证码" name="code" required autocomplete="off">
+                            <button id="send-code" type="button">获取验证码</button>
+                        </div>
+                    </div><br>
+                    <div class="userinformation">
+                        <label>邮箱</label>
+                        <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>设置密码</label>
+                        <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
+                    </div><br>
+                    <div class="userinformation">
+                        <label>再次确认密码</label>
+                        <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
+                    </div><br>
+                </div>
                 <button type="submit" class="login-button">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
                 <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
