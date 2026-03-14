@@ -137,6 +137,12 @@ br.gap-small {                      /*  缩小间隔的css */
     border: 1px solid;
     border-color: rgb(57 255 20 / 0.3);
     margin: 30px 10px 30px 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.feature-img span {
+    font-size: 40px;
 }
 .feature-card {                             /*  特点卡片css */
     position: absolute;
