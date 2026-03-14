@@ -48,7 +48,7 @@ br.gap-small {                      /*  缩小间隔的css */
     font-size: 76px;
 }
 #device-introduction div {
-    margin: 10px 10px -100px 10px;
+    margin: 10px;
 }
 #device-introduction p {
     color: rgb(156 163 175);

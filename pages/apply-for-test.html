@@ -211,10 +211,14 @@
     <div id="register-container">               <!--注册浮窗-->
         <div id="register">
             <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
-            <h1>注册</h1><br>
-            <form id="collector">
+            <h1>注册</h1>
+            <form class="collector">
+                <div id="choose">
+                    <div class="register-option" id="phone">手机号注册</div>
+                    <div class="register-option" id="e-mail">邮箱注册</div>
+                </div>
                 <div id="input">
-                    <div class="userinformation">
+                    <div class="userinformation" id="change">
                         <label>输入手机号</label>
                         <input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">
                     </div><br>
@@ -226,16 +230,12 @@
                         </div>
                     </div><br>
                     <div class="userinformation">
-                        <label>邮箱</label>
-                        <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
-                    </div><br>
-                    <div class="userinformation">
                         <label>设置密码</label>
                         <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
                     </div><br>
                     <div class="userinformation">
                         <label>再次确认密码</label>
-                        <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
+                        <input type="text" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
                     </div><br>
                 </div>
                 <button type="submit" class="login-button">成为新用户</button>
