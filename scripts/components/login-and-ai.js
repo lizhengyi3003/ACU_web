@@ -105,10 +105,10 @@ window.addEventListener('load',function(){
             registerOptions.forEach(function(i){i.classList.remove('click')});
             this.classList.add('click');
             const registerOptionsValue=this.textContent;
-            const registerWay=document.getElementById('change');
+            const registerWay=document.getElementById('register-change');
             if(registerOptionsValue=='手机号注册')
             {
-                registerWay.innerHTML='<label>输入手机号</label><input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">';
+                registerWay.innerHTML='<label>输入手机号</label><input type="text" placeholder="请输入您的手机号" name="phone" required autocomplete="off">';
             }
             else if(registerOptionsValue=='邮箱注册')
             {
@@ -116,6 +116,84 @@ window.addEventListener('load',function(){
             }
         })
     })
+    const loginOptions=this.document.querySelectorAll('.login-option');
+    loginOptions[0].classList.add('click');
+    loginOptions.forEach(function(l){
+        l.addEventListener('click',function(){
+            loginOptions.forEach(function(i){i.classList.remove('click')});
+            this.classList.add('click');
+            const loginOptionsValue=this.textContent;
+            const loginWay=document.getElementById('login-change');
+            if(loginOptionsValue=='密码登录')
+            {
+                loginWay.innerHTML='<label>密码</label><input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">';
+            }
+            else if(loginOptionsValue=='验证码登录')
+            {
+                loginWay.innerHTML='<label>验证码</label><div id="input-code"><input type="text" placeholder="输入验证码" name="code" required autocomplete="off"><button id="send-code" type="button">获取验证码</button></div>';
+            }
+        })
+    })
+    this.document.getElementById('register-collector').addEventListener('submit',async function(e){
+        e.preventDefault();
+        const form=e.target;
+        const username=form.username.value.trim();
+        const email=form.email.value.trim();
+        const password=form.password.value;
+        const password_confirm=form.confirm_password.value;
+        if(username.length<3||username.length>50)
+        {
+            showMessage('用户名长度需在3-50字符之间');
+            return;
+        }
+        if(!email.includes('@'))
+        {
+            showMessage('请输入有效邮箱');
+            return;
+        }
+        if(password.length<8)
+        {
+            showMessage('密码至少8位');
+            return;
+        }
+        if(password!==password_confirm)
+        {
+            showMessage('两次密码不一致');
+            return;
+        }
+        try {
+            const emailRegisterApi=await fetch('http://47.97.115.62:8000/auth/register',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                email,
+                password,
+                password_confirm
+            })
+        });
+
+        if (emailRegisterApi.status === 200) {
+            const data = await emailRegisterApi.json();
+            showMessage(data.message || '请查收邮件中的验证码', true);
+        }   else if (emailRegisterApi.status === 400) {
+            const msg = await emailRegisterApi.text();
+            showMessage(msg || '用户名或邮箱已存在、两次密码不一致');
+        }       else if (emailRegisterApi.status === 500) {
+            showMessage('邮件发送失败，请稍后重试');
+        }       else {
+            showMessage('注册失败，未知错误');
+        }} catch(err) {
+            showMessage('网络错误，请检查网络连接');
+        }
+        function showMessage(msg, success) {
+            const el = document.getElementById('register-message');
+            el.textContent = msg;
+            el.style.color = success ? 'green' : 'red';
+        }
+        })
    // const readyToLogin=this.document.getElementById('login-collector');
    // const readyToRegister=this.document.getElementById('register-collector');
    // const loginCaptchaPassed=this.document.getElementById('login-captcha_passed');
