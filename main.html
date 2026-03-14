@@ -78,7 +78,7 @@
                     <p>
                         基于千万级职业选手数据训练的神经网络模型，精准识别你的击球类型、发力点和潜在受伤风险。
                     </p>
-                </div>
+                </div>\]
                 <div class="feature-card">
                     <div class="feature-img"><span class="iconfont icon-d"></span></div>
                     <h3>3D 轨迹全息还原</h3>
@@ -400,7 +400,7 @@
             <canvas id="particle-canvas"></canvas>
             <h1>登录</h1>
             <br>
-            <form id="collector">
+            <form class="collector">
                 <div class="userinformation">
                     <label>手机号或邮箱</label>
                     <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off">
@@ -418,10 +418,14 @@
     <div id="register-container">               <!--注册浮窗-->
         <div id="register">
             <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
-            <h1>注册</h1><br>
-            <form id="collector">
+            <h1>注册</h1>
+            <form class="collector">
+                <div id="choose">
+                    <div class="register-option" id="phone">手机号注册</div>
+                    <div class="register-option" id="e-mail">邮箱注册</div>
+                </div>
                 <div id="input">
-                    <div class="userinformation">
+                    <div class="userinformation" id="change">
                         <label>输入手机号</label>
                         <input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">
                     </div><br>
@@ -433,16 +437,12 @@
                         </div>
                     </div><br>
                     <div class="userinformation">
-                        <label>邮箱</label>
-                        <input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">
-                    </div><br>
-                    <div class="userinformation">
                         <label>设置密码</label>
                         <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
                     </div><br>
                     <div class="userinformation">
                         <label>再次确认密码</label>
-                        <input type="text" placeholder="与上面设置密码一致" name="confirm_password" required autocomplete="off">
+                        <input type="text" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
                     </div><br>
                 </div>
                 <button type="submit" class="login-button">成为新用户</button>

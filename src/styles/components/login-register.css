@@ -51,11 +51,18 @@
     padding-top: 3vmin;
     color: #39FF14;
 }
-#collector {                            /*表单收集容器*/
+.collector {                            /*表单收集容器*/
     margin-top: auto;
     margin-bottom: auto;
     padding-bottom: 3vmin;
     width: 60vmin;
+}
+#choose {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
 }
 #input {
     margin-bottom: 20px;
@@ -146,4 +153,10 @@ label {                 /* 登录注册表单元素*/
     filter: blur(12px);
     transition: filter 0.3s;
     pointer-events: none; 
+}
+
+.click {
+    color: #1BD96A;
+    border-bottom: 1px solid #39ff14;
+    padding-bottom: 0.5vmin;
 }

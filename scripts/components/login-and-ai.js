@@ -98,6 +98,24 @@ window.addEventListener('load',function(){
     document.body.style.overflow = '';
     }
 }
+    const registerOptions=this.document.querySelectorAll('.register-option');
+    registerOptions[0].classList.add('click');
+    registerOptions.forEach(function(r){
+        r.addEventListener('click',function(){
+            registerOptions.forEach(function(i){i.classList.remove('click')});
+            this.classList.add('click');
+            const registerOptionsValue=this.textContent;
+            const registerWay=document.getElementById('change');
+            if(registerOptionsValue=='手机号注册')
+            {
+                registerWay.innerHTML='<label>输入手机号</label><input type="text" placeholder="请输入您的手机号" name="username" required autocomplete="off">';
+            }
+            else if(registerOptionsValue=='邮箱注册')
+            {
+                registerWay.innerHTML='<label>邮箱</label><input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">';
+            }
+        })
+    })
     oaiAssistant.onclick=function() {            //点击打开  AI浮窗
         oaiContainer.style.display='flex';
         oaiContainer.style.inset='';
