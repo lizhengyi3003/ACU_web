@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="./src/styles/components/aiContainer.css">        <!--AI助手浮窗css-->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_0ycxx6l1mdnd.css">
     <link rel="icon" href="./src/assets/images/logo.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.css" rel="stylesheet">  
+
     <script src="./scripts/pages/main.js"></script>
     <script src="./scripts/components/login-and-ai.js"></script>
     <title>SWINGCORE 挥迹 | 智能运动传感器</title>              <!--网页标题-->
@@ -527,6 +530,32 @@
             </div>
         </div>
     </div>
+    <div id="slide-wrap"></div>
     <script src="./scripts/components/particle.js"></script>      <!--背景粒子效果js-->
+    <script>
+  window.onload = function() {
+    const el = document.getElementById("slide-wrap");
+    const capt = new GoCaptcha.Slide({
+      width: 300,
+      height: 220,
+    });
+    capt.mount(el);
+    capt.setData({
+      image: '你的背景图片URL',   // 例如 '/images/bg.jpg'
+      thumb: '你的滑块图片URL',   // 例如 '/images/thumb.png'
+      thumbWidth: 50,
+      thumbHeight: 50,
+      thumbX: 100,
+      thumbY: 100,
+    });
+    capt.setEvents({
+      confirm(point, reset) {
+        // 这里只是演示，实际可根据 point 判断是否通过
+        alert('验证通过！');
+        return true;
+      }
+    });
+  }
+</script>
 </body>
 </html>
