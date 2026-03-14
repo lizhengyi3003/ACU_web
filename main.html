@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="./src/styles/components/aiContainer.css">        <!--AI助手浮窗css-->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5125336_0ycxx6l1mdnd.css">
     <link rel="icon" href="./src/assets/images/logo.png" type="image/png">
-    <script src="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.css" rel="stylesheet">  
+   <!-- <script src="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.js"></script>-->
+   <!-- <link href="https://cdn.jsdelivr.net/npm/go-captcha-jslib/dist/gocaptcha.global.css" rel="stylesheet">  -->
 
     <script src="./scripts/pages/main.js"></script>
     <script src="./scripts/components/login-and-ai.js"></script>
@@ -412,7 +412,7 @@
                 </div><br>
                 <div class="userinformation" id="login-change">
                     <label>密码</label>
-                    <input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">
+                    <input type="password" placeholder="请输入密码" required name="current-password" autocomplete="off">
                 </div><br>
                 
                 <input type="hidden" name="captcha_passed" id="login-captcha_passed" value="0">
@@ -449,11 +449,11 @@
                     </div><br>
                     <div class="userinformation">
                         <label>设置密码</label>
-                        <input type="text" placeholder="最小8位有效字符" name="password" required autocomplete="off">
+                        <input type="password" placeholder="最小8位有效字符" name="password" required autocomplete="off">
                     </div><br>
                     <div class="userinformation">
                         <label>再次确认密码</label>
-                        <input type="text" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
+                        <input type="password" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
                     </div><br>
                     
                     <input type="hidden" name="captcha_passed" id="register-captcha_passed" value="0">

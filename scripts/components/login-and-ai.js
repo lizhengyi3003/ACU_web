@@ -162,7 +162,7 @@ window.addEventListener('load',function(){
             return;
         }
         try {
-            const emailRegisterApi=await fetch('http://47.97.115.62:8000/auth/register',{
+            const emailRegisterApi=await fetch('https://47.97.115.62:8000/auth/register',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
