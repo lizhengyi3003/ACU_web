@@ -186,3 +186,10 @@ label {                 /* 登录注册表单元素*/
     border-bottom: 1px solid #39ff14;
     padding-bottom: 0.5vmin;
 }
+.slide-wrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

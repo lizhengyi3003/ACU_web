@@ -116,6 +116,63 @@ window.addEventListener('load',function(){
             }
         })
     })
+   // const readyToLogin=this.document.getElementById('login-collector');
+   // const readyToRegister=this.document.getElementById('register-collector');
+   // const loginCaptchaPassed=this.document.getElementById('login-captcha_passed');
+   // const registerCaptchaPassed=this.document.getElementById('register-captcha_passed');
+   // const slideWrap=this.document.getElementById('slide-wrap');
+   // readyToLogin.addEventListener('submit',function(e){
+   //     if(loginCaptchaPassed.value==0)
+   //     {
+   //         e.preventDefault();
+   //         alert('请先通过人机验证');
+   //         slideWrap.style.display='block';
+   //     }
+   // })
+   // readyToRegister.addEventListener('submit',function(e){
+   //     if(registerCaptchaPassed.value==0)
+   //     {
+   //         e.preventDefault();
+   //         alert('请先通过人机验证');
+   //         slideWrap.style.display='block';
+   //     }
+   // })
+   // const el = document.getElementById("slide-wrap");
+   // const capt = new GoCaptcha.Slide({
+   //     width: 300,
+   //     height: 220,
+   // });
+   // const thumbX = Math.floor(Math.random() * ( 100- 50)); 
+   // capt.mount(el);
+   // capt.setData({
+   //     image: './src/images/sample,jpeg',   // 例如 '/images/bg.jpg'
+   //     thumb: './src/images/sample,jpeg',   // 例如 '/images/thumb.png'
+   //     thumbWidth: 50,
+   //     thumbHeight: 50,
+   //     thumbX: thumbX,
+   //     thumbY: 100,
+   // });
+   // capt.setEvents({
+   //     confirm(point, reset) {
+   //     // 你设置的目标位置
+   //         const targetX = 200;
+   //         const targetY = 100;
+   //         // 容许误差
+   //         const tolerance = 5;
+   //         if (
+   //           Math.abs(point.x - targetX) <= tolerance &&
+   //           Math.abs(point.y - targetY) <= tolerance
+   //         ) {
+   //           alert('验证通过！');
+//
+   //           return true;
+   //         } else {
+   //           alert('验证失败，请重试');
+   //           reset();
+   //           return false;
+   //         }
+   //     }
+   // });
     oaiAssistant.onclick=function() {            //点击打开  AI浮窗
         oaiContainer.style.display='flex';
         oaiContainer.style.inset='';

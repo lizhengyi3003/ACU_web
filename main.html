@@ -125,7 +125,7 @@
                         </ul>
                     </div>
                     <div class="main-img">
-                        <img src="./src/assets/images/sensors.jpg">
+                        <img src="https://assets.intellicoretech.cn/front-end/sensors.png" loading="lazy">
                     </div>
                 </div>
                 <div id="APP" class="tab-content-elements">
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <div class="main-img">
-                        <img src="./src/assets/images/app.png" id="app-img">
+                        <img src="https://assets.intellicoretech.cn/front-end/app.png" id="app-img" loading="lazy">
                     </div>
                 </div>
                 <div id="cloud" class="tab-content-elements">
@@ -195,7 +195,7 @@
                         </ul>
                     </div>
                     <div class="main-img">
-                        <img src="./src/assets/images/cloud.png">
+                        <img src="https://assets.intellicoretech.cn/front-end/cloud.png" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -402,7 +402,7 @@
             <canvas id="particle-canvas"></canvas>
             <h1>登录</h1>
             <br>
-            <form class="collector">
+            <form class="collector" id="login-collector">
                 <div class="userinformation">
                     <label>手机号或邮箱</label>
                     <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off">
@@ -411,7 +411,9 @@
                     <label>密码</label>
                     <input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">
                 </div><br>
-                <button type="submit" class="login-button" >登录</button>
+                
+                <input type="hidden" name="captcha_passed" id="login-captcha_passed" value="0">
+                <button type="submit" class="login-button" id="ready-to-login">登录</button>
                 <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
                 <button type="button" class="login-button" id="login-go-back">先体验部分功能?点我返回页面</button>
             </form>
@@ -421,7 +423,7 @@
         <div id="register">
             <canvas id="particle-canvas"></canvas>      <!--背景粒子效果画布-->
             <h1>注册</h1>
-            <form class="collector">
+            <form class="collector" id="register-collector">
                 <div id="choose">
                     <div class="register-option" id="phone">手机号注册</div>
                     <div class="register-option" id="e-mail">邮箱注册</div>
@@ -446,13 +448,16 @@
                         <label>再次确认密码</label>
                         <input type="text" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
                     </div><br>
+                    
+                    <input type="hidden" name="captcha_passed" id="register-captcha_passed" value="0">
                 </div>
-                <button type="submit" class="login-button">成为新用户</button>
+                <button type="submit" class="login-button" id="ready-to-register">成为新用户</button>
                 <button type="button" class="login-button" id="go-login">已有账号?点我前往登录</button>
                 <button type="button" class="login-button" id="register-go-back">先体验部分功能?点我返回页面</button>
             </form>
         </div>
     </div>
+    <div id="slide-wrap"></div>
     <div id="ai-assistant">                 <!--AI助手浮窗-->
         <span>AI助手</span>
         <div id="ai-container">
@@ -494,7 +499,7 @@
     <div id="footer">                               <!--页脚-->
         <div class="footer-columns">
             <div>
-                <img src="./src/assets/images/logo.png">
+                <img src="https://assets.intellicoretech.cn/front-end/logo.png" loading="lazy">
             </div>
         </div>
         <div class="footer-columns">
@@ -530,32 +535,7 @@
             </div>
         </div>
     </div>
-    <div id="slide-wrap"></div>
     <script src="./scripts/components/particle.js"></script>      <!--背景粒子效果js-->
-    <script>
-  window.onload = function() {
-    const el = document.getElementById("slide-wrap");
-    const capt = new GoCaptcha.Slide({
-      width: 300,
-      height: 220,
-    });
-    capt.mount(el);
-    capt.setData({
-      image: '你的背景图片URL',   // 例如 '/images/bg.jpg'
-      thumb: '你的滑块图片URL',   // 例如 '/images/thumb.png'
-      thumbWidth: 50,
-      thumbHeight: 50,
-      thumbX: 100,
-      thumbY: 100,
-    });
-    capt.setEvents({
-      confirm(point, reset) {
-        // 这里只是演示，实际可根据 point 判断是否通过
-        alert('验证通过！');
-        return true;
-      }
-    });
-  }
 </script>
 </body>
 </html>
