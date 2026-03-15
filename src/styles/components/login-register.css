@@ -104,13 +104,23 @@
     flex: 1;
     width: 30vmin;
 }
-#send-code {
+#login-send-code {
     border-radius: 10px;
     border: none;
     background: #39FF14;
     padding: 6px;
     white-space: nowrap;
     width: 40%;
+    flex: 1;
+}
+#register-send-code {
+    border-radius: 10px;
+    border: none;
+    background: #39FF14;
+    padding: 6px;
+    white-space: nowrap;
+    width: 40%;
+    flex: 1;
 }
 label {                 /* 登录注册表单元素*/
     display: block;
