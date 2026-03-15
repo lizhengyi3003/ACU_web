@@ -105,14 +105,15 @@ window.addEventListener('load',function(){
             registerOptions.forEach(function(i){i.classList.remove('click')});
             this.classList.add('click');
             const registerOptionsValue=this.textContent;
-            const registerWay=document.getElementById('register-change');
             if(registerOptionsValue=='手机号注册')
             {
-                registerWay.innerHTML='<label>输入手机号</label><input type="text" placeholder="请输入您的手机号" name="phone" required autocomplete="off">';
+                document.getElementById('register-phone-container').style.display='block';
+                document.getElementById('register-email-container').style.display='none';
             }
             else if(registerOptionsValue=='邮箱注册')
             {
-                registerWay.innerHTML='<label>邮箱</label><input type="text" placeholder="输入您的邮箱" name="email" required autocomplete="off">';
+                document.getElementById('register-phone-container').style.display='none';
+                document.getElementById('register-email-container').style.display='block';
             }
         })
     })
@@ -126,11 +127,13 @@ window.addEventListener('load',function(){
             const loginWay=document.getElementById('login-change');
             if(loginOptionsValue=='密码登录')
             {
-                loginWay.innerHTML='<label>密码</label><input type="text" placeholder="请输入密码" required name="current-password" autocomplete="off">';
+                document.getElementById('login-password-container').style.display='block';
+                document.getElementById('login-code-container').style.display='none';
             }
             else if(loginOptionsValue=='验证码登录')
             {
-                loginWay.innerHTML='<label>验证码</label><div id="input-code"><input type="text" placeholder="输入验证码" name="code" required autocomplete="off"><button id="send-code" type="button">获取验证码</button></div>';
+                document.getElementById('login-password-container').style.display='none';
+                document.getElementById('login-code-container').style.display='block';
             }
         })
     })
@@ -194,6 +197,121 @@ window.addEventListener('load',function(){
             el.style.color = success ? 'green' : 'red';
         }
         })
+    this.document.getElementById('register-send-code').addEventListener('click',async function(){
+        const emailContainer=document.getElementById('register-email-container');
+        const emailInput=document.getElementById('register-eamil');
+        const messageDiv=document.getElementById('register-message');
+        messageDiv.textContent='';
+        if(emailContainer.style.display!=='none')
+        {
+            const email=emailInput.value.trim();
+            if(!email)
+            {
+                messageDiv.textContent='请输入邮箱地址';
+                messageDiv.style.color='red';
+                return;
+            }
+            try
+            {
+                const registerApi=await fetch('/api/',{
+                    method:'POST',
+                    headers:{'Content-Type': 'application/json'},
+                    body:JSON.stringify({email})
+                });
+                if(res.ok)
+                {
+                    messageDiv.textContent = '验证码已发送，请查收邮箱';
+                    messageDiv.style.color = 'green';
+                }
+                else
+                {
+                    messageDiv.textContent = '验证码发送失败';
+                    messageDiv.style.color = 'red';
+                }
+            }
+            catch(e)
+            {
+                messageDiv.textContent = '网络错误，请稍后重试';
+                messageDiv.style.color = 'red';
+            }
+        }
+        if(document.getElementById('register-phone-container').style.display==='block')
+        {
+            const phone=document.getElementById('register-phone').value.trim();
+            messageDiv.textContent='';
+            if(!phone)
+            {
+                messageDiv.textContent = '请输入手机号';
+                messageDiv.style.color = 'red';
+                return;
+            }
+            if (!/^(\+86)?1\d{10}$/.test(phone)) {
+                messageDiv.textContent = '手机号格式不正确';
+                messageDiv.style.color = 'red';
+                return;
+            }
+            const btn=this;
+            btn.disabled=true;
+            btn.textContent='发送中....'
+            try
+            {
+                const res=await fetch('https://47.97.115.62:8000/auth/phone/send-code',{
+                    method:'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone })
+                });
+                if(res.ok)
+                {
+                    const data=await res.json();
+                    messageDiv.textContent = data.message || '验证码已发送，请查收短信';
+                    messageDiv.style.color = 'green';
+                    // 60秒倒计时
+                    let sec = 60;
+                    btn.textContent = `${sec}s后重试`;
+                    const timer=setInterval(function(){
+                        sec--;
+                        btn.textContent=`${sec}s后重试`;
+                        if(sec<=0)
+                        {
+                            clearInterval(timer);
+                            btn.disabled=false;
+                            btn.textContent='获取验证码';
+                        }
+                    },1000);
+                    
+                }
+                else if(res.status === 429)
+                {
+                    messageDiv.textContent = '发送过于频繁，请 60 秒后重试';
+                    messageDiv.style.color = 'red';
+                    btn.disabled = false;
+                    btn.textContent = '获取验证码';
+                }
+                else if(res.status === 502)
+                {
+                    messageDiv.textContent = '短信发送失败，请稍后重试';
+                    messageDiv.style.color = 'red';
+                    btn.disabled = false;
+                    btn.textContent = '获取验证码';
+                }
+                else
+                {
+                    messageDiv.textContent = '发送失败，请检查手机号';
+                    messageDiv.style.color = 'red';
+                    btn.disabled = false;
+                    btn.textContent = '获取验证码';
+                }
+            }
+            catch
+            {
+                messageDiv.textContent = '网络错误，请稍后重试';
+                messageDiv.style.color = 'red';
+                btn.disabled = false;
+                btn.textContent = '获取验证码';
+            }
+        }
+        
+    })
    // const readyToLogin=this.document.getElementById('login-collector');
    // const readyToRegister=this.document.getElementById('register-collector');
    // const loginCaptchaPassed=this.document.getElementById('login-captcha_passed');

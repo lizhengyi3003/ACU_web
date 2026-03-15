@@ -408,13 +408,19 @@
                 </div>
                 <div class="userinformation">
                     <label>手机号或邮箱</label>
-                    <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off">
+                    <input type="text" placeholder="请输入手机号或邮箱" required name="username" autocomplete="off" id="login-account">
                 </div><br>
-                <div class="userinformation" id="login-change">
+                <div class="userinformation" id="login-password-container">
                     <label>密码</label>
-                    <input type="password" placeholder="请输入密码" required name="current-password" autocomplete="off">
+                    <input type="password" placeholder="请输入密码" required name="current-password" autocomplete="off" id="login-password">
+                </div>
+                <div class="userinformation" id="login-code-container" style="display: none;">
+                    <label>验证码</label>
+                    <div id="input-code">
+                        <input type="text" placeholder="输入验证码" name="code" required autocomplete="off" maxlength="6" id="login-code">
+                        <button id="login-send-code" type="button">获取验证码</button>
+                    </div>
                 </div><br>
-                
                 <input type="hidden" name="captcha_passed" id="login-captcha_passed" value="0">
                 <button type="submit" class="login-button" id="ready-to-login">登录</button>
                 <button type="button" class="login-button" id="go-register">还未注册账号?点我前往注册</button>
@@ -434,28 +440,32 @@
                 <div id="input">
                     <div class="userinformation" >
                         <label>输入用户名</label>
-                        <input type="text" placeholder="请输入您想要的用户名" name="username" required autocomplete="off">
+                        <input type="text" placeholder="请输入您想要的用户名" name="username" required autocomplete="off" id="register-username">
                     </div><br>
-                    <div class="userinformation" id="register-change">
+                    <div class="userinformation" id="register-phone-container" >
                         <label>输入手机号</label>
-                        <input type="text" placeholder="请输入您的手机号" name="phone" required autocomplete="off">
+                        <input type="text" placeholder="请输入您的手机号" name="phone" required autocomplete="off" id="register-phone">
+                    </div>
+                     <div class="userinformation" id="register-email-container" style="display: none;">
+                        <label>邮箱</label>
+                        <input type="text" placeholder="请输入您的邮箱" name="email" required autocomplete="off" id="register-email">
                     </div><br>
                     <div class="userinformation">
                         <label>验证码</label>
                         <div id="input-code">
-                            <input type="text" placeholder="输入验证码" name="code" required autocomplete="off">
-                            <button id="send-code" type="button">获取验证码</button>
+                            <input type="text" placeholder="输入验证码" name="code" required autocomplete="off" maxlength="6" id="register-code">
+                            <button id="register-send-code" type="button">获取验证码</button>
                         </div>
                     </div><br>
                     <div class="userinformation">
                         <label>设置密码</label>
-                        <input type="password" placeholder="最小8位有效字符" name="password" required autocomplete="off">
+                        <input type="password" placeholder="最小8位有效字符" name="password" required autocomplete="off" id="register-password">
                     </div><br>
                     <div class="userinformation">
                         <label>再次确认密码</label>
-                        <input type="password" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off">
+                        <input type="password" placeholder="与设置的密码一致" name="confirm_password" required autocomplete="off" id="register-confirm_password">
                     </div><br>
-                    
+                    <div></div>
                     <input type="hidden" name="captcha_passed" id="register-captcha_passed" value="0">
                 </div>
                 <button type="submit" class="login-button" id="ready-to-register">成为新用户</button>
